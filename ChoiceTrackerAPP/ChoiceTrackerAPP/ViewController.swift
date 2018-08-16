@@ -7,9 +7,31 @@
 //
 
 import UIKit
-
+import Charts
 
 class ViewController: UIViewController {
+    //MARK:- Charts stuff
+    @IBOutlet var pieChartView: PieChartView!
+    
+    var badChoice = PieChartDataEntry(value: 0)
+    var goodChoice = PieChartDataEntry(value: 0)
+    
+    var numberOfDataEntries = [PieChartDataEntry]()
+    
+    func updateChartData() {
+        let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
+        
+        let chartData = PieChartData(dataSet: chartDataSet)
+        
+        let colors = [UIColor.red, UIColor.green]
+        
+        chartDataSet.colors = colors
+        
+        pieChartView.data = chartData
+    }
+    
+    
+    
     // dateFormatter
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -56,6 +78,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         currentDailyRecord = getCurrentDailyRecord()
         //updateUI()
+        
+        pieChartView.chartDescription?.text = ""
+        
+        goodChoice.value = 5
+        goodChoice.label = "Good Choices"
+        
+        badChoice.value = 2
+        badChoice.label = "Bad Choices"
+        
+        numberOfDataEntries = [goodChoice, badChoice]
+        
+        updateChartData()
     }
     
     override func didReceiveMemoryWarning() {

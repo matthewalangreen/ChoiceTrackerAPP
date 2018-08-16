@@ -14,7 +14,47 @@
 		D0ACA14D2126310300C955FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */; };
 		D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1542126313400C955FB /* DailyRecord.swift */; };
 		D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1562126315D00C955FB /* DailyRecordStore.swift */; };
+		D0ACA1612126358300C955FB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; };
+		D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0ACA15D2126352500C955FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		D0ACA15F2126352500C955FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		D0ACA1632126358300C955FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0ACA1652126358300C955FB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +66,7 @@
 		D0ACA14E2126310300C955FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0ACA1542126313400C955FB /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		D0ACA1562126315D00C955FB /* DailyRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordStore.swift; sourceTree = "<group>"; };
+		D0ACA1582126352500C955FB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0ACA1612126358300C955FB /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +86,7 @@
 			children = (
 				D0ACA1412126310200C955FB /* ChoiceTrackerAPP */,
 				D0ACA1402126310200C955FB /* Products */,
+				D0ACA1582126352500C955FB /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +113,15 @@
 			path = ChoiceTrackerAPP;
 			sourceTree = "<group>";
 		};
+		D0ACA1592126352500C955FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0ACA15E2126352500C955FB /* Charts.framework */,
+				D0ACA1602126352500C955FB /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,10 +132,12 @@
 				D0ACA13B2126310200C955FB /* Sources */,
 				D0ACA13C2126310200C955FB /* Frameworks */,
 				D0ACA13D2126310200C955FB /* Resources */,
+				D0ACA1652126358300C955FB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D0ACA1642126358300C955FB /* PBXTargetDependency */,
 			);
 			name = ChoiceTrackerAPP;
 			productName = ChoiceTrackerAPP;
@@ -116,12 +170,35 @@
 			mainGroup = D0ACA1362126310200C955FB;
 			productRefGroup = D0ACA1402126310200C955FB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D0ACA1592126352500C955FB /* Products */;
+					ProjectRef = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D0ACA13E2126310200C955FB /* ChoiceTrackerAPP */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D0ACA15E2126352500C955FB /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = D0ACA15D2126352500C955FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0ACA1602126352500C955FB /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = D0ACA15F2126352500C955FB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D0ACA13D2126310200C955FB /* Resources */ = {
@@ -149,6 +226,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0ACA1642126358300C955FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = D0ACA1632126358300C955FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D0ACA1462126310200C955FB /* Main.storyboard */ = {
@@ -287,6 +372,7 @@
 		D0ACA1522126310300C955FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XKKV2P59Y;
@@ -305,6 +391,7 @@
 		D0ACA1532126310300C955FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4XKKV2P59Y;
