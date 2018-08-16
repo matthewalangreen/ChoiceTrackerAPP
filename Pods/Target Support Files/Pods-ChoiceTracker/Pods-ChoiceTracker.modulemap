@@ -1,0 +1,6 @@
+framework module Pods_ChoiceTracker {
+  umbrella header "Pods-ChoiceTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
