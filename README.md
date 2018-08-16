@@ -1,2 +1,0 @@
-# ChoiceTrackerAPP
-choice tracker
