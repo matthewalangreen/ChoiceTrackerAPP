@@ -18,6 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-Ak-VYn">
+                                <rect key="frame" x="27" y="40" width="320" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnp-cD-Xc0" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="CEj-Ji-LxS"/>
+                                            <constraint firstAttribute="width" constant="60" id="o7D-3t-p3r"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCc-Kl-8Co" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="65" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="k1V-NX-5nz"/>
+                                            <constraint firstAttribute="width" constant="60" id="tET-zk-Ups"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6cC-tQ-3xv" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="130" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="DoB-zl-ign"/>
+                                            <constraint firstAttribute="width" constant="60" id="RhO-iT-JsT"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yi-M2-973" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="195" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="1UM-av-vb7"/>
+                                            <constraint firstAttribute="height" constant="60" id="duw-Up-dXg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GvI-0m-aU6" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="260" y="0.0" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="1tZ-E4-aHY"/>
+                                            <constraint firstAttribute="width" constant="60" id="ENs-tL-1Wu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="fH6-4Q-aVT"/>
+                                    <constraint firstAttribute="height" constant="60" id="hHv-8x-HQQ"/>
+                                </constraints>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-gk-pr2" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,18 +98,25 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mek-pP-rVr" secondAttribute="bottom" constant="80" id="IKI-Rd-pkX"/>
                             <constraint firstItem="Mek-pP-rVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LFa-Os-pIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uwr-bB-InI" secondAttribute="bottom" constant="80" id="RGG-FQ-Wax"/>
+                            <constraint firstItem="a1U-Ak-VYn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YTg-F1-HRl"/>
+                            <constraint firstItem="a1U-Ak-VYn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d4W-sz-auj"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSE-uF-SiG"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zpV-l5-nf7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="chartFive" destination="GvI-0m-aU6" id="Ez3-5U-ShS"/>
+                        <outlet property="chartFour" destination="6yi-M2-973" id="qi5-Ve-NSX"/>
+                        <outlet property="chartOne" destination="Qnp-cD-Xc0" id="4eO-4b-upF"/>
+                        <outlet property="chartThree" destination="6cC-tQ-3xv" id="u34-Ni-9rE"/>
+                        <outlet property="chartTwo" destination="aCc-Kl-8Co" id="Ubu-WV-baM"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1201" y="-83"/>
+            <point key="canvasLocation" x="-1202.4000000000001" y="-83.208395802098963"/>
         </scene>
     </scenes>
 </document>

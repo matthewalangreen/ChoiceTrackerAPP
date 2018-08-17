@@ -12,7 +12,12 @@ import Charts
 class ViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
-   
+    @IBOutlet var chartOne: PieChartView!
+    @IBOutlet var chartTwo: PieChartView!
+    @IBOutlet var chartThree: PieChartView!
+    @IBOutlet var chartFour: PieChartView!
+    @IBOutlet var chartFive: PieChartView!
+    
 
     //MARK:- Actions
     @IBAction func addBadChoice(_ sender: Any) {
@@ -42,18 +47,16 @@ class ViewController: UIViewController {
     
     func updateChartData() {
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
+        let smallChartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
+        
         let chartData = PieChartData(dataSet: chartDataSet)
+        let smallChartData = PieChartData(dataSet: smallChartDataSet)
         
         let format = NumberFormatter()
         format.numberStyle = .none
         let formatter = DefaultValueFormatter(formatter: format)
         chartData.setValueFormatter(formatter)
-        
-       
-        //let badColor = UIColor.init(red: 1, green: 43/255, blue: 83/255, alpha: 1)
-        //let goodColor = UIColor.init(red: 90/255, green: 1, blue: 100/255, alpha: 1)
-        
-        //let colors = [goodColor, badColor]
+
         
         let otherBadColor = UIColor.init(red: 247/255, green: 113/255, blue: 93/255, alpha: 1)
         let otherGoodColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
@@ -65,7 +68,28 @@ class ViewController: UIViewController {
         
         pieChartView.data = chartData
         
+        smallChartDataSet.drawValuesEnabled = false
+        chartOne.data = smallChartData
+        chartTwo.data = smallChartData
+        chartThree.data = smallChartData
+        chartFour.data = smallChartData
+        chartFive.data = smallChartData
      
+    }
+    
+    func formatChart(chartName: PieChartView) {
+        // format the pieChart
+        chartName.chartDescription?.text = ""
+        chartName.centerText = "ChoiceTracker"
+        chartName.drawEntryLabelsEnabled = false
+        //pieChartView.drawSlicesUnderHoleEnabled = false
+        //pieChartView.transparentCircleRadiusPercent = 0
+        //pieChartView.drawHoleEnabled = false
+        chartName.entryLabelColor = NSUIColor.black
+        chartName.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
+        chartName.legend.enabled = false
+        chartName.noDataText = "Make a great choice!"
+        chartName.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
     }
     
     
@@ -84,7 +108,6 @@ class ViewController: UIViewController {
     var currentDailyRecord: DailyRecord!
     
 
-    
     //MARK:- Template
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,18 +117,24 @@ class ViewController: UIViewController {
         
        
         // format the pieChart
-        pieChartView.chartDescription?.text = ""
-        pieChartView.centerText = "ChoiceTracker"
-        pieChartView.drawEntryLabelsEnabled = false
-        //pieChartView.drawSlicesUnderHoleEnabled = false
-        //pieChartView.transparentCircleRadiusPercent = 0
-        //pieChartView.drawHoleEnabled = false
-        pieChartView.entryLabelColor = NSUIColor.black
-        pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
-        pieChartView.legend.enabled = false
-        pieChartView.noDataText = "Make a great choice!"
-        pieChartView.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
+//        pieChartView.chartDescription?.text = ""
+//        pieChartView.centerText = "ChoiceTracker"
+//        pieChartView.drawEntryLabelsEnabled = false
+//        //pieChartView.drawSlicesUnderHoleEnabled = false
+//        //pieChartView.transparentCircleRadiusPercent = 0
+//        //pieChartView.drawHoleEnabled = false
+//        pieChartView.entryLabelColor = NSUIColor.black
+//        pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
+//        pieChartView.legend.enabled = false
+//        pieChartView.noDataText = "Make a great choice!"
+//        pieChartView.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
         
+        formatChart(chartName: pieChartView)
+        formatChart(chartName: chartOne)
+        formatChart(chartName: chartTwo)
+        formatChart(chartName: chartThree)
+        formatChart(chartName: chartFour)
+        formatChart(chartName: chartFive)
         
         
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
