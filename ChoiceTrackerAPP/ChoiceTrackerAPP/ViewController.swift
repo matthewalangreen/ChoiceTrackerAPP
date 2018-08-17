@@ -15,8 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var chartOne: PieChartView!
     @IBOutlet var chartTwo: PieChartView!
     @IBOutlet var chartThree: PieChartView!
-    @IBOutlet var chartFour: PieChartView!
-    @IBOutlet var chartFive: PieChartView!
+  
     
 
     //MARK:- Actions
@@ -47,10 +46,8 @@ class ViewController: UIViewController {
     
     func updateChartData() {
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
-        let smallChartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
-        let smallChartData = PieChartData(dataSet: smallChartDataSet)
         
         let format = NumberFormatter()
         format.numberStyle = .none
@@ -68,19 +65,18 @@ class ViewController: UIViewController {
         
         pieChartView.data = chartData
         
-        smallChartDataSet.drawValuesEnabled = false
-        chartOne.data = smallChartData
-        chartTwo.data = smallChartData
-        chartThree.data = smallChartData
-        chartFour.data = smallChartData
-        chartFive.data = smallChartData
+        chartDataSet.drawValuesEnabled = false
+        chartOne.data = chartData
+        chartTwo.data = chartData
+        chartThree.data = chartData
+
      
     }
     
     func formatChart(chartName: PieChartView) {
         // format the pieChart
         chartName.chartDescription?.text = ""
-        chartName.centerText = "ChoiceTracker"
+        //chartName.centerText = "ChoiceTracker"
         chartName.drawEntryLabelsEnabled = false
         //pieChartView.drawSlicesUnderHoleEnabled = false
         //pieChartView.transparentCircleRadiusPercent = 0
@@ -133,8 +129,7 @@ class ViewController: UIViewController {
         formatChart(chartName: chartOne)
         formatChart(chartName: chartTwo)
         formatChart(chartName: chartThree)
-        formatChart(chartName: chartFour)
-        formatChart(chartName: chartFive)
+      
         
         
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
