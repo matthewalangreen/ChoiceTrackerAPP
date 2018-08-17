@@ -16,19 +16,19 @@ class ViewController: UIViewController {
 
     //MARK:- Actions
     @IBAction func addBadChoice(_ sender: Any) {
+        pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
         badChoices.value = Double(currentDailyRecord.numBadChoices)
         updateChartData()
-        pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
     }
     
     
     @IBAction func addGoodChoice(_ sender: Any) {
+        pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         incrementChoice(choice: "Good")
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
         updateChartData()
-        pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
     }
     
