@@ -51,7 +51,7 @@ class DailyRecordStore {
     }
     
     @discardableResult func createRandomDailyRecord() -> DailyRecord {
-        let n = Int(arc4random_uniform(50)) // random number  0 - 49
+        let n = Int(arc4random_uniform(3600)) // random number  0 - 49
         let newDailyRecord = DailyRecord()
         let nowDateString = dateFormatter.string(from: generateRandomDate(daysBack: n)!)
         allDailyRecords[nowDateString] = newDailyRecord
@@ -64,6 +64,7 @@ class DailyRecordStore {
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
+    
     
     //MARK:- NSCoding Methods
     func saveChanges() -> Bool {

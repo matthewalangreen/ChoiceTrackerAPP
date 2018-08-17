@@ -24,7 +24,9 @@ class ViewController: UIViewController {
         badChoices.value = Double(currentDailyRecord.numBadChoices)
         updateChartData()
         updateUI()
-        print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
+        //print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
+        
+        print("total records: \(dailyRecordStore.allDailyRecords.count)")
     }
     
     
@@ -111,6 +113,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // make some fake data
+        for _ in 0..<20 {
+           dailyRecordStore.createRandomDailyRecord()
+        }
+        
         currentDailyRecord = getCurrentDailyRecord()
         updateUI()
     
