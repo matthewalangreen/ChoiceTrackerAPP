@@ -32,18 +32,32 @@ class ViewController: UIViewController {
     
 
 
-    //MARK:- Charts stuff
+    //MARK:- PieChart stuff
+    let pieFormat: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .none
+        return formatter
+    }()
+    
+    
+    
+    
+    
     var badChoices = PieChartDataEntry(value: 0)
     var goodChoices = PieChartDataEntry(value: 0)
     
     var numberOfDataEntries = [PieChartDataEntry]()
     
     func updateChartData() {
-       
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
-        
         let chartData = PieChartData(dataSet: chartDataSet)
         
+        let format = NumberFormatter()
+        format.numberStyle = .none
+        let formatter = DefaultValueFormatter(formatter: format)
+        chartData.setValueFormatter(formatter)
+        
+       
         //let badColor = UIColor.init(red: 1, green: 43/255, blue: 83/255, alpha: 1)
         //let goodColor = UIColor.init(red: 90/255, green: 1, blue: 100/255, alpha: 1)
         
@@ -84,7 +98,7 @@ class ViewController: UIViewController {
         currentDailyRecord = getCurrentDailyRecord()
         //updateUI()
         
-        
+       
         // format the pieChart
         pieChartView.chartDescription?.text = ""
         pieChartView.centerText = "ChoiceTracker"
@@ -94,6 +108,8 @@ class ViewController: UIViewController {
         pieChartView.entryLabelColor = NSUIColor.black
         pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
         pieChartView.legend.enabled = false
+        pieChartView.noDataText = "Make a great choice!"
+        pieChartView.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
         
         
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
