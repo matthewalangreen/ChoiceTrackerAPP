@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         incrementChoice(choice: "Bad")
         badChoices.value = Double(currentDailyRecord.numBadChoices)
         updateChartData()
+        pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
     }
     
@@ -27,22 +28,13 @@ class ViewController: UIViewController {
         incrementChoice(choice: "Good")
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
         updateChartData()
+        pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
     }
     
 
 
     //MARK:- PieChart stuff
-    let pieFormat: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .none
-        return formatter
-    }()
-    
-    
-    
-    
-    
     var badChoices = PieChartDataEntry(value: 0)
     var goodChoices = PieChartDataEntry(value: 0)
     
@@ -72,6 +64,8 @@ class ViewController: UIViewController {
         chartDataSet.colors = colors
         
         pieChartView.data = chartData
+        
+     
     }
     
     
@@ -104,12 +98,14 @@ class ViewController: UIViewController {
         pieChartView.centerText = "ChoiceTracker"
         pieChartView.drawEntryLabelsEnabled = false
         //pieChartView.drawSlicesUnderHoleEnabled = false
-        pieChartView.transparentCircleRadiusPercent = 0
+        //pieChartView.transparentCircleRadiusPercent = 0
+        //pieChartView.drawHoleEnabled = false
         pieChartView.entryLabelColor = NSUIColor.black
         pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
         pieChartView.legend.enabled = false
         pieChartView.noDataText = "Make a great choice!"
         pieChartView.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
+        
         
         
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
