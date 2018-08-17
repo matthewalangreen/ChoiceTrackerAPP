@@ -12,10 +12,9 @@ import Charts
 class ViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
-    @IBOutlet var chartOne: PieChartView!
-    @IBOutlet var chartTwo: PieChartView!
-    @IBOutlet var chartThree: PieChartView!
-  
+    
+   
+    
     
 
     //MARK:- Actions
@@ -24,6 +23,7 @@ class ViewController: UIViewController {
         incrementChoice(choice: "Bad")
         badChoices.value = Double(currentDailyRecord.numBadChoices)
         updateChartData()
+        updateUI()
         print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
     }
     
@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         incrementChoice(choice: "Good")
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
         updateChartData()
+        updateUI()
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
     }
     
@@ -66,11 +67,11 @@ class ViewController: UIViewController {
         chartDataSet.colors = colors
         
         pieChartView.data = chartData
+      
+        formatChart(chartName: pieChartView)
         
-        chartDataSet.drawValuesEnabled = false
-        chartOne.data = chartData
-        chartTwo.data = chartData
-        chartThree.data = chartData
+        chartDataSet.drawValuesEnabled = true
+       
 
      
     }
@@ -111,29 +112,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         currentDailyRecord = getCurrentDailyRecord()
-        //updateUI()
-        
-       
-        // format the pieChart
-//        pieChartView.chartDescription?.text = ""
-//        pieChartView.centerText = "ChoiceTracker"
-//        pieChartView.drawEntryLabelsEnabled = false
-//        //pieChartView.drawSlicesUnderHoleEnabled = false
-//        //pieChartView.transparentCircleRadiusPercent = 0
-//        //pieChartView.drawHoleEnabled = false
-//        pieChartView.entryLabelColor = NSUIColor.black
-//        pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
-//        pieChartView.legend.enabled = false
-//        pieChartView.noDataText = "Make a great choice!"
-//        pieChartView.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
-        
-        formatChart(chartName: pieChartView)
-        formatChart(chartName: chartOne)
-        formatChart(chartName: chartTwo)
-        formatChart(chartName: chartThree)
-      
-        
-        
+        updateUI()
+    
         goodChoices.value = Double(currentDailyRecord.numGoodChoices)
         goodChoices.label = "Good"
         
@@ -141,6 +121,7 @@ class ViewController: UIViewController {
         badChoices.label = "Bad"
         
         numberOfDataEntries = [goodChoices, badChoices]
+   
         
         updateChartData()
     }
@@ -151,15 +132,16 @@ class ViewController: UIViewController {
     }
     
     //MARK:- UI Logic
-//    func updateUI() {
+    func updateUI() {
 //        currentScoreUITextField.text = String(currentDailyRecord.sum)
 //        numChoicesUITextField.text = String(currentDailyRecord.numAllChoices)
 //        numGoodChoicesUITextField.text = String(currentDailyRecord.numGoodChoices)
 //        numBadChoicesUITextField.text = String(currentDailyRecord.numBadChoices)
-//       // updateGauge()
+       // updateGauge()
 //        currentDailyRecord = getCurrentDailyRecord()
-//        self.view.setNeedsDisplay()
-//    }
+        
+        self.view.setNeedsDisplay()
+    }
     
 //    func updateGauge() {
 //        gaugeView.needleValue = CGFloat(gaugeValue)
