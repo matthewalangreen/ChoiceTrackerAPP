@@ -26,9 +26,29 @@
                                     <constraint firstAttribute="width" constant="260" id="cfn-aU-Axl"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-bB-InI">
+                                <rect key="frame" x="285" y="521" width="30" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addGoodChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eG3-mc-Xfd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-pP-rVr">
+                                <rect key="frame" x="60" y="521" width="30" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="addBadChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0DQ-P7-ky7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uwr-bB-InI" secondAttribute="trailing" constant="60" id="Asx-kt-fe9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mek-pP-rVr" secondAttribute="bottom" constant="80" id="IKI-Rd-pkX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uwr-bB-InI" secondAttribute="bottom" constant="80" id="RGG-FQ-Wax"/>
+                            <constraint firstItem="Mek-pP-rVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="dcj-4U-3UL"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSE-uF-SiG"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zpV-l5-nf7"/>
                         </constraints>
@@ -40,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186.40000000000001" y="112.89355322338831"/>
+            <point key="canvasLocation" x="-783" y="96"/>
         </scene>
     </scenes>
 </document>

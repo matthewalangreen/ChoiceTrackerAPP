@@ -10,20 +10,42 @@ import UIKit
 import Charts
 
 class ViewController: UIViewController {
-    //MARK:- Charts stuff
+    //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
+   
+
+    //MARK:- Actions
+    @IBAction func addBadChoice(_ sender: Any) {
+        incrementChoice(choice: "Bad")
+        badChoice.value = Double(currentDailyRecord.numBadChoices)
+        updateChartData()
+        print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
+    }
     
+    
+    @IBAction func addGoodChoice(_ sender: Any) {
+        incrementChoice(choice: "Good")
+        goodChoice.value = Double(currentDailyRecord.numGoodChoices)
+        updateChartData()
+        print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
+    }
+    
+
+
+    //MARK:- Charts stuff
     var badChoice = PieChartDataEntry(value: 0)
     var goodChoice = PieChartDataEntry(value: 0)
     
     var numberOfDataEntries = [PieChartDataEntry]()
     
     func updateChartData() {
+       
+
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
         
-        let colors = [UIColor.red, UIColor.green]
+        let colors = [UIColor.green, UIColor.red]
         
         chartDataSet.colors = colors
         
@@ -45,32 +67,7 @@ class ViewController: UIViewController {
     var dailyRecordStore: DailyRecordStore!
     var currentDailyRecord: DailyRecord!
     
-    //MARK:- Outlets
-//    @IBOutlet var numChoicesUITextField: UITextField!
-//    @IBOutlet var numGoodChoicesUITextField: UITextField!
-//    @IBOutlet var numBadChoicesUITextField: UITextField!
-//    @IBOutlet var currentScoreUITextField: UITextField!
-//    @IBOutlet var gaugeView: ABGaugeView!
-//    @IBOutlet var littleGaugeView: ABGaugeView!
-    
-    
-    //MARK:- Actions
-//    @IBAction func addGoodChoice(_ sender: Any) {
-//        incrementChoice(choice: "Good")
-//        updateUI()
-//        print(dailyRecordStore.allDailyRecords.count)
-//    }
-//
-//    @IBAction func addBadChoice(_ sender: Any) {
-//        incrementChoice(choice: "Bad")
-//        print("Today's Date: \(currentDailyRecord.date)")
-//        print(dailyRecordStore.allDailyRecords.keys)
-//        updateUI()
-//    }
-//    @IBAction func addDailyRecord(_ sender: Any) {
-//        dailyRecordStore.createRandomDailyRecord()
-//        print("Today's Date: \(currentDailyRecord.date)")
-//    }
+
     
     //MARK:- Template
     override func viewDidLoad() {
@@ -81,11 +78,11 @@ class ViewController: UIViewController {
         
         pieChartView.chartDescription?.text = ""
         
-        goodChoice.value = 5
-        goodChoice.label = "Good Choices"
+        goodChoice.value = Double(currentDailyRecord.numGoodChoices)
+        goodChoice.label = "Good"
         
-        badChoice.value = 2
-        badChoice.label = "Bad Choices"
+        badChoice.value = Double(currentDailyRecord.numBadChoices)
+        badChoice.label = "Bad"
         
         numberOfDataEntries = [goodChoice, badChoice]
         
@@ -103,7 +100,7 @@ class ViewController: UIViewController {
 //        numChoicesUITextField.text = String(currentDailyRecord.numAllChoices)
 //        numGoodChoicesUITextField.text = String(currentDailyRecord.numGoodChoices)
 //        numBadChoicesUITextField.text = String(currentDailyRecord.numBadChoices)
-//        updateGauge()
+//       // updateGauge()
 //        currentDailyRecord = getCurrentDailyRecord()
 //        self.view.setNeedsDisplay()
 //    }
