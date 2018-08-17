@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     //MARK:- Actions
     @IBAction func addBadChoice(_ sender: Any) {
         incrementChoice(choice: "Bad")
-        badChoice.value = Double(currentDailyRecord.numBadChoices)
+        badChoices.value = Double(currentDailyRecord.numBadChoices)
         updateChartData()
         print("# Bad Choices: \(currentDailyRecord.numBadChoices)")
     }
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBAction func addGoodChoice(_ sender: Any) {
         incrementChoice(choice: "Good")
-        goodChoice.value = Double(currentDailyRecord.numGoodChoices)
+        goodChoices.value = Double(currentDailyRecord.numGoodChoices)
         updateChartData()
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
     }
@@ -33,19 +33,27 @@ class ViewController: UIViewController {
 
 
     //MARK:- Charts stuff
-    var badChoice = PieChartDataEntry(value: 0)
-    var goodChoice = PieChartDataEntry(value: 0)
+    var badChoices = PieChartDataEntry(value: 0)
+    var goodChoices = PieChartDataEntry(value: 0)
     
     var numberOfDataEntries = [PieChartDataEntry]()
     
     func updateChartData() {
        
-
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
         
-        let colors = [UIColor.green, UIColor.red]
+        //let badColor = UIColor.init(red: 1, green: 43/255, blue: 83/255, alpha: 1)
+        //let goodColor = UIColor.init(red: 90/255, green: 1, blue: 100/255, alpha: 1)
+        
+        //let colors = [goodColor, badColor]
+        
+        let otherBadColor = UIColor.init(red: 247/255, green: 113/255, blue: 93/255, alpha: 1)
+        let otherGoodColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
+        //let backgroundColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
+        
+        let colors = [otherGoodColor, otherBadColor]
         
         chartDataSet.colors = colors
         
@@ -76,15 +84,25 @@ class ViewController: UIViewController {
         currentDailyRecord = getCurrentDailyRecord()
         //updateUI()
         
+        
+        // format the pieChart
         pieChartView.chartDescription?.text = ""
+        pieChartView.centerText = "ChoiceTracker"
+        pieChartView.drawEntryLabelsEnabled = false
+        //pieChartView.drawSlicesUnderHoleEnabled = false
+        pieChartView.transparentCircleRadiusPercent = 0
+        pieChartView.entryLabelColor = NSUIColor.black
+        pieChartView.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
+        pieChartView.legend.enabled = false
         
-        goodChoice.value = Double(currentDailyRecord.numGoodChoices)
-        goodChoice.label = "Good"
         
-        badChoice.value = Double(currentDailyRecord.numBadChoices)
-        badChoice.label = "Bad"
+        goodChoices.value = Double(currentDailyRecord.numGoodChoices)
+        goodChoices.label = "Good"
         
-        numberOfDataEntries = [goodChoice, badChoice]
+        badChoices.value = Double(currentDailyRecord.numBadChoices)
+        badChoices.label = "Bad"
+        
+        numberOfDataEntries = [goodChoices, badChoices]
         
         updateChartData()
     }

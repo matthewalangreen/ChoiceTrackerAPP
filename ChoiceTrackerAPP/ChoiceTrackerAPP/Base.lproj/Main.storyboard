@@ -19,15 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-gk-pr2" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="57.5" y="203.5" width="260" height="260"/>
+                                <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="260" id="IQa-jH-SsM"/>
-                                    <constraint firstAttribute="width" constant="260" id="cfn-aU-Axl"/>
+                                    <constraint firstAttribute="width" constant="320" id="HD6-iO-Lst"/>
+                                    <constraint firstAttribute="height" constant="320" id="yIn-6L-4rj"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-bB-InI">
-                                <rect key="frame" x="285" y="521" width="30" height="66"/>
+                                <rect key="frame" x="245" y="521" width="30" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -35,7 +38,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-pP-rVr">
-                                <rect key="frame" x="60" y="521" width="30" height="66"/>
+                                <rect key="frame" x="100" y="521" width="30" height="66"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <state key="normal" title="-"/>
                                 <connections>
@@ -43,12 +46,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.94117647058823528" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uwr-bB-InI" secondAttribute="trailing" constant="60" id="Asx-kt-fe9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uwr-bB-InI" secondAttribute="trailing" constant="100" id="Asx-kt-fe9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mek-pP-rVr" secondAttribute="bottom" constant="80" id="IKI-Rd-pkX"/>
+                            <constraint firstItem="Mek-pP-rVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="LFa-Os-pIo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uwr-bB-InI" secondAttribute="bottom" constant="80" id="RGG-FQ-Wax"/>
-                            <constraint firstItem="Mek-pP-rVr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="dcj-4U-3UL"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hSE-uF-SiG"/>
                             <constraint firstItem="MPr-gk-pr2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zpV-l5-nf7"/>
                         </constraints>
@@ -60,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783" y="96"/>
+            <point key="canvasLocation" x="-1201" y="-83"/>
         </scene>
     </scenes>
 </document>
