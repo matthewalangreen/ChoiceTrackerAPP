@@ -87,27 +87,47 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-gk-pr2" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="20" y="121" width="335" height="335"/>
+                                        <rect key="frame" x="20" y="122" width="335" height="335"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MPr-gk-pr2" secondAttribute="height" multiplier="1:1" id="zYS-cZ-MVc"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="hwh-an-0Lx" userLabel="ButtonStackView">
-                                        <rect key="frame" x="97.5" y="481" width="180" height="66"/>
+                                    <stackView opaque="NO" contentMode="center" distribution="equalSpacing" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="hwh-an-0Lx" userLabel="ButtonStackView">
+                                        <rect key="frame" x="63.5" y="483" width="248" height="64"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-pP-rVr">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="66"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="-"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-pP-rVr" userLabel="Minus Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.396078431372549" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="64" id="rm5-ra-scI"/>
+                                                    <constraint firstAttribute="height" constant="64" id="uLI-tA-u65"/>
+                                                </constraints>
+                                                <state key="normal" image="minus"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="addBadChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0DQ-P7-ky7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-bB-InI">
-                                                <rect key="frame" x="150" y="0.0" width="30" height="66"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                                <state key="normal" title="+"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwr-bB-InI" userLabel="Plus Button">
+                                                <rect key="frame" x="184" y="0.0" width="64" height="64"/>
+                                                <color key="backgroundColor" red="0.0039215686274509803" green="0.6470588235294118" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="64" id="4zI-yL-aPu"/>
+                                                    <constraint firstAttribute="width" constant="64" id="S2A-1V-9fv"/>
+                                                </constraints>
+                                                <state key="normal" image="plus"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="32"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="addGoodChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eG3-mc-Xfd"/>
                                                 </connections>
@@ -196,6 +216,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="user" width="300" height="300"/>
+        <image name="minus" width="600" height="600"/>
+        <image name="plus" width="600" height="600"/>
+        <image name="user" width="600" height="600"/>
     </resources>
 </document>
