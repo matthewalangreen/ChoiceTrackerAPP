@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     var numberOfDataEntries = [PieChartDataEntry]()
     
     func updateChartData() {
+        // hide a chart if there is no data
+        //chartOne.isHidden = true
         let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
