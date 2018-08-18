@@ -75,16 +75,13 @@ class MainViewController: UIViewController {
     }
 
     //MARK:- Segue
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      let destinationVC = segue.destination as UIT
-//            // Figure out which row was just tapped
-//            if let row = tableView.indexPathForSelectedRow?.row {
-//                // Get the item associated with this row and pass it along
-//                let item = itemStore.allItems[row]
-//                let detailViewController = segue.destination as! DetailViewController
-//                detailViewController.item = item
-//
-//    }
+    
+    // send over the [DailyRecord] array of all the records that we've got here
+    // this will be used to populated the table
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! HistoryTableViewController
+        destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+    }
 
 
     //MARK:- PieChart stuff
