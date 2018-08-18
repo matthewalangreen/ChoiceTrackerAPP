@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
 		D0ACA1482126310200C955FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA1462126310200C955FB /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0ACA1442126310200C955FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				D0ACA1562126315D00C955FB /* DailyRecordStore.swift */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
+				D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */,
 				D0ACA1442126310200C955FB /* MainViewController.swift */,
 				D0FF87CF2127AB58003C8644 /* SettingsTableTableViewController.swift */,
 				D0FF87CD2127AB16003C8644 /* SettingsViewController.swift */,
@@ -233,6 +236,7 @@
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
+				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
 				D0FF87CE2127AB16003C8644 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

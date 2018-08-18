@@ -9,7 +9,10 @@
 import UIKit
 
 class HistoryTableViewController: UITableViewController {
-
+    @IBAction func dismissPopup(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     var allRecords: [DailyRecord]!
     
