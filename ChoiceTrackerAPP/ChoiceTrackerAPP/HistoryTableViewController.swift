@@ -10,8 +10,15 @@ import UIKit
 
 class HistoryTableViewController: UITableViewController {
     
-//    var dailyRecordStore: DailyRecordStore!
-//    
+    var dailyRecordStore: DailyRecordStore!
+    var allRecords: [DailyRecord]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+    }
+//
 //
 ////    struct Objects {
 ////        var dateKey: String!
@@ -19,26 +26,26 @@ class HistoryTableViewController: UITableViewController {
 ////    }
 //
 ////    var objectArray = [Objects]()
-//    
+//
 //    var dailyRecords: [DailyRecord]
 //
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
-//        
-//      
 //
-//        
+//
+//
+//
 //    }
-//    
+//
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        return objectArray.count
 //    }
-//    
+//
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return objectArray[section].count
 //    }
-//    
-//    
+//
+//
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        // get a new or recycled cell
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)

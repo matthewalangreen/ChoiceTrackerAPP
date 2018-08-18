@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="-2103" y="494"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--History View Controller-->
         <scene sceneID="k2a-1d-q5m">
             <objects>
-                <viewController id="S9s-Ru-PHd" customClass="HistoryTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="S9s-Ru-PHd" customClass="HistoryViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pMP-Ug-iO7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

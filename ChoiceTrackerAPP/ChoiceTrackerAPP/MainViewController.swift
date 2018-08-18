@@ -10,13 +10,45 @@ import UIKit
 import Charts
 
 class MainViewController: UIViewController {
+    
+    //MARK:- Model
+    var dailyRecordStore: DailyRecordStore!
+    var currentDailyRecord: DailyRecord!
+    
+    
+    //MARK:- Override built-in functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        // make some fake data
+        for _ in 0..<20 {
+            dailyRecordStore.createRandomDailyRecord()
+        }
+        
+        currentDailyRecord = getCurrentDailyRecord()
+        updateUI()
+        
+        goodChoices.value = Double(currentDailyRecord.numGoodChoices)
+        goodChoices.label = "Good"
+        
+        badChoices.value = Double(currentDailyRecord.numBadChoices)
+        badChoices.label = "Bad"
+        
+        numberOfDataEntries = [goodChoices, badChoices]
+        
+        
+        updateChartData()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
     
-   
-    
-    
-
     //MARK:- Actions
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
@@ -29,7 +61,6 @@ class MainViewController: UIViewController {
         print("total records: \(dailyRecordStore.allDailyRecords.count)")
     }
     
-    
     @IBAction func addGoodChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         incrementChoice(choice: "Good")
@@ -37,12 +68,23 @@ class MainViewController: UIViewController {
         updateChartData()
         updateUI()
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
-        let r = [DailyRecord](dailyRecordStore.allDailyRecords.values)
-        for v in r {
-            print("date: \(v.dateString)")
-        }
+        //        let r = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+        //        for v in r {
+        //            print("date: \(v.dateString)")
+        //        }
     }
-    
+
+    //MARK:- Segue
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//      let destinationVC = segue.destination as UIT
+//            // Figure out which row was just tapped
+//            if let row = tableView.indexPathForSelectedRow?.row {
+//                // Get the item associated with this row and pass it along
+//                let item = itemStore.allItems[row]
+//                let detailViewController = segue.destination as! DetailViewController
+//                detailViewController.item = item
+//
+//    }
 
 
     //MARK:- PieChart stuff
@@ -106,40 +148,6 @@ class MainViewController: UIViewController {
         return formatter
     }()
     
-    // model stuff
-    var dailyRecordStore: DailyRecordStore!
-    var currentDailyRecord: DailyRecord!
-    
-
-    //MARK:- Template
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // make some fake data
-        for _ in 0..<20 {
-           dailyRecordStore.createRandomDailyRecord()
-        }
-        
-        currentDailyRecord = getCurrentDailyRecord()
-        updateUI()
-    
-        goodChoices.value = Double(currentDailyRecord.numGoodChoices)
-        goodChoices.label = "Good"
-        
-        badChoices.value = Double(currentDailyRecord.numBadChoices)
-        badChoices.label = "Bad"
-        
-        numberOfDataEntries = [goodChoices, badChoices]
-   
-        
-        updateChartData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     //MARK:- UI Logic
     func updateUI() {
@@ -177,14 +185,6 @@ class MainViewController: UIViewController {
     }
     
     
-    //MARK:- Gauge Stuff
-//    var gaugeValue: Int = 50
-//
-//    func calculatedGaugeValue() -> Int {
-//        let amount = Int(currentDailyRecord.choicePercentage * 100)
-//        return amount
-//    }
-    
     //MARK:- Daily Record stuff
     func doesRecordExist(day: String) -> Bool {
         return dailyRecordStore.allDailyRecords.keys.contains(day)
@@ -201,6 +201,7 @@ class MainViewController: UIViewController {
             return dailyRecordStore.createDailyRecord()
         }
     }
+    
     
 }
 
