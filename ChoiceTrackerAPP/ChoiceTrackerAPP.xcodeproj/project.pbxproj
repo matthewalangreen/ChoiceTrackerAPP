@@ -17,8 +17,8 @@
 		D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1562126315D00C955FB /* DailyRecordStore.swift */; };
 		D0ACA1612126358300C955FB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; };
 		D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D0FF87CE2127AB16003C8644 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CD2127AB16003C8644 /* SettingsViewController.swift */; };
-		D0FF87D02127AB58003C8644 /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CF2127AB58003C8644 /* SettingsTableTableViewController.swift */; };
+		D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */; };
+		D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */; };
 		D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,8 +72,8 @@
 		D0ACA1542126313400C955FB /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		D0ACA1562126315D00C955FB /* DailyRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordStore.swift; sourceTree = "<group>"; };
 		D0ACA1582126352500C955FB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
-		D0FF87CD2127AB16003C8644 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		D0FF87CF2127AB58003C8644 /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
+		D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,10 +113,10 @@
 				D0ACA1562126315D00C955FB /* DailyRecordStore.swift */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
-				D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */,
 				D0ACA1442126310200C955FB /* MainViewController.swift */,
-				D0FF87CF2127AB58003C8644 /* SettingsTableTableViewController.swift */,
-				D0FF87CD2127AB16003C8644 /* SettingsViewController.swift */,
+				D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */,
+				D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */,
+				D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */,
 				D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
 				D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */,
@@ -232,12 +232,12 @@
 			files = (
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
-				D0FF87D02127AB58003C8644 /* SettingsTableTableViewController.swift in Sources */,
+				D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
 				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
-				D0FF87CE2127AB16003C8644 /* SettingsViewController.swift in Sources */,
+				D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

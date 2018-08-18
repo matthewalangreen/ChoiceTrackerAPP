@@ -79,10 +79,22 @@ class MainViewController: UIViewController {
     // send over the [DailyRecord] array of all the records that we've got here
     // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as! UINavigationController
-        let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
-        destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+        switch segue.identifier {
+        case "showHistory"?:
+            let navVC = segue.destination as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
+            destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+            
+        case "showSettings"?:
+            let navVC = segue.destination as! SettingsNavigationController
+            let destinationVC = navVC.viewControllers.first as! SettingsTableViewController
+            destinationVC.successString = "it worked!"
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
     }
+    
+  
 
 
     //MARK:- PieChart stuff

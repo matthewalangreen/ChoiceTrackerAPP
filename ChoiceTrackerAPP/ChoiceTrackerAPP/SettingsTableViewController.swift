@@ -8,11 +8,13 @@
 
 import UIKit
 
-class SettingsTableTableViewController: UITableViewController {
-
+class SettingsTableViewController: UITableViewController {
+    var successString: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("Success String Value: \(successString)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
