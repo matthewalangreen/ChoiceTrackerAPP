@@ -184,7 +184,7 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="History" id="ml5-Aq-uEU">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="z2v-M2-e8u">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="z2v-M2-e8u">
                             <connections>
                                 <action selector="dismissPopup:" destination="kGL-B2-MFn" id="WuC-oR-QY2"/>
                             </connections>
@@ -219,7 +219,13 @@
                             <outlet property="delegate" destination="Cy3-2C-JgT" id="3Fz-PF-zEx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="vOp-Fl-Qtc"/>
+                    <navigationItem key="navigationItem" title="Settings" id="vOp-Fl-Qtc">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="3eZ-ha-989">
+                            <connections>
+                                <action selector="dismissPopup:" destination="Cy3-2C-JgT" id="Gel-eh-rG5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaj-bm-76I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
