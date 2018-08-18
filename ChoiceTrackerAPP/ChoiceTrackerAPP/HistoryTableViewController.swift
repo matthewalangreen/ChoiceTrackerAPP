@@ -12,13 +12,37 @@ class HistoryTableViewController: UITableViewController {
     
     var allRecords: [DailyRecord]!
     
+    
+    //MARK:- TableView methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allRecords.count
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Create an instance of UITableViewCell, with default appearance
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell",
+                                                 for: indexPath)
+        
+        // Set the text on the cell with the description of the item
+        // that is at the nth index of items, where n = row this cell
+        // will appear in on the tableview
+        let record = allRecords[indexPath.row]
+        
+        let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
+        cell.textLabel?.text = val
+        
+        return cell
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        for v in allRecords {
-            print("date: \(v.dateString)")
-        }
+        // show the data
+//        for v in allRecords {
+//            print("date: \(v.dateString)")
+//        }
     }
     
 }
