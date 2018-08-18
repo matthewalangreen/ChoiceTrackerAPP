@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // access the view controller and set its dailyRecordScore
-        let vc = window!.rootViewController as! ViewController
+        let vc = window!.rootViewController as! MainViewController
         vc.dailyRecordStore = dailyRecordStore
         vc.currentDailyRecord = currentDailyRecord
         

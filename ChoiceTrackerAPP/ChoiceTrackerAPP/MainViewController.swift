@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
     
@@ -73,9 +73,7 @@ class ViewController: UIViewController {
         formatChart(chartName: pieChartView)
         
         chartDataSet.drawValuesEnabled = true
-       
-
-     
+   
     }
     
     func formatChart(chartName: PieChartView) {

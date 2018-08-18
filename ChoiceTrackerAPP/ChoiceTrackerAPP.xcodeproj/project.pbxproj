@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
-		D0ACA1452126310200C955FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* ViewController.swift */; };
+		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
 		D0ACA1482126310200C955FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA1462126310200C955FB /* Main.storyboard */; };
 		D0ACA14A2126310300C955FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA1492126310300C955FB /* Assets.xcassets */; };
 		D0ACA14D2126310300C955FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */; };
@@ -16,6 +16,7 @@
 		D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1562126315D00C955FB /* DailyRecordStore.swift */; };
 		D0ACA1612126358300C955FB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; };
 		D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0FF87CB2127A25F003C8644 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CA2127A25F003C8644 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,7 @@
 /* Begin PBXFileReference section */
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0ACA1442126310200C955FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0ACA1442126310200C955FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D0ACA1472126310200C955FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0ACA1492126310300C955FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0ACA14C2126310300C955FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		D0ACA1542126313400C955FB /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		D0ACA1562126315D00C955FB /* DailyRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordStore.swift; sourceTree = "<group>"; };
 		D0ACA1582126352500C955FB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		D0FF87CA2127A25F003C8644 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				D0ACA1542126313400C955FB /* DailyRecord.swift */,
 				D0ACA1562126315D00C955FB /* DailyRecordStore.swift */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
-				D0ACA1442126310200C955FB /* ViewController.swift */,
+				D0ACA1442126310200C955FB /* MainViewController.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
+				D0FF87CA2127A25F003C8644 /* HistoryViewController.swift */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
 				D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */,
 				D0ACA14E2126310300C955FB /* Info.plist */,
@@ -219,8 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
-				D0ACA1452126310200C955FB /* ViewController.swift in Sources */,
+				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
+				D0FF87CB2127A25F003C8644 /* HistoryViewController.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

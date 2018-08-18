@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="ViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="MainViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,9 @@
                                             <constraint firstAttribute="width" secondItem="cV7-sq-Xx7" secondAttribute="height" multiplier="1:1" id="Lnh-Wu-ARF"/>
                                         </constraints>
                                         <state key="normal" image="list"/>
+                                        <connections>
+                                            <segue destination="S9s-Ru-PHd" kind="presentation" id="8Gt-kk-cY1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,6 +159,51 @@
             </objects>
             <point key="canvasLocation" x="-1719.2" y="-265.81709145427288"/>
         </scene>
+        <!--History View Controller-->
+        <scene sceneID="k2a-1d-q5m">
+            <objects>
+                <viewController id="S9s-Ru-PHd" customClass="HistoryViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pMP-Ug-iO7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2O-8C-u7S" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="87" y="233.5" width="200" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6J7-Vn-t1u"/>
+                                    <constraint firstAttribute="height" constant="200" id="FYN-Zu-fSx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-xP-6mK">
+                                <rect key="frame" x="15" y="32" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="TLN-oH-bK9"/>
+                                    <constraint firstAttribute="height" constant="38" id="V3d-d6-5qd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="x"/>
+                                <connections>
+                                    <action selector="dismissPopu:" destination="S9s-Ru-PHd" eventType="touchUpInside" id="oeL-MV-ZO2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z2O-8C-u7S" firstAttribute="centerX" secondItem="pMP-Ug-iO7" secondAttribute="centerX" id="24y-Q0-w1Y"/>
+                            <constraint firstItem="AJC-xP-6mK" firstAttribute="leading" secondItem="pMP-Ug-iO7" secondAttribute="leading" constant="15" id="8Id-rd-ajj"/>
+                            <constraint firstItem="z2O-8C-u7S" firstAttribute="centerY" secondItem="pMP-Ug-iO7" secondAttribute="centerY" id="l8o-ZX-tWi"/>
+                            <constraint firstItem="AJC-xP-6mK" firstAttribute="top" secondItem="pMP-Ug-iO7" secondAttribute="top" constant="32" id="wTt-SE-whJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OMr-Rn-BwR"/>
+                    </view>
+                    <connections>
+                        <outlet property="yesterdayPieChart" destination="z2O-8C-u7S" id="3I7-J9-Xw9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfq-IB-RhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-961" y="458"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="4j0-d8-zc7">
             <objects>
@@ -207,5 +255,6 @@
         <image name="minus" width="600" height="600"/>
         <image name="plus" width="600" height="600"/>
         <image name="user" width="600" height="600"/>
+        <image name="x" width="600" height="600"/>
     </resources>
 </document>
