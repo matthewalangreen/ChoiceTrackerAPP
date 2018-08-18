@@ -45,7 +45,7 @@
                                         </constraints>
                                         <state key="normal" image="list"/>
                                         <connections>
-                                            <segue destination="S9s-Ru-PHd" kind="presentation" id="8Gt-kk-cY1"/>
+                                            <segue destination="kGL-B2-MFn" kind="presentation" id="BL5-F9-G9P"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -159,6 +159,42 @@
             </objects>
             <point key="canvasLocation" x="-1719.2" y="-265.81709145427288"/>
         </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="EAm-dK-qb2">
+            <objects>
+                <tableViewController id="kGL-B2-MFn" customClass="HistoryTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BOe-CL-6Jq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5f4-2G-vxq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5f4-2G-vxq" id="aSi-i2-DCX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kGL-B2-MFn" id="QvO-Sq-JlP"/>
+                            <outlet property="delegate" destination="kGL-B2-MFn" id="xnV-ev-79H"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Next" style="plain" id="0aV-Gz-kaU">
+                            <connections>
+                                <segue destination="S9s-Ru-PHd" kind="show" id="PbW-Iq-Ine"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2103" y="494"/>
+        </scene>
         <!--History View Controller-->
         <scene sceneID="k2a-1d-q5m">
             <objects>
@@ -175,8 +211,8 @@
                                     <constraint firstAttribute="height" constant="200" id="FYN-Zu-fSx"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-xP-6mK">
-                                <rect key="frame" x="15" y="32" width="38" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJC-xP-6mK">
+                                <rect key="frame" x="16" y="32" width="38" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="TLN-oH-bK9"/>
                                     <constraint firstAttribute="height" constant="38" id="V3d-d6-5qd"/>
@@ -204,10 +240,10 @@
             </objects>
             <point key="canvasLocation" x="-961" y="458"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="4j0-d8-zc7">
             <objects>
-                <tableViewController id="Cy3-2C-JgT" sceneMemberID="viewController">
+                <tableViewController id="Cy3-2C-JgT" customClass="SettingsTableTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4xB-2g-Z3h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,16 +263,16 @@
                             <outlet property="delegate" destination="Cy3-2C-JgT" id="3Fz-PF-zEx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="vOp-Fl-Qtc"/>
+                    <navigationItem key="navigationItem" title="Settings" id="vOp-Fl-Qtc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaj-bm-76I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="-103"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="1EZ-D3-TE7">
             <objects>
-                <navigationController storyboardIdentifier="settingsNavController" id="Zj7-Z8-qSK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingsNavController" id="Zj7-Z8-qSK" customClass="SettingsViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wzi-db-Fqd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
