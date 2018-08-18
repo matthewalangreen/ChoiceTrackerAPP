@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -168,13 +169,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordCell" id="5f4-2G-vxq">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="120" id="5f4-2G-vxq" customClass="HistoryCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5f4-2G-vxq" id="aSi-i2-DCX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
+                                            <rect key="frame" x="26" y="49.5" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-dD-BHj" customClass="PieChartView" customModule="Charts">
+                                            <rect key="frame" x="255" y="10" width="100" height="100"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="71r-Rr-BdK"/>
+                                                <constraint firstAttribute="width" constant="100" id="qfJ-1j-2vb"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FfL-t6-6AF" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="4N7-NB-20l"/>
+                                        <constraint firstAttribute="trailing" secondItem="vcV-dD-BHj" secondAttribute="trailing" constant="20" id="4oM-Fh-Lgl"/>
+                                        <constraint firstItem="vcV-dD-BHj" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="CH7-Ib-Aj5"/>
+                                        <constraint firstItem="FfL-t6-6AF" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leadingMargin" constant="10" id="fbS-jz-68M"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accessoryView" destination="aSi-i2-DCX" id="dHH-hs-VUp"/>
+                                    <outlet property="dateLabel" destination="FfL-t6-6AF" id="5Hd-Wr-FX0"/>
+                                    <outlet property="pieChart" destination="vcV-dD-BHj" id="es3-pc-8kb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -194,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2255" y="1193"/>
+            <point key="canvasLocation" x="-2255.1999999999998" y="1192.3538230884558"/>
         </scene>
         <!--Settings-->
         <scene sceneID="4j0-d8-zc7">

@@ -25,16 +25,17 @@ class HistoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create an instance of UITableViewCell, with default appearance
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordCell",
-                                                 for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
         
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         let record = allRecords[indexPath.row]
         
-        let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
-        cell.textLabel?.text = val
+        //let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
+        //cell.textLabel?.text = val
+        
+        cell.dateLabel?.text = record.dateString
         
         return cell
     }
@@ -43,6 +44,8 @@ class HistoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 120
         // show the data
 //        for v in allRecords {
 //            print("date: \(v.dateString)")
