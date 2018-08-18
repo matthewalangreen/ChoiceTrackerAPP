@@ -79,7 +79,8 @@ class MainViewController: UIViewController {
     // send over the [DailyRecord] array of all the records that we've got here
     // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! HistoryTableViewController
+        let navVC = segue.destination as! UINavigationController
+        let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
         destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
     }
 

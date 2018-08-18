@@ -9,6 +9,7 @@
 import UIKit
 
 class HistoryTableViewController: UITableViewController {
+
     
     var allRecords: [DailyRecord]!
     
