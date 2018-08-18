@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyRecordStore {
+class DailyRecordStore{
     //MARK:- Properties
     var allDailyRecords: Dictionary = [String:DailyRecord]()
     
@@ -52,15 +52,15 @@ class DailyRecordStore {
     
     @discardableResult func createRandomDailyRecord() -> DailyRecord {
         let n = Int(arc4random_uniform(3600)) // random number  0 - 49
-        let newDailyRecord = DailyRecord()
         let nowDateString = dateFormatter.string(from: generateRandomDate(daysBack: n)!)
+        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString)
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
     
     @discardableResult func createDailyRecord() -> DailyRecord {
-        let newDailyRecord = DailyRecord()
         let nowDateString = dateFormatter.string(from: Date.init())
+        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString)
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
@@ -72,4 +72,6 @@ class DailyRecordStore {
         return NSKeyedArchiver.archiveRootObject(allDailyRecords, toFile: recordsArchiveURL.path)
     }
 }
+
+
 

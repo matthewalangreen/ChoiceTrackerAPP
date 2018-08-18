@@ -11,23 +11,29 @@ import UIKit
 class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
-    var choices: [Int] = [0]
-    var date: Date = Date()
+    var choices: [Int]
+    var dateString: String
     
     //MARK:- init
     override init() {
-        
+        self.choices = [0]
+        self.dateString = "1111"
+    }
+    
+    init(nowDateString: String) {
+        self.dateString = nowDateString
+        self.choices = [0]
     }
     
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(choices, forKey: "choices")
-        aCoder.encode(date, forKey: "date")
+        aCoder.encode(dateString, forKey: "dateString")
     }
     
     required init(coder aDecoder: NSCoder) {
         choices = aDecoder.decodeObject(forKey: "choices") as! [Int]
-        date = aDecoder.decodeObject(forKey: "date") as! Date
+        dateString = aDecoder.decodeObject(forKey: "dateString") as! String
         super.init()
     }
     

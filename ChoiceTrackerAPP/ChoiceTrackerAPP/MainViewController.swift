@@ -37,6 +37,10 @@ class MainViewController: UIViewController {
         updateChartData()
         updateUI()
         print("# Good Choices: \(currentDailyRecord.numGoodChoices)")
+        let r = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+        for v in r {
+            print("date: \(v.dateString)")
+        }
     }
     
 
@@ -185,6 +189,7 @@ class MainViewController: UIViewController {
     func doesRecordExist(day: String) -> Bool {
         return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
+    
     
     func getCurrentDailyRecord() -> DailyRecord {
         let today = dateFormatter.string(from: Date.init())
