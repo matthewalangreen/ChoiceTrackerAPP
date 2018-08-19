@@ -38,6 +38,16 @@ class DailyRecord: NSObject, NSCoding {
         self.choices = genRandomData(40)
     }
     
+    init(nowDateString: String, firstTimeToday: Bool) {
+        self.dateString = nowDateString
+        if firstTimeToday {
+            self.choices = [0]
+        } else {
+            self.choices = genRandomData(40)
+        }
+        
+    }
+    
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(choices, forKey: "choices")

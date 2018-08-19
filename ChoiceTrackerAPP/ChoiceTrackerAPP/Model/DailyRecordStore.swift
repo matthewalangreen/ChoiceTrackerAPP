@@ -60,7 +60,7 @@ class DailyRecordStore{
     
     @discardableResult func createDailyRecord() -> DailyRecord {
         let nowDateString = dateFormatter.string(from: Date.init())
-        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString)
+        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString, firstTimeToday: true)
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
