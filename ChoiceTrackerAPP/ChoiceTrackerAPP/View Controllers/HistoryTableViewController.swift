@@ -46,7 +46,8 @@ class HistoryTableViewController: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 120
+        tableView.allowsSelection = false
+        tableView.rowHeight = 150
 
         // show the data
 //        for v in allRecords {

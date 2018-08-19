@@ -8,6 +8,19 @@
 
 import UIKit
 
+func genRandomData(_ arrayLength: Int) -> [Int] {
+    var results = [Int]()
+    for _ in 0..<arrayLength {
+        if(Int(arc4random_uniform(UInt32(2)))) == 1 {
+            results.append(-1)
+        } else {
+            results.append(1)
+        }
+    }
+    
+    return results
+}
+
 class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
@@ -16,13 +29,13 @@ class DailyRecord: NSObject, NSCoding {
     
     //MARK:- init
     override init() {
-        self.choices = [0-1,1,1,1,-1,1,1,1,-1,-1,-1,-1,1,1]
+        self.choices = genRandomData(40)
         self.dateString = "1111"
     }
     
     init(nowDateString: String) {
         self.dateString = nowDateString
-        self.choices = [0-1,1,1,1,-1,1,1,1,-1,-1,-1,-1,1,1]
+        self.choices = genRandomData(40)
     }
     
     //MARK:- NSCoding required methods
@@ -88,6 +101,8 @@ class DailyRecord: NSObject, NSCoding {
     func badChoice() {
         choices.append(-1)
     }
+    
+  
     
 }
 
