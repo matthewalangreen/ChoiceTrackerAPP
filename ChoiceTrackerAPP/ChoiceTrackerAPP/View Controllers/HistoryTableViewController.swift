@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Charts
+
 
 class HistoryTableViewController: UITableViewController {
     @IBAction func dismissPopup(_ sender: Any) {
@@ -36,20 +38,26 @@ class HistoryTableViewController: UITableViewController {
         //cell.textLabel?.text = val
         
         cell.dateLabel?.text = record.dateString
+        cell.numGoodChoices?.text = String(record.numGoodChoices)
+        cell.numBadChoices?.text = String(record.numBadChoices)
         
+        
+        let chartView = createPieChart(record: record)
+        
+        // add subview
+        cell.pieChart?.addSubview(chartView)
+      
         return cell
     }
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.rowHeight = 120
+
         // show the data
 //        for v in allRecords {
 //            print("date: \(v.dateString)")
 //        }
     }
-    
+
 }

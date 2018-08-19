@@ -16,13 +16,13 @@ class DailyRecord: NSObject, NSCoding {
     
     //MARK:- init
     override init() {
-        self.choices = [0]
+        self.choices = [0-1,1,1,1,-1,1,1,1,-1,-1,-1,-1,1,1]
         self.dateString = "1111"
     }
     
     init(nowDateString: String) {
         self.dateString = nowDateString
-        self.choices = [0]
+        self.choices = [0-1,1,1,1,-1,1,1,1,-1,-1,-1,-1,1,1]
     }
     
     //MARK:- NSCoding required methods

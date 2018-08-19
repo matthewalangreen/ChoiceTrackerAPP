@@ -12,6 +12,8 @@ import Charts
 class HistoryCell: UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var pieChart: PieChartView!
+    @IBOutlet var pieChart: UIView!
+    @IBOutlet var numGoodChoices: UILabel!
+    @IBOutlet var numBadChoices: UILabel!
     
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
+		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
 		D0ACA1482126310200C955FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA1462126310200C955FB /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0ACA1442126310200C955FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
 				D04AE6D12128D42C002F8F6A /* HistoryCell.swift */,
+				D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */,
 				D04AE6CF2128D2CD002F8F6A /* View Controllers */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
 				D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
 				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
+				D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */,
 				D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -177,30 +177,63 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
-                                            <rect key="frame" x="26" y="49.5" width="86" height="21"/>
+                                            <rect key="frame" x="26" y="50" width="86" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-dD-BHj" customClass="PieChartView" customModule="Charts">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-dD-BHj">
                                             <rect key="frame" x="255" y="10" width="100" height="100"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="71r-Rr-BdK"/>
                                                 <constraint firstAttribute="width" constant="100" id="qfJ-1j-2vb"/>
                                             </constraints>
                                         </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RO0-tR-VXc">
+                                            <rect key="frame" x="126" y="6" width="123" height="106"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Good Choices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTu-ez-8gX" userLabel="# Good Choices">
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAh-0E-HF7">
+                                                    <rect key="frame" x="0.0" y="28.5" width="123" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Bad Choices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgS-je-Bwy">
+                                                    <rect key="frame" x="0.0" y="57" width="123" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM4-fA-ta1">
+                                                    <rect key="frame" x="0.0" y="85.5" width="123" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="FfL-t6-6AF" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="4N7-NB-20l"/>
                                         <constraint firstAttribute="trailing" secondItem="vcV-dD-BHj" secondAttribute="trailing" constant="20" id="4oM-Fh-Lgl"/>
+                                        <constraint firstItem="RO0-tR-VXc" firstAttribute="centerX" secondItem="aSi-i2-DCX" secondAttribute="centerX" id="AqP-ac-85x"/>
                                         <constraint firstItem="vcV-dD-BHj" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="CH7-Ib-Aj5"/>
                                         <constraint firstItem="FfL-t6-6AF" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leadingMargin" constant="10" id="fbS-jz-68M"/>
+                                        <constraint firstItem="RO0-tR-VXc" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="uR6-Mb-T88"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accessoryView" destination="aSi-i2-DCX" id="dHH-hs-VUp"/>
                                     <outlet property="dateLabel" destination="FfL-t6-6AF" id="5Hd-Wr-FX0"/>
+                                    <outlet property="numBadChoices" destination="EM4-fA-ta1" id="6lZ-ZA-JUV"/>
+                                    <outlet property="numGoodChoices" destination="mAh-0E-HF7" id="nkm-bg-kie"/>
                                     <outlet property="pieChart" destination="vcV-dD-BHj" id="es3-pc-8kb"/>
                                 </connections>
                             </tableViewCell>
