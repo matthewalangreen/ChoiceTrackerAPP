@@ -84,6 +84,7 @@ class MainViewController: UIViewController {
             let navVC = segue.destination as! UINavigationController
             let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
             destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+            destinationVC.recordDictionary = dailyRecordStore.allDailyRecords
             
         case "showSettings"?:
             let navVC = segue.destination as! SettingsNavigationController

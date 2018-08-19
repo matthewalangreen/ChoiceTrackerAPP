@@ -11,12 +11,16 @@ import Charts
 
 
 class HistoryTableViewController: UITableViewController {
+    
+    //MARK:- Actions
     @IBAction func dismissPopup(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-    
+    //MARK:- Parameters
     var allRecords: [DailyRecord]!
+    var recordDictionary: [Date:DailyRecord]!
+    var sortedRecords: [(key: Date, value: DailyRecord)]!
     
     
     //MARK:- TableView methods
@@ -32,17 +36,22 @@ class HistoryTableViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-        let record = allRecords[indexPath.row]
+       // let record = allRecords[indexPath.row]
+        let date = sortedRecords[indexPath.row].key
+        let currentDailyRecord = sortedRecords[indexPath.row].value
         
         //let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
         //cell.textLabel?.text = val
         
        
         
-        cell.dateLabel?.text = dateFormatter.string(from: record.date)
+        //cell.dateLabel?.text = dateFormatter.string(from: record.date)
+        //cell.dateLabel?.text = record.date.description
+        cell.dateLabel?.text = dateFormatter.string(from: date)
+       
         
-        styleChart(chart: cell.pieChart, goodChoices: record.numGoodChoices, badChoices: record.numBadChoices)
-      
+        //styleChart(chart: cell.pieChart, goodChoices: numGoodChoices, badChoices: record.numBadChoices)
+        styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         return cell
     }
  
@@ -50,6 +59,9 @@ class HistoryTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.allowsSelection = false
         tableView.rowHeight = 150
+        
+        sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
+        
 
         // show the data
 //        for v in allRecords {

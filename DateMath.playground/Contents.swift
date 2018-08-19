@@ -44,7 +44,7 @@ let test = makeRandomDateStringDict()
 
 
 let sortedKeysAndValues = test.sorted(by: { $0.0 < $1.0} )
-sortedKeysAndValues
+sortedKeysAndValues[1].key
 
 
 
