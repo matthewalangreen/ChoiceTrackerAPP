@@ -38,14 +38,8 @@ class HistoryTableViewController: UITableViewController {
         //cell.textLabel?.text = val
         
         cell.dateLabel?.text = record.dateString
-        cell.numGoodChoices?.text = String(record.numGoodChoices)
-        cell.numBadChoices?.text = String(record.numBadChoices)
         
-        
-        let chartView = createPieChart(record: record)
-        
-        // add subview
-        cell.pieChart?.addSubview(chartView)
+        styleChart(chart: cell.pieChart, goodChoices: record.numGoodChoices, badChoices: record.numBadChoices)
       
         return cell
     }
