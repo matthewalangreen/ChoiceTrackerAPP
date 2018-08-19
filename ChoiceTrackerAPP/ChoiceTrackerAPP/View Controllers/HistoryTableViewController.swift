@@ -37,7 +37,9 @@ class HistoryTableViewController: UITableViewController {
         //let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
         //cell.textLabel?.text = val
         
-        cell.dateLabel?.text = record.dateString
+       
+        
+        cell.dateLabel?.text = dateFormatter.string(from: record.date)
         
         styleChart(chart: cell.pieChart, goodChoices: record.numGoodChoices, badChoices: record.numBadChoices)
       
@@ -56,3 +58,11 @@ class HistoryTableViewController: UITableViewController {
     }
 
 }
+
+let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .none
+    formatter.locale = Locale(identifier: "en_US")
+    return formatter
+}()

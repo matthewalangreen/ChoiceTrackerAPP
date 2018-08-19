@@ -25,21 +25,21 @@ class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
     var choices: [Int]
-    var dateString: String
+    var date: Date
     
     //MARK:- init
     override init() {
         self.choices = genRandomData(40)
-        self.dateString = "1111"
+        self.date = Date()
     }
     
-    init(nowDateString: String) {
-        self.dateString = nowDateString
+    init(nowDate: Date) {
+        self.date = nowDate
         self.choices = genRandomData(40)
     }
     
-    init(nowDateString: String, firstTimeToday: Bool) {
-        self.dateString = nowDateString
+    init(nowDate: Date, firstTimeToday: Bool) {
+        self.date = nowDate
         if firstTimeToday {
             self.choices = [0]
         } else {
@@ -51,12 +51,12 @@ class DailyRecord: NSObject, NSCoding {
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(choices, forKey: "choices")
-        aCoder.encode(dateString, forKey: "dateString")
+        aCoder.encode(date, forKey: "date")
     }
     
     required init(coder aDecoder: NSCoder) {
         choices = aDecoder.decodeObject(forKey: "choices") as! [Int]
-        dateString = aDecoder.decodeObject(forKey: "dateString") as! String
+        date = aDecoder.decodeObject(forKey: "date") as! Date
         super.init()
     }
     

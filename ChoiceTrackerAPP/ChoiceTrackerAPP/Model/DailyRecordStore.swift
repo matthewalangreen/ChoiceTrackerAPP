@@ -10,7 +10,7 @@ import UIKit
 
 class DailyRecordStore{
     //MARK:- Properties
-    var allDailyRecords: Dictionary = [String:DailyRecord]()
+    var allDailyRecords: Dictionary = [Date:DailyRecord]()
     
     let recordsArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -28,7 +28,7 @@ class DailyRecordStore{
     
     //MARK:- Initializer
     init() {
-        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecord] {
+        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [Date:DailyRecord] {
             allDailyRecords = archivedItems
         }
     }
@@ -52,16 +52,18 @@ class DailyRecordStore{
     
     @discardableResult func createRandomDailyRecord() -> DailyRecord {
         let n = Int(arc4random_uniform(3600)) // random number  0 - 49
-        let nowDateString = dateFormatter.string(from: generateRandomDate(daysBack: n)!)
-        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString)
-        allDailyRecords[nowDateString] = newDailyRecord
+       // let nowDateString = dateFormatter.string(from: generateRandomDate(daysBack: n)!)
+        let nowDate = generateRandomDate(daysBack: n)!
+        let newDailyRecord = DailyRecord.init(nowDate: nowDate)
+        allDailyRecords[nowDate] = newDailyRecord
         return newDailyRecord
     }
     
     @discardableResult func createDailyRecord() -> DailyRecord {
-        let nowDateString = dateFormatter.string(from: Date.init())
-        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString, firstTimeToday: true)
-        allDailyRecords[nowDateString] = newDailyRecord
+       // let nowDateString = dateFormatter.string(from: Date.init())
+        let nowDate = Date.init()
+        let newDailyRecord = DailyRecord.init(nowDate:nowDate, firstTimeToday: true)
+        allDailyRecords[nowDate] = newDailyRecord
         return newDailyRecord
     }
     

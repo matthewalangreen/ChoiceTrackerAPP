@@ -196,13 +196,14 @@ class MainViewController: UIViewController {
     
     
     //MARK:- Daily Record stuff
-    func doesRecordExist(day: String) -> Bool {
+    func doesRecordExist(day: Date) -> Bool {
         return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
     
     
     func getCurrentDailyRecord() -> DailyRecord {
-        let today = dateFormatter.string(from: Date.init())
+        //let today = dateFormatter.string(from: Date.init())
+        let today = Date.init()
         // check allDailyRecords for today, if today exists return
         if (doesRecordExist(day: today)) {
             return dailyRecordStore.allDailyRecords[today]! // eew
