@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
             dailyRecordStore.createRandomDailyRecord()
         }
         
+        
         currentDailyRecord = getCurrentDailyRecord()
         updateUI()
         
@@ -150,14 +151,15 @@ class MainViewController: UIViewController {
     
     
     
-    // dateFormatter
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.locale = Locale(identifier: "en_US")
-        return formatter
-    }()
+    // dateFormatter -- deprecated... moved new version to DateFormatters.swift
+    
+//    let dateFormatter: DateFormatter = {
+//        let formatter = DateFormatter()
+//        formatter.dateStyle = .medium
+//        formatter.timeStyle = .none
+//        formatter.locale = Locale(identifier: "en_US")
+//        return formatter
+//    }()
     
     
     //MARK:- UI Logic
@@ -197,17 +199,47 @@ class MainViewController: UIViewController {
     
     
     //MARK:- Daily Record stuff
-    func doesRecordExist(day: Date) -> Bool {
+//    func dayStringUsingFormatter(_ day: Date) -> String {
+//        return dateFormatter.string(from: day)
+//    }
+    
+    
+    func doesRecordExist(_ day: String) -> Bool {
+        //get current day and format as string
+//        let currentDayString = dayStringUsingFormatter(day)
+//
+//        // make a [Date] array of all the Date objects in the [Date:DailyRecord] dictionary
+//        let allSavedDates = [String](dailyRecordStore.allDailyRecords.keys)
+//
+//        // set check to 0
+//        var check: Int = 0
+//
+//        // iterate over all Date objects and check to see if their short string representation
+//        // matches the current day string
+//        for date in allSavedDates {
+//            if currentDayString == dayStringUsingFormatter(date) {
+//                check += 1
+//            }
+//        }
+//
+//        // if that date was in the array, return true
+//        if check >= 1 {
+//            return true
+//        } else { // otherwise return false
+//            return false
+//        }
+        
+        // this was how I did it when the dictionary was a [String:DailyRecord] format
         return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
     
     
     func getCurrentDailyRecord() -> DailyRecord {
-        //let today = dateFormatter.string(from: Date.init())
-        let today = Date.init()
+        //let today = Date.init()
+        let todayString = sortableShortDate.string(from: Date.init())
         // check allDailyRecords for today, if today exists return
-        if (doesRecordExist(day: today)) {
-            return dailyRecordStore.allDailyRecords[today]! // eew
+        if (doesRecordExist(todayString)) {
+            return dailyRecordStore.allDailyRecords[todayString]! // eew
         } else {
             // if today doesn't exist, make it and return it.
             return dailyRecordStore.createDailyRecord()

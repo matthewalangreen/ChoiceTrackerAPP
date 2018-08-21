@@ -19,6 +19,8 @@
 		D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1562126315D00C955FB /* DailyRecordStore.swift */; };
 		D0ACA1612126358300C955FB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; };
 		D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA562D212B93F9002657DB /* DateFormatters.swift */; };
+		D0DA5631212B9519002657DB /* Various-Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA5630212B9519002657DB /* Various-Methods.swift */; };
 		D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */; };
 		D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */; };
 		D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */; };
@@ -76,6 +78,8 @@
 		D0ACA1542126313400C955FB /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		D0ACA1562126315D00C955FB /* DailyRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordStore.swift; sourceTree = "<group>"; };
 		D0ACA1582126352500C955FB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		D0DA562D212B93F9002657DB /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		D0DA5630212B9519002657DB /* Various-Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Various-Methods.swift"; sourceTree = "<group>"; };
 		D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
 		D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		D0ACA1412126310200C955FB /* ChoiceTrackerAPP */ = {
 			isa = PBXGroup;
 			children = (
+				D0DA562D212B93F9002657DB /* DateFormatters.swift */,
+				D0DA5630212B9519002657DB /* Various-Methods.swift */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
@@ -254,8 +260,10 @@
 			files = (
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
+				D0DA5631212B9519002657DB /* Various-Methods.swift in Sources */,
 				D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */,
 				D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */,
+				D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,

@@ -19,8 +19,8 @@ class HistoryTableViewController: UITableViewController {
     
     //MARK:- Parameters
     var allRecords: [DailyRecord]!
-    var recordDictionary: [Date:DailyRecord]!
-    var sortedRecords: [(key: Date, value: DailyRecord)]!
+    var recordDictionary: [String:DailyRecord]!
+    var sortedRecords: [(key: String, value: DailyRecord)]!
     
     
     //MARK:- TableView methods
@@ -37,7 +37,7 @@ class HistoryTableViewController: UITableViewController {
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
        // let record = allRecords[indexPath.row]
-        let date = sortedRecords[indexPath.row].key
+        let dateStringOldFormat = sortedRecords[indexPath.row].key
         let currentDailyRecord = sortedRecords[indexPath.row].value
         
         //let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
@@ -47,7 +47,9 @@ class HistoryTableViewController: UITableViewController {
         
         //cell.dateLabel?.text = dateFormatter.string(from: record.date)
         //cell.dateLabel?.text = record.date.description
-        cell.dateLabel?.text = dateFormatter.string(from: date)
+        let dateObject = sortableShortDate.date(from: dateStringOldFormat)
+        let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
+        cell.dateLabel?.text = newDateString
        
         
         //styleChart(chart: cell.pieChart, goodChoices: numGoodChoices, badChoices: record.numBadChoices)
@@ -60,6 +62,8 @@ class HistoryTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.rowHeight = 150
         
+        // remove today from the dictionary... hope this works!
+        recordDictionary[sortableShortDate.string(from: Date.init())] = nil
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
         
 
@@ -71,10 +75,10 @@ class HistoryTableViewController: UITableViewController {
 
 }
 
-let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    formatter.timeStyle = .none
-    formatter.locale = Locale(identifier: "en_US")
-    return formatter
-}()
+//let dateFormatter: DateFormatter = {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .medium
+//    formatter.timeStyle = .none
+//    formatter.locale = Locale(identifier: "en_US")
+//    return formatter
+//}()

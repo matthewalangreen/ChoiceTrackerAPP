@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK:- Testing... Remove?
+// helper function to fill up data at outset... remove after testing complete?
 func genRandomData(_ arrayLength: Int) -> [Int] {
     var results = [Int]()
     for _ in 0..<arrayLength {
@@ -21,25 +23,29 @@ func genRandomData(_ arrayLength: Int) -> [Int] {
     return results
 }
 
+
+
 class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
     var choices: [Int]
-    var date: Date
+    
+    // encode using "sortableShortDate" closure
+    var dateString: String
     
     //MARK:- init
     override init() {
         self.choices = genRandomData(40)
-        self.date = Date()
+        self.dateString = sortableShortDate.string(from: Date.init())
     }
     
-    init(nowDate: Date) {
-        self.date = nowDate
+    init(nowDateString: String) {
+        self.dateString = nowDateString
         self.choices = genRandomData(40)
     }
     
-    init(nowDate: Date, firstTimeToday: Bool) {
-        self.date = nowDate
+    init(nowDateString: String, firstTimeToday: Bool) {
+        self.dateString = nowDateString
         if firstTimeToday {
             self.choices = [0]
         } else {
@@ -51,12 +57,12 @@ class DailyRecord: NSObject, NSCoding {
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(choices, forKey: "choices")
-        aCoder.encode(date, forKey: "date")
+        aCoder.encode(dateString, forKey: "dateString")
     }
     
     required init(coder aDecoder: NSCoder) {
         choices = aDecoder.decodeObject(forKey: "choices") as! [Int]
-        date = aDecoder.decodeObject(forKey: "date") as! Date
+        dateString = aDecoder.decodeObject(forKey: "dateString") as! String
         super.init()
     }
     
@@ -90,6 +96,7 @@ class DailyRecord: NSObject, NSCoding {
     }
     
     // optional binding to catch the potential for no value for gauge when we haven't recorded data yet
+    // Um... I'm not sure this is optional binding... the above comment is confusing to me
     var choicePercentage: Float {
         var ratio: Float = 0
         let num = Float(numGoodChoices)
@@ -102,7 +109,6 @@ class DailyRecord: NSObject, NSCoding {
         return ratio
     }
     
-    
     //MARK:- setters
     func goodChoice() {
         choices.append(1)
@@ -112,7 +118,7 @@ class DailyRecord: NSObject, NSCoding {
         choices.append(-1)
     }
     
-  
-    
 }
+
+
 
