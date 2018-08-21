@@ -8,30 +8,11 @@
 
 import UIKit
 
-//MARK:- Testing... Remove?
-// helper function to fill up data at outset... remove after testing complete?
-func genRandomData(_ arrayLength: Int) -> [Int] {
-    var results = [Int]()
-    for _ in 0..<arrayLength {
-        if(Int(arc4random_uniform(UInt32(2)))) == 1 {
-            results.append(-1)
-        } else {
-            results.append(1)
-        }
-    }
-    
-    return results
-}
-
-
-
 class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
     var choices: [Int]
-    
-    // encode using "sortableShortDate" closure
-    var dateString: String
+    var dateString: String   // encode using "sortableShortDate" closure
     
     //MARK:- init
     override init() {
@@ -51,7 +32,6 @@ class DailyRecord: NSObject, NSCoding {
         } else {
             self.choices = genRandomData(40)
         }
-        
     }
     
     //MARK:- NSCoding required methods
@@ -95,8 +75,6 @@ class DailyRecord: NSObject, NSCoding {
         return count
     }
     
-    // optional binding to catch the potential for no value for gauge when we haven't recorded data yet
-    // Um... I'm not sure this is optional binding... the above comment is confusing to me
     var choicePercentage: Float {
         var ratio: Float = 0
         let num = Float(numGoodChoices)

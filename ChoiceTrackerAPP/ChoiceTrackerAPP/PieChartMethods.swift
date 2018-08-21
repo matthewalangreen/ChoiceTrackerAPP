@@ -19,7 +19,6 @@ func styleChart(chart: PieChartView, goodChoices: Int, badChoices: Int) {
     updateChartData(chart: chart, numberOfDataEntries: numberOfDataEntries)
 }
 
-
 func updateChartData(chart: PieChartView, numberOfDataEntries: [PieChartDataEntry]) {
     let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
     let chartData = PieChartData(dataSet: chartDataSet)

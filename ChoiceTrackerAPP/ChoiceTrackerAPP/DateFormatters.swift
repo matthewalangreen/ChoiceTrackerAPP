@@ -15,7 +15,6 @@ let sortableShortDate: DateFormatter = {
     return formatter
 }()
 
-// dateFormatter
 let prettyDateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .medium

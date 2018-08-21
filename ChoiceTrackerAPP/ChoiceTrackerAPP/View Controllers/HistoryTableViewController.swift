@@ -39,20 +39,11 @@ class HistoryTableViewController: UITableViewController {
        // let record = allRecords[indexPath.row]
         let dateStringOldFormat = sortedRecords[indexPath.row].key
         let currentDailyRecord = sortedRecords[indexPath.row].value
-        
-        //let val: String = "Date: \(record.dateString) Good# \(record.numGoodChoices) Bad# \(record.numBadChoices)"
-        //cell.textLabel?.text = val
-        
        
-        
-        //cell.dateLabel?.text = dateFormatter.string(from: record.date)
-        //cell.dateLabel?.text = record.date.description
         let dateObject = sortableShortDate.date(from: dateStringOldFormat)
         let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
         cell.dateLabel?.text = newDateString
        
-        
-        //styleChart(chart: cell.pieChart, goodChoices: numGoodChoices, badChoices: record.numBadChoices)
         styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         return cell
     }
@@ -65,20 +56,7 @@ class HistoryTableViewController: UITableViewController {
         // remove today from the dictionary... hope this works!
         recordDictionary[sortableShortDate.string(from: Date.init())] = nil
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
-        
-
-        // show the data
-//        for v in allRecords {
-//            print("date: \(v.dateString)")
-//        }
     }
 
 }
 
-//let dateFormatter: DateFormatter = {
-//    let formatter = DateFormatter()
-//    formatter.dateStyle = .medium
-//    formatter.timeStyle = .none
-//    formatter.locale = Locale(identifier: "en_US")
-//    return formatter
-//}()

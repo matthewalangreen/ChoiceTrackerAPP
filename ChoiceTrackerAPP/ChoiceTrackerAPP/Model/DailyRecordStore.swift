@@ -18,14 +18,6 @@ class DailyRecordStore{
         return documentDirectory.appendingPathComponent("dailyRecords.archive")
     }()
     
-//    let dateFormatter: DateFormatter = {
-//        let formatter = DateFormatter()
-//        formatter.dateStyle = .medium
-//        formatter.timeStyle = .none
-//        formatter.locale = Locale(identifier: "en_US")
-//        return formatter
-//    }()
-    
     //MARK:- Initializer
     init() {
         if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecord] {
@@ -34,8 +26,6 @@ class DailyRecordStore{
     }
     
     //Mark:- Methods
-    // generate random date used to be here... moved to Various-Methods.swift
-    
     @discardableResult func createRandomDailyRecord() -> DailyRecord {
         let n = Int(arc4random_uniform(3600)) // random number  0 - 49
         let nowDateString = sortableShortDate.string(from: generateRandomDate(daysBack: n)!)
