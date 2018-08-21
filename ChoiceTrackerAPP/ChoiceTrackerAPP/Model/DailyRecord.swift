@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CSVExporter
 
 class DailyRecord: NSObject, NSCoding {
     
@@ -96,6 +97,16 @@ class DailyRecord: NSObject, NSCoding {
         choices.append(-1)
     }
     
+}
+
+extension DailyRecord: CSVExporting {
+    static func  templateString() -> String {
+        return "no, header, yet\n"
+    }
+    
+    func exportAsCommaSeparatedString() -> String {
+        return "put, some, stuff\n"
+    }
 }
 
 

@@ -10,6 +10,8 @@
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
+		D09C8D53212BA41500E39B62 /* CSVExporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */; };
+		D09C8D54212BA41500E39B62 /* CSVExporter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
 		D0ACA1482126310200C955FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0ACA1462126310200C955FB /* Main.storyboard */; };
@@ -27,6 +29,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D09C8D4F212BA3FA00E39B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_16;
+			remoteInfo = CSVExporter;
+		};
+		D09C8D51212BA3FA00E39B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_17;
+			remoteInfo = "csv-export-swiftTests";
+		};
+		D09C8D55212BA41500E39B62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_18;
+			remoteInfo = CSVExporter;
+		};
 		D0ACA15D2126352500C955FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
@@ -57,6 +80,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D09C8D54212BA41500E39B62 /* CSVExporter.framework in Embed Frameworks */,
 				D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -68,6 +92,7 @@
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
+		D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CSVExporter.xcodeproj; path = "../csv-export-swift-master/CSVExporter.xcodeproj"; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0ACA1442126310200C955FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09C8D53212BA41500E39B62 /* CSVExporter.framework in Frameworks */,
 				D0ACA1612126358300C955FB /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,11 +144,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D09C8D4B212BA3FA00E39B62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */,
+				D09C8D52212BA3FA00E39B62 /* csv-export-swiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0ACA1362126310200C955FB = {
 			isa = PBXGroup;
 			children = (
 				D0ACA1412126310200C955FB /* ChoiceTrackerAPP */,
 				D0ACA1402126310200C955FB /* Products */,
+				D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */,
 				D0ACA1582126352500C955FB /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -178,6 +214,7 @@
 			);
 			dependencies = (
 				D0ACA1642126358300C955FB /* PBXTargetDependency */,
+				D09C8D56212BA41500E39B62 /* PBXTargetDependency */,
 			);
 			name = ChoiceTrackerAPP;
 			productName = ChoiceTrackerAPP;
@@ -215,6 +252,10 @@
 					ProductGroup = D0ACA1592126352500C955FB /* Products */;
 					ProjectRef = D0ACA1582126352500C955FB /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = D09C8D4B212BA3FA00E39B62 /* Products */;
+					ProjectRef = D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -224,6 +265,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CSVExporter.framework;
+			remoteRef = D09C8D4F212BA3FA00E39B62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D09C8D52212BA3FA00E39B62 /* csv-export-swiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "csv-export-swiftTests.xctest";
+			remoteRef = D09C8D51212BA3FA00E39B62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D0ACA15E2126352500C955FB /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -276,6 +331,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D09C8D56212BA41500E39B62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CSVExporter;
+			targetProxy = D09C8D55212BA41500E39B62 /* PBXContainerItemProxy */;
+		};
 		D0ACA1642126358300C955FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
