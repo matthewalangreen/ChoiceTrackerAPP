@@ -54,7 +54,9 @@ class HistoryTableViewController: UITableViewController {
         tableView.rowHeight = 150
         
         // remove today from the dictionary... hope this works!
-        recordDictionary[sortableShortDate.string(from: Date.init())] = nil
+        //MARK:- **BUG** This solution created an index out of range error on the last cell
+        // of the table view... not sure why... nor how to fix it at this time
+        //recordDictionary[sortableShortDate.string(from: Date.init())] = nil
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
     }
 
