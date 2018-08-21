@@ -10,6 +10,7 @@
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
+		D08550C7212BA6C1002A6C04 /* CSV-Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08550C6212BA6C1002A6C04 /* CSV-Export.swift */; };
 		D09C8D53212BA41500E39B62 /* CSVExporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */; };
 		D09C8D54212BA41500E39B62 /* CSVExporter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D09C8D50212BA3FA00E39B62 /* CSVExporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
@@ -92,6 +93,7 @@
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
+		D08550C6212BA6C1002A6C04 /* CSV-Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSV-Export.swift"; sourceTree = "<group>"; };
 		D09C8D4A212BA3FA00E39B62 /* CSVExporter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CSVExporter.xcodeproj; path = "../csv-export-swift-master/CSVExporter.xcodeproj"; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D08550C3212BA4A5002A6C04 /* Shared Methods */ = {
+			isa = PBXGroup;
+			children = (
+				D0DA562D212B93F9002657DB /* DateFormatters.swift */,
+				D0DA5630212B9519002657DB /* Various-Methods.swift */,
+				D08550C6212BA6C1002A6C04 /* CSV-Export.swift */,
+				D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */,
+			);
+			path = "Shared Methods";
+			sourceTree = "<group>";
+		};
 		D09C8D4B212BA3FA00E39B62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,13 +187,11 @@
 		D0ACA1412126310200C955FB /* ChoiceTrackerAPP */ = {
 			isa = PBXGroup;
 			children = (
-				D0DA562D212B93F9002657DB /* DateFormatters.swift */,
-				D0DA5630212B9519002657DB /* Various-Methods.swift */,
+				D08550C3212BA4A5002A6C04 /* Shared Methods */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D0ACA1462126310200C955FB /* Main.storyboard */,
 				D04AE6D12128D42C002F8F6A /* HistoryCell.swift */,
-				D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */,
 				D04AE6CF2128D2CD002F8F6A /* View Controllers */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
 				D0ACA14B2126310300C955FB /* LaunchScreen.storyboard */,
@@ -319,6 +330,7 @@
 				D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */,
 				D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */,
 				D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */,
+				D08550C7212BA6C1002A6C04 /* CSV-Export.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,

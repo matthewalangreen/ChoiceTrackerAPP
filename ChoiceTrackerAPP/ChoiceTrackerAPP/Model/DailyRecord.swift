@@ -101,11 +101,14 @@ class DailyRecord: NSObject, NSCoding {
 
 extension DailyRecord: CSVExporting {
     static func  templateString() -> String {
-        return "no, header, yet\n"
+        return "Date, Good_Choices, Bad_Choices, Total_Choices\n"
     }
-    
+
     func exportAsCommaSeparatedString() -> String {
-        return "put, some, stuff\n"
+        let first = "\(self.dateString), \(String(self.numGoodChoices)), "
+        let second = "\(String(self.numBadChoices)), \(String(self.numAllChoices))\n"
+
+        return first + second
     }
 }
 

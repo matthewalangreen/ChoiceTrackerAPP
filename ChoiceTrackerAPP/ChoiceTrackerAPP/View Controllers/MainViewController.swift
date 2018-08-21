@@ -41,6 +41,8 @@ class MainViewController: UIViewController {
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
         
+//        let data: [DailyRecord] = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+//        exportToCSV(fileNameDotCSV: "firstTest.csv", dataToExport: data)
     }
     
     @IBAction func addGoodChoice(_ sender: Any) {
