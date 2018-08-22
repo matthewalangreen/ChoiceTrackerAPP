@@ -177,7 +177,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
-                                            <rect key="frame" x="26" y="64.5" width="86" height="20.5"/>
+                                            <rect key="frame" x="18" y="64.5" width="86" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                         <constraint firstItem="FfL-t6-6AF" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="4N7-NB-20l"/>
                                         <constraint firstAttribute="trailing" secondItem="vcV-dD-BHj" secondAttribute="trailing" constant="20" id="4oM-Fh-Lgl"/>
                                         <constraint firstItem="vcV-dD-BHj" firstAttribute="centerY" secondItem="aSi-i2-DCX" secondAttribute="centerY" id="CH7-Ib-Aj5"/>
-                                        <constraint firstItem="FfL-t6-6AF" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leadingMargin" constant="10" id="fbS-jz-68M"/>
+                                        <constraint firstItem="FfL-t6-6AF" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leadingMargin" constant="2" id="fbS-jz-68M"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
