@@ -33,6 +33,11 @@ class SettingsTableViewController: UITableViewController {
         ResetAllData_Cell.accessoryType = .disclosureIndicator
         
         // hides extra rows at end of tableview
+//        let bottomView = UIView()
+//        bottomView.backgroundColor = UIColor(red: 239/255, green: 0, blue: 0, alpha: 1)
+        
+        // r: 244, g: 244, b: 239
+        
         tableView.tableFooterView = UIView()
 
         print("Success String Value: \(successString)")
