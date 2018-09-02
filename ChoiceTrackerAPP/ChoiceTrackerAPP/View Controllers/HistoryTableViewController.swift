@@ -53,6 +53,9 @@ class HistoryTableViewController: UITableViewController {
         tableView.allowsSelection = false
         tableView.rowHeight = 150
         
+        // remove bottom of table view
+        tableView.tableFooterView = UIView()
+        
         // remove today from the dictionary... hope this works!
         //MARK:- **BUG** This solution created an index out of range error on the last cell
         // of the table view... not sure why... nor how to fix it at this time
