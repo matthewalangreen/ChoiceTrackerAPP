@@ -24,10 +24,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // make some fake data
-        for _ in 0..<20 {
-            dailyRecordStore.createRandomDailyRecord()
-        }
+        //MARK:- Fake Data
+//        for _ in 0..<20 {
+//            dailyRecordStore.createRandomDailyRecord()
+//        }
         
         // show chart on load
         currentDailyRecord = getCurrentDailyRecord()

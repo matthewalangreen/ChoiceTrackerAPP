@@ -9,6 +9,14 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    //MARK:- Outlets to cells
+    
+    @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
+    @IBOutlet var Help_Cell: UITableViewCell!
+    @IBOutlet var Themes_Cell: UITableViewCell!
+    @IBOutlet var LabelYourData_Cell: UITableViewCell!
+    @IBOutlet var ResetAllData_Cell: UITableViewCell!
+    
     var successString: String!
     
     @IBAction func dismissPopup(_ sender: Any) {
@@ -16,6 +24,16 @@ class SettingsTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // add the little arrow to the right side of the cells
+        ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
+        Help_Cell.accessoryType = .disclosureIndicator
+        Themes_Cell.accessoryType = .disclosureIndicator
+        LabelYourData_Cell.accessoryType = .disclosureIndicator
+        ResetAllData_Cell.accessoryType = .disclosureIndicator
+        
+        // hides extra rows at end of tableview
+        tableView.tableFooterView = UIView()
 
         print("Success String Value: \(successString)")
         // Uncomment the following line to preserve selection between presentations
@@ -24,6 +42,13 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
+//        cell.accessoryType = .detailButton
+//    
+//        return cell
+//    }
 //
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
