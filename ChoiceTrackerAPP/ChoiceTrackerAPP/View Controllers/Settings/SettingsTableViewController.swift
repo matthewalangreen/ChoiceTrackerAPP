@@ -12,10 +12,7 @@ class SettingsTableViewController: UITableViewController {
     //MARK:- Outlets to cells
     
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
-    @IBOutlet var Help_Cell: UITableViewCell!
-    @IBOutlet var Themes_Cell: UITableViewCell!
-    @IBOutlet var LabelYourData_Cell: UITableViewCell!
-    @IBOutlet var ResetAllData_Cell: UITableViewCell!
+    @IBOutlet var About_Cell: UITableViewCell!
     
     var successString: String!
     
@@ -27,10 +24,7 @@ class SettingsTableViewController: UITableViewController {
         
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
-        Help_Cell.accessoryType = .disclosureIndicator
-        Themes_Cell.accessoryType = .disclosureIndicator
-        LabelYourData_Cell.accessoryType = .disclosureIndicator
-        ResetAllData_Cell.accessoryType = .disclosureIndicator
+        About_Cell.accessoryType = .disclosureIndicator
         
         // hides extra rows at end of tableview
 //        let bottomView = UIView()
