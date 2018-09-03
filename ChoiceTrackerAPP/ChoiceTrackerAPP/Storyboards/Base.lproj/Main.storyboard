@@ -457,6 +457,13 @@
                             <outlet property="delegate" destination="XmP-51-Udd" id="XIM-5P-pzz"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="exportData" destination="X7i-cB-0PW" id="Q2t-7V-ZUu"/>
+                        <outlet property="labelYourData" destination="o0w-1g-9FS" id="i2Z-8u-fpG"/>
+                        <outlet property="monthly" destination="zE0-DQ-Drr" id="GP4-gZ-OEI"/>
+                        <outlet property="themes" destination="XP3-QF-9i7" id="Rbn-l1-HiD"/>
+                        <outlet property="yearly" destination="mrT-Zl-9au" id="iQk-bV-fjf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gp-MX-Khc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
