@@ -72,7 +72,8 @@ class MainViewController: UIViewController {
         case "showSettings"?:
             let navVC = segue.destination as! SettingsNavigationController
             let destinationVC = navVC.viewControllers.first as! SettingsTableViewController
-            destinationVC.successString = "it worked!"
+            destinationVC.successString = "showSettings"
+            destinationVC.settingsDailyRecordStore = dailyRecordStore
         default:
             preconditionFailure("Unexpected segue identifier")
         }

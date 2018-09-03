@@ -225,7 +225,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="XmP-51-Udd" kind="show" id="hKL-Vj-1Pq"/>
+                                            <segue destination="XmP-51-Udd" kind="show" identifier="showChoiceTrackerPro" id="hKL-Vj-1Pq"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -354,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386.4000000000001" y="684.10794602698661"/>
+            <point key="canvasLocation" x="1397" y="762"/>
         </scene>
         <!--ChoiceTracker Pro-->
         <scene sceneID="u1W-eW-RRx">
@@ -494,7 +494,6 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="exportData" destination="X7i-cB-0PW" id="Q2t-7V-ZUu"/>
                         <outlet property="labelYourData" destination="o0w-1g-9FS" id="i2Z-8u-fpG"/>
                         <outlet property="monthly" destination="zE0-DQ-Drr" id="GP4-gZ-OEI"/>
                         <outlet property="themes" destination="XP3-QF-9i7" id="Rbn-l1-HiD"/>
