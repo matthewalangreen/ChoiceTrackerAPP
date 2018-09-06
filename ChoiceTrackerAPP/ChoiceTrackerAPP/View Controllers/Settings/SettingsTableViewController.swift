@@ -56,6 +56,8 @@ class SettingsTableViewController: UITableViewController {
         case "showChoiceTrackerPro"?:
             let destinationVC = segue.destination as! ChoiceTrackerProSettingsTableView
                 destinationVC.dailyRecordStore = settingsDailyRecordStore
+        case "showAbout"?:
+            print("you selected showAbout")
         default:
             preconditionFailure("Unexpected segue identifier")
         }

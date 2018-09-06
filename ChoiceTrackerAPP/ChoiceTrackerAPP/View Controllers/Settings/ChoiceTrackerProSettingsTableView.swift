@@ -27,9 +27,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
          yearly.accessoryType = .disclosureIndicator
          themes.accessoryType = .disclosureIndicator
          labelYourData.accessoryType = .disclosureIndicator
-        
-        
-        
+  
         // set footer to blank to hide extra rows
         tableView.tableFooterView = UIView()
     }
@@ -38,8 +36,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         // if we clicked on the "export data" row
         if indexPath.section  == 2 {
             if indexPath.row == 0 {
-                // export testing
-                //MARK:- Move this to a settings page
+                //MARK:- Data Export
                 exportCSV(fileName: "testing", data: dailyRecordStore.allDailyRecords, viewController: self)
                 print("you pressed export")
             }

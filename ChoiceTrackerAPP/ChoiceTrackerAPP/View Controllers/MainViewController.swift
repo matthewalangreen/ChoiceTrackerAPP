@@ -9,8 +9,6 @@
 import UIKit
 import Charts
 
-
-
 class MainViewController: UIViewController {
     
     //MARK:- Model
@@ -42,11 +40,6 @@ class MainViewController: UIViewController {
         incrementChoice(choice: "Bad")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
-        
-        // export testing
-        //MARK:- Move this to a settings page
-       // exportCSV(fileName: "testing", data: dailyRecordStore.allDailyRecords, viewController: self)
-        
     }
     
     @IBAction func addGoodChoice(_ sender: Any) {
@@ -54,7 +47,6 @@ class MainViewController: UIViewController {
         incrementChoice(choice: "Good")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
-        
     }
 
     //MARK:- Segue
