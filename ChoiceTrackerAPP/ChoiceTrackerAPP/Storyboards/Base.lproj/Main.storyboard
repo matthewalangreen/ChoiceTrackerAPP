@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72D-GA-26t" userLabel="TopBar">
                                 <rect key="frame" x="0.0" y="20" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-Qy-wsO" userLabel="SettingsButton">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8h-Qy-wsO" userLabel="SettingsButton">
                                         <rect key="frame" x="12" y="8" width="36" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g8h-Qy-wsO" secondAttribute="height" multiplier="1:1" id="BuP-lo-pby"/>
@@ -33,8 +33,8 @@
                                             <segue destination="8Cn-2W-bv7" kind="presentation" identifier="showSettings" id="si2-if-TCL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV7-sq-Xx7" userLabel="ListButton">
-                                        <rect key="frame" x="60" y="4" width="44" height="44"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV7-sq-Xx7" userLabel="ListButton">
+                                        <rect key="frame" x="60" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cV7-sq-Xx7" secondAttribute="height" multiplier="1:1" id="Lnh-Wu-ARF"/>
                                         </constraints>
@@ -56,9 +56,9 @@
                                     <constraint firstAttribute="trailing" secondItem="633-6r-5oz" secondAttribute="trailing" constant="8" id="4DF-iO-SlT"/>
                                     <constraint firstItem="cV7-sq-Xx7" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="12" id="74v-vY-tbO"/>
                                     <constraint firstItem="633-6r-5oz" firstAttribute="centerY" secondItem="72D-GA-26t" secondAttribute="centerY" id="A2F-pc-5KB"/>
-                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="4" id="G0E-QR-bFB"/>
+                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" id="G0E-QR-bFB"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="leading" secondItem="72D-GA-26t" secondAttribute="leading" constant="12" id="Obu-3o-XSl"/>
-                                    <constraint firstAttribute="bottom" secondItem="cV7-sq-Xx7" secondAttribute="bottom" constant="2" id="SwK-Gq-RDj"/>
+                                    <constraint firstAttribute="bottom" secondItem="cV7-sq-Xx7" secondAttribute="bottom" id="SwK-Gq-RDj"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="8" id="Wcn-1L-NNl"/>
                                     <constraint firstAttribute="height" constant="50" id="cya-Fg-tJX"/>
                                     <constraint firstAttribute="bottom" secondItem="g8h-Qy-wsO" secondAttribute="bottom" constant="6" id="rc4-YC-6Kg"/>
@@ -195,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1719.2" y="-265.81709145427288"/>
+            <point key="canvasLocation" x="-1720.289855072464" y="-266.57608695652175"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lk1-fe-pCK">
@@ -302,7 +302,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </button>
             </objects>
-            <point key="canvasLocation" x="495.19999999999999" y="208.24587706146929"/>
+            <point key="canvasLocation" x="-296" y="-100"/>
         </scene>
         <!--About-->
         <scene sceneID="so9-2a-hp1">
@@ -361,7 +361,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="761.82266009852219"/>
+            <point key="canvasLocation" x="-297" y="587"/>
         </scene>
         <!--ChoiceTracker Pro-->
         <scene sceneID="u1W-eW-RRx">
@@ -507,7 +507,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gp-MX-Khc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="-12.143928035982009"/>
+            <point key="canvasLocation" x="428" y="-48"/>
         </scene>
         <!--History-->
         <scene sceneID="EAm-dK-qb2">
@@ -572,7 +572,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2255.1999999999998" y="1192.3538230884558"/>
+            <point key="canvasLocation" x="-2417" y="492"/>
         </scene>
         <!--History Navigation Controller-->
         <scene sceneID="7qN-nb-l5C">
@@ -593,7 +593,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-ej-Ckl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2255" y="484"/>
+            <point key="canvasLocation" x="-2417" y="-190"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="xkw-Ff-8of">
@@ -611,7 +611,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOl-fH-iyq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-444" y="207.34632683658174"/>
+            <point key="canvasLocation" x="-1017" y="-191"/>
         </scene>
     </scenes>
     <resources>
