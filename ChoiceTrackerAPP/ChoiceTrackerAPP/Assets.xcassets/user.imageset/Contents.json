@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "user.png",
+      "filename" : "np_profile_963218_000000.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "userlarge.png",
+      "filename" : "np_profile_963218_000000-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "userlarge-1.png",
+      "filename" : "np_profile_963218_000000-2.png",
       "scale" : "3x"
     }
   ],
