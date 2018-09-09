@@ -45,9 +45,17 @@ class DailyRecordStore{
     
     
     //MARK:- NSCoding Methods
-    func saveChanges() -> Bool {
+   @discardableResult func saveChanges() -> Bool {
         print("Saving items to: \(recordsArchiveURL.path)")
         return NSKeyedArchiver.archiveRootObject(allDailyRecords, toFile: recordsArchiveURL.path)
+    }
+    
+    //MARK:- Delete All Records
+    func deleteAllRecords() {
+        // erase all data
+        allDailyRecords = [String:DailyRecord]()
+        saveChanges()
+        createDailyRecord()
     }
 }
 

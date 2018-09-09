@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    
     //MARK:- Properties
     
     // this will be set by "prepareForSegue"
@@ -46,6 +48,18 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // if we clicked on the "Reset All Data" row
+        if indexPath.section  == 2 {
+            if indexPath.row == 0 {
+                //MARK:- Reset All data
+                settingsDailyRecordStore.deleteAllRecords()
+                print("We just deleted your records, yo")
+            }
+        }
+    }
+    
     
     //MARK:- Segue
     

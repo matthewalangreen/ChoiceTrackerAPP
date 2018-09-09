@@ -23,9 +23,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         //MARK:- Fake Data
-//        for _ in 0..<20 {
-//            dailyRecordStore.createRandomDailyRecord()
-//        }
+        for _ in 0..<20 {
+            dailyRecordStore.createRandomDailyRecord()
+        }
         
         // show chart on load
         currentDailyRecord = getCurrentDailyRecord()
