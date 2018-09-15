@@ -12,6 +12,7 @@
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
 		D064D375213CD91D0059608E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D374213CD91D0059608E /* AboutViewController.swift */; };
 		D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D377213CDE540059608E /* SettingsInfoCell.swift */; };
+		D07913E0214DC19C0025D382 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07913DF214DC19C0025D382 /* Themes.swift */; };
 		D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08550C8212BAA92002A6C04 /* CSV-Export.swift */; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
@@ -74,6 +75,7 @@
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
 		D064D374213CD91D0059608E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D064D377213CDE540059608E /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
+		D07913DF214DC19C0025D382 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		D08550C8212BAA92002A6C04 /* CSV-Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSV-Export.swift"; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		D0ACA1412126310200C955FB /* ChoiceTrackerAPP */ = {
 			isa = PBXGroup;
 			children = (
+				D07913DF214DC19C0025D382 /* Themes.swift */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D08550C3212BA4A5002A6C04 /* Shared Methods */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07913E0214DC19C0025D382 /* Themes.swift in Sources */,
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
 				D0B6F39A213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift in Sources */,

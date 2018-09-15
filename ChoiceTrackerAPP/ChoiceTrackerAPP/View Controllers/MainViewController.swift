@@ -11,6 +11,18 @@ import Charts
 
 class MainViewController: UIViewController {
     
+    // this happens when we dismiss either modal popup
+    // if the popup was the settings view and you deleted all records then
+    // it makes sure the UI is updated with the new empty record.
+    override func viewWillAppear(_ animated: Bool) {
+        // show chart on load
+        currentDailyRecord = getCurrentDailyRecord()
+        
+        styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
+        updateUI()
+    }
+    
+    
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
     var currentDailyRecord: DailyRecord!
