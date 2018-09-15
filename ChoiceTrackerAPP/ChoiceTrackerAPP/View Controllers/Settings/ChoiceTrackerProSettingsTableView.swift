@@ -37,7 +37,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         if indexPath.section  == 2 {
             if indexPath.row == 0 {
                 //MARK:- Data Export
-                exportCSV(fileName: "testing", data: dailyRecordStore.allDailyRecords, viewController: self)
+                let nowString = exportFileNameDateFormatter.string(from: Date())
+                exportCSV(fileName: nowString, data: dailyRecordStore.allDailyRecords, viewController: self)
                 print("you pressed export")
             }
         }

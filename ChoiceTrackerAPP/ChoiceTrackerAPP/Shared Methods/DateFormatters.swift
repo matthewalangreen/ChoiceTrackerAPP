@@ -22,3 +22,10 @@ let prettyDateFormatter: DateFormatter = {
     formatter.locale = Locale(identifier: "en_US")
     return formatter
 }()
+
+let exportFileNameDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    formatter.locale = Locale(identifier: "en_US")
+    return formatter
+}()
