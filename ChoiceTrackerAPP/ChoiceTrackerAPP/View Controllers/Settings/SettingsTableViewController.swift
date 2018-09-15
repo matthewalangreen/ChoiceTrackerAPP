@@ -60,9 +60,21 @@ class SettingsTableViewController: UITableViewController {
         // if we clicked on the "Reset All Data" row
         if indexPath.section  == 2 {
             if indexPath.row == 0 {
-                //MARK:- Reset All data
-                settingsDailyRecordStore.deleteAllRecords()
-                print("We just deleted your records, yo")
+                
+                //MARK:- Reset All data -- add action
+                
+                let alert = UIAlertController(title: "Reset All Data", message: "Are you sure? You cannot undo this action", preferredStyle: .alert)
+                
+                let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+                    self.settingsDailyRecordStore.deleteAllRecords()
+                    print("We just deleted your records, yo")
+                })
+                let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+                
+                alert.addAction(yesAction)
+                alert.addAction(noAction)
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
