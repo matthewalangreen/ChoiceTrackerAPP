@@ -10,7 +10,16 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    //MARK:- Force Portrait
+    /// set orientations you want to be allowed in this property by default
+//    var orientationLock = UIInterfaceOrientationMask.all
+//    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        return self.orientationLock
+//    }
     
+    
+    //MARK:- Properties
     var window: UIWindow?
     let dailyRecordStore = DailyRecordStore()
     let currentDailyRecord = DailyRecord()

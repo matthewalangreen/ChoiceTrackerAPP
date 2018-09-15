@@ -54,7 +54,6 @@ class DailyRecordStore{
     func deleteAllRecords() {
         // erase all data
         allDailyRecords = [String:DailyRecord]()
-        saveChanges()
         createDailyRecord()
     }
 }

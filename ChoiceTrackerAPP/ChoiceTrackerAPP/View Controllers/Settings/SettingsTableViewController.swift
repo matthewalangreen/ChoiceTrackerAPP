@@ -67,7 +67,7 @@ class SettingsTableViewController: UITableViewController {
                 
                 let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { action in
                     self.settingsDailyRecordStore.deleteAllRecords()
-                    print("We just deleted your records, yo")
+                    print("All records deleted")
                 })
                 let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
                 
