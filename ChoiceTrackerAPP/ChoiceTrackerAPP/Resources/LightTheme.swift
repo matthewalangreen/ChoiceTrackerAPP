@@ -8,12 +8,11 @@
 
 import UIKit
 
-class LightTheme {
-    
-    static let goodColor = UIColor(named: "light-good")
-    static let badColor = UIColor(named: "light-bad")
-    static let headerColor = UIColor(named: "light-header")
-    static let backgroundColor = UIColor(named: "light-background")
+class LightTheme: ThemeProtocol {
+    var goodColor: UIColor = UIColor(named: "light-good")!
+    var badColor: UIColor = UIColor(named: "light-bad")!
+    var headerColor: UIColor = UIColor(named: "light-header")!
+    var backgroundColor: UIColor = UIColor(named: "light-background")!
 }
 
 

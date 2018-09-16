@@ -8,10 +8,9 @@
 
 import UIKit
 
-class DarkTheme {
-    
-    static let goodColor = UIColor(named: "light-good")
-    static let badColor = UIColor(named: "light-bad")
-    static let headerColor = UIColor(named: "dark-background")
-    static let backgroundColor = UIColor(named: "dark-background")
+class DarkTheme: ThemeProtocol {
+    var goodColor: UIColor = UIColor(named: "light-good")!
+    var badColor: UIColor = UIColor(named: "light-bad")!
+    var headerColor: UIColor = UIColor(named: "dark-background")!
+    var backgroundColor: UIColor = UIColor(named: "dark-background")!
 }

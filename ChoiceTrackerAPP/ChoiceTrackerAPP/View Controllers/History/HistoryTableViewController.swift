@@ -44,7 +44,7 @@ class HistoryTableViewController: UITableViewController {
         let dateObject = sortableShortDate.date(from: dateStringOldFormat)
         let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
         cell.dateLabel?.text = newDateString
-        cell.backgroundColor = DarkTheme.backgroundColor
+        cell.backgroundColor = Theme.current.backgroundColor
        
         styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         return cell

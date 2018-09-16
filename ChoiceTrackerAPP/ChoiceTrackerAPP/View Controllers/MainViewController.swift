@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         // set colors by theme
-        BGView.backgroundColor = DarkTheme.backgroundColor
-        TopBar.backgroundColor = LightTheme.headerColor
+        BGView.backgroundColor = Theme.current.backgroundColor
+        TopBar.backgroundColor = Theme.current.headerColor
         
         //Fake Data
         for _ in 0..<20 {
