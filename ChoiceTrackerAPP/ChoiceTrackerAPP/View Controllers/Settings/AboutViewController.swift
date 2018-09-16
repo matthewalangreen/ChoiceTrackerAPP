@@ -9,9 +9,16 @@
 import UIKit
 
 class AboutViewController: UIViewController {
+    //MARK:- IBOutlets
+    @IBOutlet var bgView: UIView!
+    @IBOutlet var aboutTextView: UITextView!
+    
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        bgView.backgroundColor = Theme.current.backgroundColor
+        aboutTextView.textColor = Theme.current.textColor
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock

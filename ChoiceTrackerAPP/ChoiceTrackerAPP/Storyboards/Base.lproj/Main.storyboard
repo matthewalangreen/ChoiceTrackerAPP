@@ -284,7 +284,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrj-9r-i4M">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="H5A-Rj-TGb"/>
                                         </constraints>
@@ -294,7 +294,7 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-nj-giU">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="352"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="fpz-gA-qxz"/>
                                                 </constraints>
@@ -324,7 +324,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-k8-H46">
                                                 <rect key="frame" x="310" y="0.0" width="10" height="352"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="10" id="xWx-Nw-Clk"/>
                                                 </constraints>
@@ -333,7 +333,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQN-Q1-hk3">
                                         <rect key="frame" x="0.0" y="377" width="320" height="20"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="xrj-XJ-SsF"/>
                                         </constraints>
@@ -343,12 +343,12 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-pd-eO2">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="37"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="eZM-Di-Rba"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FullLogoGrey" translatesAutoresizingMaskIntoConstraints="NO" id="VEy-b5-Bsr">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparentBG" translatesAutoresizingMaskIntoConstraints="NO" id="VEy-b5-Bsr">
                                                 <rect key="frame" x="60" y="0.0" width="200" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VEy-b5-Bsr" secondAttribute="height" multiplier="70:13" id="yhQ-Gn-eoS"/>
@@ -356,7 +356,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IN-Ok-vYd">
                                                 <rect key="frame" x="260" y="0.0" width="60" height="37"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="l3k-r1-A7P"/>
                                                 </constraints>
@@ -373,7 +373,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nZl-Ck-4x8" firstAttribute="bottom" secondItem="SGk-PJ-dfY" secondAttribute="bottom" id="0In-S0-bOz"/>
                             <constraint firstItem="SGk-PJ-dfY" firstAttribute="leading" secondItem="nZl-Ck-4x8" secondAttribute="leading" id="LfN-My-dpz"/>
@@ -382,6 +382,10 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nZl-Ck-4x8"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="NtM-3h-lRj" id="0zu-1h-sUH"/>
+                        <outlet property="bgView" destination="6I6-Iq-InB" id="DSf-Fv-xBs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,7 +662,6 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
         </scene>
     </scenes>
     <resources>
-        <image name="FullLogoGrey" width="350" height="65"/>
         <image name="LogoTransparentBG" width="350" height="65"/>
         <image name="history" width="600" height="600"/>
         <image name="user" width="600" height="600"/>
