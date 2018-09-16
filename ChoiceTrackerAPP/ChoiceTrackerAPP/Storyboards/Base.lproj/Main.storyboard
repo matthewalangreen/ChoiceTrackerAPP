@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -302,19 +303,17 @@
                                             <textView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-3h-lRj">
                                                 <rect key="frame" x="10" y="0.0" width="300" height="352"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="light-good"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <string key="content">ChoiceTracker provides a simple way to keep track of your choices over time. The Quantified Self movement (http://quantifiedself.com/) has united data-nerds like us. We are keenly interested in knowing about our lives and looking at our personal worlds through the lens of data. ChoiceTracker is a simple, and elegant way to track your choices.
+                                                        <string key="content">ChoiceTracker is a simple, and elegant way to track your choices, one choice parameter at a time. ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
 
-Unlike other choice trackers available for iOS, ChoiceTracker focuses on a single metric. When working to shift behavior, focus matters. As a result, ChoiceTracker is designed to allow you to think only about a single choice parameter at a time. 
+All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting (CSV) and a dark color theme. 
 
-All of the essential features are included in ChoiceTracker for free. You’ll discover that with a ChoiceTracker pro subscription you’ll enable the ability to name your choice parameter (what type of choice are you tracking?) and export your data as a CSV file.
-
-Would you be willing to share your thoughts about ChoiceTracker with me? Please connect with me via twitter: http://twitter.com/stematthewgreen
-</string>
+Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="13" name="Avenir-Medium"/>
+                                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -413,7 +412,7 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                                                     <rect key="frame" x="8" y="8" width="304" height="107.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Subscribe to ChoiceTracker Pro and enable Data Export (CSV), App Themes and the ability to label your data -- both within the app and for exprted data.</string>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -667,5 +666,8 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
         <image name="user" width="600" height="600"/>
         <image name="whiteMinus" width="600" height="600"/>
         <image name="whitePlus" width="600" height="600"/>
+        <namedColor name="light-good">
+            <color red="0.28999999165534973" green="0.6470000147819519" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
