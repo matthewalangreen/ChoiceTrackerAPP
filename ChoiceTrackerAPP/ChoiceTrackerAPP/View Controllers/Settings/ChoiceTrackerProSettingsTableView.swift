@@ -91,7 +91,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
          monthly.accessoryType = .disclosureIndicator
          yearly.accessoryType = .disclosureIndicator
          //themes.accessoryType = .disclosureIndicator
-         labelYourData.accessoryType = .disclosureIndicator
+         //labelYourData.accessoryType = .disclosureIndicator
   
         // set footer to blank to hide extra rows
         tableView.tableFooterView = UIView()
@@ -100,6 +100,42 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "export data" row
         if indexPath.section  == 2 {
+            //MARK:- Change Data Label
+            if indexPath.row == 1 {
+                var userDataLabelField: UITextField?
+                
+                // 2.
+                let alertController = UIAlertController(
+                    title: "Change Label",
+                    message: "All previously saved data will receive this new label.",
+                    preferredStyle: UIAlertControllerStyle.alert)
+                
+                // 3.
+                let labelAction = UIAlertAction(title: "Accept", style: .destructive) {
+                    (action) -> Void in
+                    
+                    if let userDataLabel = userDataLabelField?.text {
+                        print(" label = \(userDataLabel)")
+                    } else {
+                        print("no label entered")
+                    }
+                }
+                
+                // 4.
+                alertController.addTextField {
+                    (userLabel) -> Void in
+                    userDataLabelField = userLabel
+                    userDataLabelField!.placeholder = "<Your New Label Here>"
+                }
+                
+                let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                
+                // 5.
+                alertController.addAction(labelAction)
+                alertController.addAction(noAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
             if indexPath.row == 2 {
                 //MARK:- Data Export
                 let nowString = exportFileNameDateFormatter.string(from: Date())
