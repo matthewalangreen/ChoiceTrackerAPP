@@ -15,6 +15,9 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     @IBAction func ThemeSwitch(_ sender: UISwitch) {
         Theme.current = sender.isOn ? LightTheme() : DarkTheme()
         UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
+       
+        // set the status bar style based on which theme we are using
+        UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
     }
     
     
