@@ -36,6 +36,17 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        
+        
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
         About_Cell.accessoryType = .disclosureIndicator
@@ -99,6 +110,17 @@ class SettingsTableViewController: UITableViewController {
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock

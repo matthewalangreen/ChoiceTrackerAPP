@@ -53,6 +53,18 @@ class HistoryTableViewController: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        
+        
         tableView.allowsSelection = false
         tableView.rowHeight = 150
         

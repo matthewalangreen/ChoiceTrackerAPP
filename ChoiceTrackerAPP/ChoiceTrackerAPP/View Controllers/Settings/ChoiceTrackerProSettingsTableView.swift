@@ -18,6 +18,17 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
        
         // set the status bar style based on which theme we are using
         UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        view.setNeedsDisplay()
     }
     
     
@@ -53,7 +64,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "export data" row
         if indexPath.section  == 2 {
-            if indexPath.row == 0 {
+            if indexPath.row == 2 {
                 //MARK:- Data Export
                 let nowString = exportFileNameDateFormatter.string(from: Date())
                 exportCSV(fileName: nowString, data: dailyRecordStore.allDailyRecords, viewController: self)
@@ -65,6 +76,16 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
