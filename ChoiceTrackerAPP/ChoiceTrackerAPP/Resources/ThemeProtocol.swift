@@ -14,4 +14,5 @@ protocol ThemeProtocol {
     var headerColor: UIColor { get }
     var backgroundColor: UIColor { get }
     var textColor: UIColor { get }
+    var historyCellTextColor: UIColor { get }
 }

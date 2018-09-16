@@ -14,4 +14,5 @@ class DarkTheme: ThemeProtocol {
     var headerColor: UIColor = UIColor(named: "light-header")!
     var backgroundColor: UIColor = UIColor(named: "dark-background")!
     var textColor: UIColor = UIColor.white
+    var historyCellTextColor: UIColor = UIColor.white
 }

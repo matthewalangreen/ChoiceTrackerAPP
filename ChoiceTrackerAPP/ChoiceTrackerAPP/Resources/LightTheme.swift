@@ -13,7 +13,8 @@ class LightTheme: ThemeProtocol {
     var badColor: UIColor = UIColor(named: "light-bad")!
     var headerColor: UIColor = UIColor(named: "light-header")!
     var backgroundColor: UIColor = UIColor(named: "light-background")!
-    var textColor: UIColor = UIColor.black
+    var textColor: UIColor = UIColor.white
+    var historyCellTextColor: UIColor = UIColor.black
 }
 
 

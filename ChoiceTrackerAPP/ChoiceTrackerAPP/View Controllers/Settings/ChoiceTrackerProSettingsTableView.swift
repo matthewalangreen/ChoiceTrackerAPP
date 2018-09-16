@@ -35,7 +35,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
             UserDefaults.standard.set(true, forKey: "LightTheme")
         }
         
-        // set theme
+       // set theme
         ThemeSwitchOutlet.isOn = UserDefaults.standard.bool(forKey: "LightTheme")
         
          monthly.accessoryType = .disclosureIndicator

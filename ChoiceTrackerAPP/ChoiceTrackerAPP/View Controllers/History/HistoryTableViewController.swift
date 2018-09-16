@@ -45,6 +45,7 @@ class HistoryTableViewController: UITableViewController {
         let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
         cell.dateLabel?.text = newDateString
         cell.backgroundColor = Theme.current.backgroundColor
+        cell.dateLabel?.textColor = Theme.current.historyCellTextColor
        
         styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         return cell

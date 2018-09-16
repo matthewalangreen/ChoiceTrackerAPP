@@ -25,12 +25,13 @@ class MainViewController: UIViewController {
     
     
     //MARK:- Override built-in functions
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set colors by theme
-        BGView.backgroundColor = Theme.current.backgroundColor
-        TopBar.backgroundColor = Theme.current.headerColor
+        applyTheme()
+       // TopBar.backgroundColor = Theme.current.headerColor
         
         //Fake Data
         for _ in 0..<20 {
@@ -51,8 +52,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         // update background color
         // set colors by theme
-        BGView.backgroundColor = Theme.current.backgroundColor
-        TopBar.backgroundColor = Theme.current.headerColor
+       applyTheme()
         
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
@@ -147,7 +147,13 @@ class MainViewController: UIViewController {
         }
     }
     
-    //MARK:- Force Portrait
+    fileprivate func applyTheme() {
+        // set colors by theme
+        BGView.backgroundColor = Theme.current.backgroundColor
+        view.backgroundColor = Theme.current.backgroundColor
+    }
+    
+   
     
 }
 
