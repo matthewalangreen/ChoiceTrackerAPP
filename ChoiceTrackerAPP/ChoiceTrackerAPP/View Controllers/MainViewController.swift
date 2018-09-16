@@ -34,9 +34,9 @@ class MainViewController: UIViewController {
        // TopBar.backgroundColor = Theme.current.headerColor
         
         //Fake Data
-        for _ in 0..<20 {
-            dailyRecordStore.createRandomDailyRecord()
-        }
+//        for _ in 0..<20 {
+//            dailyRecordStore.createRandomDailyRecord()
+//        }
         
         // show chart on load
         currentDailyRecord = getCurrentDailyRecord()

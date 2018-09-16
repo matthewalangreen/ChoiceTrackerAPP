@@ -54,6 +54,9 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set background view to match theme
+        self.view.backgroundColor = Theme.current.backgroundColor
+        
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
         // change the bar tint color to change what the color of the bar itself looks like
