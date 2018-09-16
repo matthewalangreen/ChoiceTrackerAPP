@@ -10,7 +10,12 @@ import UIKit
 
 class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- Outlets to cells
-    
+    @IBOutlet var infoCell: SettingsInfoCell!
+    @IBOutlet var monthly: UITableViewCell!
+    @IBOutlet var yearly: UITableViewCell!
+    @IBOutlet var themes: UITableViewCell!
+    @IBOutlet var labelYourData: UITableViewCell!
+    @IBOutlet var exportDataCell: UITableViewCell!
     
     //MARK:- Outlets to cell labels
     @IBOutlet var HeaderTextView: UITextView!
@@ -23,13 +28,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- Properties
     
     @IBOutlet var ThemeSwitchOutlet: UISwitch!
-    @IBAction func ThemeSwitch(_ sender: UISwitch) {
-        Theme.current = sender.isOn ? LightTheme() : DarkTheme()
-        UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
-       
-        // set the status bar style based on which theme we are using
-        UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
-        
+    fileprivate func ApplyTheme() {
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
         // change the bar tint color to change what the color of the bar itself looks like
@@ -40,6 +39,12 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         //  title color
         navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
         
+        infoCell.backgroundColor = Theme.current.backgroundColor
+        monthly.backgroundColor = Theme.current.backgroundColor
+        yearly.backgroundColor = Theme.current.backgroundColor
+        themes.backgroundColor = Theme.current.backgroundColor
+        labelYourData.backgroundColor = Theme.current.backgroundColor
+        exportDataCell.backgroundColor = Theme.current.backgroundColor
         view.backgroundColor = Theme.current.backgroundColor
         HeaderTextView.backgroundColor = Theme.current.backgroundColor
         HeaderTextView.textColor = Theme.current.textColor
@@ -48,6 +53,17 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         ThemeLabel.textColor = Theme.current.textColor
         LabelYourDataLabel.textColor = Theme.current.textColor
         ExportDataLabel.textColor = Theme.current.textColor
+        
+    }
+    
+    @IBAction func ThemeSwitch(_ sender: UISwitch) {
+        Theme.current = sender.isOn ? LightTheme() : DarkTheme()
+        UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
+       
+        // set the status bar style based on which theme we are using
+        UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        
+        ApplyTheme()
         
         view.setNeedsDisplay()
     }
@@ -57,24 +73,13 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     // this will be set by "prepareForSegue"
     var dailyRecordStore: DailyRecordStore!
     
-    @IBOutlet var monthly: UITableViewCell!
-    @IBOutlet var yearly: UITableViewCell!
-    @IBOutlet var themes: UITableViewCell!
-    @IBOutlet var labelYourData: UITableViewCell!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.textColor = Theme.current.textColor
-        MonthlyLabel.textColor = Theme.current.textColor
-        YearlyLabel.textColor = Theme.current.textColor
-        ThemeLabel.textColor = Theme.current.textColor
-        LabelYourDataLabel.textColor = Theme.current.textColor
-        ExportDataLabel.textColor = Theme.current.textColor
+       ApplyTheme()
 
-     
         // if never set user default theme
         if UserDefaults.standard.object(forKey: "LightTheme") == nil {
             UserDefaults.standard.set(true, forKey: "LightTheme")
@@ -110,25 +115,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        view.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.textColor = Theme.current.textColor
-        MonthlyLabel.textColor = Theme.current.textColor
-        YearlyLabel.textColor = Theme.current.textColor
-        ThemeLabel.textColor = Theme.current.textColor
-        LabelYourDataLabel.textColor = Theme.current.textColor
-        ExportDataLabel.textColor = Theme.current.textColor
-
-        
-        // apply bar color theme
-        let navBar = self.navigationController?.navigationBar
-        // change the bar tint color to change what the color of the bar itself looks like
-        navBar?.barTintColor = Theme.current.headerColor
-        // back button
-        navBar?.tintColor = Theme.current.textColor
-        navBar?.isTranslucent = false
-        //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+       ApplyTheme()
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
