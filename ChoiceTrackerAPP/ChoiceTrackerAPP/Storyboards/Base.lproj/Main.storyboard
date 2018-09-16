@@ -29,7 +29,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g8h-Qy-wsO" secondAttribute="height" multiplier="1:1" id="BuP-lo-pby"/>
                                         </constraints>
-                                        <state key="normal" image="user"/>
+                                        <state key="normal" image="user-dark"/>
                                         <connections>
                                             <segue destination="8Cn-2W-bv7" kind="presentation" identifier="showSettings" id="si2-if-TCL"/>
                                         </connections>
@@ -39,7 +39,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cV7-sq-Xx7" secondAttribute="height" multiplier="1:1" id="Lnh-Wu-ARF"/>
                                         </constraints>
-                                        <state key="normal" image="history"/>
+                                        <state key="normal" image="history-dark"/>
                                         <connections>
                                             <segue destination="ezk-PU-ufk" kind="presentation" identifier="showHistory" id="BL5-F9-G9P"/>
                                         </connections>
@@ -154,7 +154,10 @@
                     <connections>
                         <outlet property="BGView" destination="pUK-z0-htW" id="7Yf-Ii-8HD"/>
                         <outlet property="TopBar" destination="72D-GA-26t" id="W83-1f-fq3"/>
+                        <outlet property="historyButton" destination="cV7-sq-Xx7" id="RG7-9a-Bot"/>
+                        <outlet property="logoImage" destination="633-6r-5oz" id="XLf-Gk-P5l"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
+                        <outlet property="userButton" destination="g8h-Qy-wsO" id="Aa7-KZ-BCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -662,8 +665,8 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
     </scenes>
     <resources>
         <image name="LogoTransparentBG" width="350" height="65"/>
-        <image name="history" width="600" height="600"/>
-        <image name="user" width="600" height="600"/>
+        <image name="history-dark" width="600" height="600"/>
+        <image name="user-dark" width="600" height="600"/>
         <image name="whiteMinus" width="600" height="600"/>
         <image name="whitePlus" width="600" height="600"/>
         <namedColor name="light-good">

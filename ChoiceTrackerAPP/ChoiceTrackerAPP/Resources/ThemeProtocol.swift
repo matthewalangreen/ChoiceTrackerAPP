@@ -15,4 +15,7 @@ protocol ThemeProtocol {
     var backgroundColor: UIColor { get }
     var textColor: UIColor { get }
     var historyCellTextColor: UIColor { get }
+    var historyButtonImage: String { get }
+    var userButtonImage: String { get }
+    var logoImage: String { get }
 }

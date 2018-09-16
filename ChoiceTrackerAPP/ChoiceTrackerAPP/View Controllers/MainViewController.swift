@@ -10,8 +10,10 @@ import UIKit
 import Charts
 
 class MainViewController: UIViewController {
-    
-   
+    //MARK:- IBOutlets
+    @IBOutlet var userButton: UIButton!
+    @IBOutlet var historyButton: UIButton!
+    @IBOutlet var logoImage: UIImageView!
     
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
@@ -39,21 +41,24 @@ class MainViewController: UIViewController {
         updateUI()
     }
     
+    fileprivate func fillFakeData() {
+        //Fake Data
+        for _ in 0..<20 {
+            dailyRecordStore.createRandomDailyRecord()
+        }
+    }
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         applyTheme()
-       // TopBar.backgroundColor = Theme.current.headerColor
         
-        //Fake Data
-//        for _ in 0..<20 {
-//            dailyRecordStore.createRandomDailyRecord()
-//        }
+       // fillFakeData()
         
-        // show chart on load
         currentDailyRecord = getCurrentDailyRecord()
         
-    
         renderChart()
     }
     
@@ -171,6 +176,15 @@ class MainViewController: UIViewController {
         // set colors by theme
         BGView.backgroundColor = Theme.current.backgroundColor
         view.backgroundColor = Theme.current.backgroundColor
+        
+        // set button images
+        let userImage = UIImage.init(named: Theme.current.userButtonImage)
+        let historyImage = UIImage.init(named: Theme.current.historyButtonImage)
+        userButton.setImage(userImage, for: .normal)
+        historyButton.setImage(historyImage, for: .normal)
+        
+        // set logo image
+        logoImage.image = UIImage.init(named: Theme.current.logoImage)
     }
     
    
