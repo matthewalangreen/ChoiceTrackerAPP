@@ -120,8 +120,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
                 
                 // 2.
                 let alertController = UIAlertController(
-                    title: "Change Label",
-                    message: "All previously saved data will receive this new label.",
+                    title: "Change Goal",
+                    message: "All previously saved data will be relabeled with this goal.",
                     preferredStyle: UIAlertControllerStyle.alert)
                 
                 // 3.
