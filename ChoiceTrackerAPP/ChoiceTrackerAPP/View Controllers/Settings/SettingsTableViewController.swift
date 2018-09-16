@@ -17,9 +17,14 @@ class SettingsTableViewController: UITableViewController {
     var settingsDailyRecordStore: DailyRecordStore!
     
     //MARK:- Outlets to cells
-    
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
     @IBOutlet var About_Cell: UITableViewCell!
+    @IBOutlet var ResetAllData_Cell: UITableViewCell!
+    
+    //MARK:- Outlets to labels in cells
+    @IBOutlet var ChoiceTrackerProLabel: UILabel!
+    @IBOutlet var AboutLabel: UILabel!
+    @IBOutlet var ResetLabel: UILabel!
     
     var successString: String!
     
@@ -37,6 +42,13 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = Theme.current.backgroundColor
+        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
+        About_Cell.backgroundColor = Theme.current.backgroundColor
+        ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
+        ChoiceTrackerProLabel.textColor = Theme.current.textColor
+        AboutLabel.textColor = Theme.current.textColor
+        ResetLabel.textColor = Theme.current.textColor
+        
         
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
@@ -112,6 +124,14 @@ class SettingsTableViewController: UITableViewController {
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        view.backgroundColor = Theme.current.backgroundColor
+        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
+        About_Cell.backgroundColor = Theme.current.backgroundColor
+        ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
+        ChoiceTrackerProLabel.textColor = Theme.current.textColor
+        AboutLabel.textColor = Theme.current.textColor
+        ResetLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar

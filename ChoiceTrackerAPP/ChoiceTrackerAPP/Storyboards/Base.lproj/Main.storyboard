@@ -164,7 +164,7 @@
         <scene sceneID="lk1-fe-pCK">
             <objects>
                 <tableViewController id="lbZ-dV-xVn" customClass="SettingsTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ITu-2Z-k24">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ITu-2Z-k24">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -255,8 +255,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AboutLabel" destination="8WB-ki-uSr" id="5BR-eX-LDJ"/>
                         <outlet property="About_Cell" destination="eyp-qN-dVj" id="9PA-Dv-ZMk"/>
+                        <outlet property="ChoiceTrackerProLabel" destination="jp1-Kq-bHN" id="V0p-Ng-lwS"/>
                         <outlet property="ChoiceTrackerPro_Cell" destination="bEz-kQ-S7D" id="Jff-0C-tgg"/>
+                        <outlet property="ResetAllData_Cell" destination="W8L-Q4-H0c" id="P55-jg-GLM"/>
+                        <outlet property="ResetLabel" destination="Mut-9I-8Dc" id="laC-I7-2Cl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEX-JK-rjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
