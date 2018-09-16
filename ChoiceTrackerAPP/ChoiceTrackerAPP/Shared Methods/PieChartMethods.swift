@@ -19,6 +19,7 @@ func styleChart(chart: PieChartView, goodChoices: Int, badChoices: Int) {
     updateChartData(chart: chart, numberOfDataEntries: numberOfDataEntries)
 }
 
+// helper function for styleChart()
 func updateChartData(chart: PieChartView, numberOfDataEntries: [PieChartDataEntry]) {
     let chartDataSet = PieChartDataSet(values: numberOfDataEntries, label: nil)
     let chartData = PieChartData(dataSet: chartDataSet)
@@ -43,6 +44,7 @@ func updateChartData(chart: PieChartView, numberOfDataEntries: [PieChartDataEntr
     chartDataSet.drawValuesEnabled = true
 }
 
+// helper function for updateChartData()
 func formatChart(chart: PieChartView) {
     chart.chartDescription?.text = ""
     chart.drawEntryLabelsEnabled = false
@@ -51,5 +53,5 @@ func formatChart(chart: PieChartView) {
     chart.holeColor = Theme.current.backgroundColor
     chart.legend.enabled = false
     chart.noDataText = "Make a great choice!"
-    chart.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
+    chart.noDataTextColor = Theme.current.backgroundColor 
 }

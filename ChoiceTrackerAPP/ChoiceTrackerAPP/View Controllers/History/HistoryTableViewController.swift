@@ -75,7 +75,7 @@ class HistoryTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         // remove today from the dictionary... hope this works!
-        //MARK:- **BUG** This solution created an index out of range error on the last cell
+        //MARK:- **BUG -- FIXED?** This solution created an index out of range error on the last cell
         // of the table view... not sure why... nor how to fix it at this time
         //recordDictionary[sortableShortDate.string(from: Date.init())] = nil
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
@@ -84,6 +84,19 @@ class HistoryTableViewController: UITableViewController {
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // set background view to match theme
+        self.view.backgroundColor = Theme.current.backgroundColor
+        
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock

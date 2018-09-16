@@ -50,6 +50,11 @@ class MainViewController: UIViewController {
     // it makes sure the UI is updated with the new empty record.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // show choices
+        print("numGoodChoices: \(currentDailyRecord.numGoodChoices)")
+        print("numBadChoices: \(currentDailyRecord.numBadChoices)")
+        
         // update background color
         // set colors by theme
        applyTheme()
