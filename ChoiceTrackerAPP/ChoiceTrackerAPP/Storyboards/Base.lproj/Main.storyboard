@@ -533,7 +533,13 @@ Would you be willing to share your thoughts about ChoiceTracker with me? Please 
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="ExportDataLabel" destination="bYP-ud-iSb" id="3bX-EU-WXI"/>
+                        <outlet property="HeaderTextView" destination="1zH-fu-kZh" id="xZj-7A-gpy"/>
+                        <outlet property="LabelYourDataLabel" destination="BnT-Pj-8Rv" id="eLc-lL-Zng"/>
+                        <outlet property="MonthlyLabel" destination="R5F-ci-6SZ" id="tzp-m3-5OW"/>
+                        <outlet property="ThemeLabel" destination="hh9-mo-6J5" id="6c7-Oe-25P"/>
                         <outlet property="ThemeSwitchOutlet" destination="A1V-2U-hR8" id="Hrw-AW-9Sv"/>
+                        <outlet property="YearlyLabel" destination="cHH-OW-9Zu" id="PYW-t3-cJf"/>
                         <outlet property="labelYourData" destination="o0w-1g-9FS" id="i2Z-8u-fpG"/>
                         <outlet property="monthly" destination="zE0-DQ-Drr" id="GP4-gZ-OEI"/>
                         <outlet property="themes" destination="XP3-QF-9i7" id="Rbn-l1-HiD"/>

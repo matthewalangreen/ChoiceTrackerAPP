@@ -9,6 +9,17 @@
 import UIKit
 
 class ChoiceTrackerProSettingsTableView: UITableViewController {
+    //MARK:- Outlets to cells
+    
+    
+    //MARK:- Outlets to cell labels
+    @IBOutlet var HeaderTextView: UITextView!
+    @IBOutlet var MonthlyLabel: UILabel!
+    @IBOutlet var YearlyLabel: UILabel!
+    @IBOutlet var ThemeLabel: UILabel!
+    @IBOutlet var LabelYourDataLabel: UILabel!
+    @IBOutlet var ExportDataLabel: UILabel!
+    
     //MARK:- Properties
     
     @IBOutlet var ThemeSwitchOutlet: UISwitch!
@@ -28,6 +39,16 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         navBar?.isTranslucent = false
         //  title color
         navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        
+        view.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.textColor = Theme.current.textColor
+        MonthlyLabel.textColor = Theme.current.textColor
+        YearlyLabel.textColor = Theme.current.textColor
+        ThemeLabel.textColor = Theme.current.textColor
+        LabelYourDataLabel.textColor = Theme.current.textColor
+        ExportDataLabel.textColor = Theme.current.textColor
+        
         view.setNeedsDisplay()
     }
     
@@ -44,6 +65,16 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.textColor = Theme.current.textColor
+        MonthlyLabel.textColor = Theme.current.textColor
+        YearlyLabel.textColor = Theme.current.textColor
+        ThemeLabel.textColor = Theme.current.textColor
+        LabelYourDataLabel.textColor = Theme.current.textColor
+        ExportDataLabel.textColor = Theme.current.textColor
+
+     
         // if never set user default theme
         if UserDefaults.standard.object(forKey: "LightTheme") == nil {
             UserDefaults.standard.set(true, forKey: "LightTheme")
@@ -73,9 +104,21 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         }
     }
     
+
+    
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        view.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.backgroundColor = Theme.current.backgroundColor
+        HeaderTextView.textColor = Theme.current.textColor
+        MonthlyLabel.textColor = Theme.current.textColor
+        YearlyLabel.textColor = Theme.current.textColor
+        ThemeLabel.textColor = Theme.current.textColor
+        LabelYourDataLabel.textColor = Theme.current.textColor
+        ExportDataLabel.textColor = Theme.current.textColor
+
         
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
