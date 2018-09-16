@@ -13,8 +13,17 @@ import Charts
 func styleChart(chart: PieChartView, goodChoices: Int, badChoices: Int) {
     var numberOfDataEntries = [PieChartDataEntry]()
     
-    let badChoices = PieChartDataEntry.init(value: Double(badChoices))
-    let goodChoices = PieChartDataEntry.init(value: Double(goodChoices))
+    let bc = 0.1
+    let gc = 0.1
+    
+    print("good: \(gc)")
+    print("bad: \(bc)")
+    
+    let badChoices = PieChartDataEntry.init(value: bc)
+    let goodChoices = PieChartDataEntry.init(value: gc)
+    
+//    let badChoices = PieChartDataEntry.init(value: Double(badChoices))
+//    let goodChoices = PieChartDataEntry.init(value: Double(goodChoices))
 
     numberOfDataEntries = [goodChoices, badChoices]
     updateChartData(chart: chart, numberOfDataEntries: numberOfDataEntries)
@@ -48,6 +57,6 @@ func formatChart(chart: PieChartView) {
     chart.entryLabelColor = NSUIColor.black
     chart.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
     chart.legend.enabled = false
-    chart.noDataText = "Make a great choice!"
-    chart.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
+    //chart.noDataText = ""
+   // chart.noDataTextColor = UIColor.black
 }

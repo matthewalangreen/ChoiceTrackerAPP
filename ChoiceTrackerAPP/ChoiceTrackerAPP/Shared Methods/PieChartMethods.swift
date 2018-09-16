@@ -9,6 +9,19 @@
 import UIKit
 import Charts
 
+// run this once to put something between 0 and 1 to show a chart that's empty but not
+// totally empty
+func setupChart(chart: PieChartView) {
+    var numberOfDataEntries = [PieChartDataEntry]()
+    
+    let badChoices = PieChartDataEntry.init(value: 0.1)
+    let goodChoices = PieChartDataEntry.init(value: 0.1)
+    
+    numberOfDataEntries = [goodChoices, badChoices]
+    updateChartData(chart: chart, numberOfDataEntries: numberOfDataEntries)
+}
+
+// primary method to use once a user has pressed a button
 func styleChart(chart: PieChartView, goodChoices: Int, badChoices: Int) {
     var numberOfDataEntries = [PieChartDataEntry]()
     

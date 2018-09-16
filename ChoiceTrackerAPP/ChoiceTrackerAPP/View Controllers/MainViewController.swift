@@ -27,6 +27,18 @@ class MainViewController: UIViewController {
     //MARK:- Override built-in functions
     
     
+    fileprivate func renderChart() {
+        // show chart that's not totally empty
+        if currentDailyRecord.numAllChoices == 0 {
+            setupChart(chart: pieChartView)
+            // remove all highlights
+            pieChartView.highlightValue(x: 1, dataSetIndex: -1)
+        } else {
+            styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
+        }
+        updateUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +53,8 @@ class MainViewController: UIViewController {
         // show chart on load
         currentDailyRecord = getCurrentDailyRecord()
         
-        styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
-        updateUI()
+    
+        renderChart()
     }
     
     // this happens when we dismiss either modal popup
@@ -52,8 +64,9 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // show choices
-        print("numGoodChoices: \(currentDailyRecord.numGoodChoices)")
-        print("numBadChoices: \(currentDailyRecord.numBadChoices)")
+        //print("numGoodChoices: \(currentDailyRecord.numGoodChoices)")
+        //print("numBadChoices: \(currentDailyRecord.numBadChoices)")
+        
         
         // update background color
         // set colors by theme
@@ -65,8 +78,10 @@ class MainViewController: UIViewController {
         
         // show chart on load
         currentDailyRecord = getCurrentDailyRecord()
-        styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
-        updateUI()
+        
+        renderChart()
+        
+        print("numAllChoices: \(currentDailyRecord.numAllChoices)")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
