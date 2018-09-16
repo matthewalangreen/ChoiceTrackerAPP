@@ -61,7 +61,7 @@ class SettingsTableViewController: UITableViewController {
         if indexPath.section  == 2 {
             if indexPath.row == 0 {
                 
-                //MARK:- Reset All data -- add action
+                //Reset All data -- add action
                 
                 let alert = UIAlertController(title: "Reset All Data", message: "Are you sure? You cannot undo this action", preferredStyle: .alert)
                 
@@ -94,6 +94,23 @@ class SettingsTableViewController: UITableViewController {
         default:
             preconditionFailure("Unexpected segue identifier")
         }
+    }
+    
+    //MARK:- Force Portrait
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AppUtility.lockOrientation(.portrait)
+        // Or to rotate and lock
+        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
     }
 
 }

@@ -11,17 +11,7 @@ import Charts
 
 class MainViewController: UIViewController {
     
-    // this happens when we dismiss either modal popup
-    // if the popup was the settings view and you deleted all records then
-    // it makes sure the UI is updated with the new empty record.
-    override func viewWillAppear(_ animated: Bool) {
-        // show chart on load
-        currentDailyRecord = getCurrentDailyRecord()
-        
-        styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
-        updateUI()
-    }
-    
+   
     
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
@@ -34,7 +24,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK:- Fake Data
+        //Fake Data
         for _ in 0..<20 {
             dailyRecordStore.createRandomDailyRecord()
         }
@@ -45,6 +35,30 @@ class MainViewController: UIViewController {
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
+    
+    // this happens when we dismiss either modal popup
+    // if the popup was the settings view and you deleted all records then
+    // it makes sure the UI is updated with the new empty record.
+    override func viewWillAppear(_ animated: Bool) {
+        // Force Portrait
+        AppUtility.lockOrientation(.portrait)
+        
+        
+        // show chart on load
+        currentDailyRecord = getCurrentDailyRecord()
+        styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
+        updateUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        
+        //Force Portrait
+        AppUtility.lockOrientation(.all)
+    }
+    
 
     //MARK:- Actions
     @IBAction func addBadChoice(_ sender: Any) {
@@ -118,5 +132,8 @@ class MainViewController: UIViewController {
             return dailyRecordStore.createDailyRecord()
         }
     }
+    
+    //MARK:- Force Portrait
+    
 }
 

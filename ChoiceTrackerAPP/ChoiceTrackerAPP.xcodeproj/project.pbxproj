@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB37214DD3350063186A /* ForcePortrait.swift */; };
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
@@ -70,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D049CB37214DD3350063186A /* ForcePortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcePortrait.swift; sourceTree = "<group>"; };
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				D0DA5630212B9519002657DB /* Various-Methods.swift */,
 				D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */,
 				D08550C8212BAA92002A6C04 /* CSV-Export.swift */,
+				D049CB37214DD3350063186A /* ForcePortrait.swift */,
 			);
 			path = "Shared Methods";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
+				D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
 				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
 				D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */,

@@ -62,6 +62,23 @@ class HistoryTableViewController: UITableViewController {
         //recordDictionary[sortableShortDate.string(from: Date.init())] = nil
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
     }
+    
+    //MARK:- Force Portrait
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        AppUtility.lockOrientation(.portrait)
+        // Or to rotate and lock
+        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Don't forget to reset when view is being removed
+        AppUtility.lockOrientation(.all)
+    }
 
 }
 
