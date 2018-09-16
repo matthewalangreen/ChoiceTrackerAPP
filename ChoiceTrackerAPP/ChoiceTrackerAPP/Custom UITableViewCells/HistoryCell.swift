@@ -14,4 +14,5 @@ class HistoryCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var pieChart: PieChartView!
 
+
 }

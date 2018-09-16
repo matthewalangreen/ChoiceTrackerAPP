@@ -12,6 +12,7 @@ import Charts
 
 class HistoryTableViewController: UITableViewController {
     
+    
     //MARK:- Actions
     @IBAction func dismissPopup(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
@@ -43,6 +44,7 @@ class HistoryTableViewController: UITableViewController {
         let dateObject = sortableShortDate.date(from: dateStringOldFormat)
         let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
         cell.dateLabel?.text = newDateString
+        cell.backgroundColor = DarkTheme.backgroundColor
        
         styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         return cell

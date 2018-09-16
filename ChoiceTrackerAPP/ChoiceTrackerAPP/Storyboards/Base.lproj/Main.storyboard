@@ -51,7 +51,6 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="633-6r-5oz" secondAttribute="trailing" constant="8" id="4DF-iO-SlT"/>
                                     <constraint firstItem="cV7-sq-Xx7" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="12" id="74v-vY-tbO"/>
@@ -154,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="BGView" destination="pUK-z0-htW" id="7Yf-Ii-8HD"/>
+                        <outlet property="TopBar" destination="72D-GA-26t" id="W83-1f-fq3"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
                     </connections>
                 </viewController>

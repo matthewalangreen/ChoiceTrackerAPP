@@ -21,12 +21,16 @@ class MainViewController: UIViewController {
     @IBOutlet var pieChartView: PieChartView!
     
     @IBOutlet var BGView: UIView!
+    @IBOutlet var TopBar: UIView!
+    
+    
     //MARK:- Override built-in functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set background color
+        // set colors by theme
         BGView.backgroundColor = DarkTheme.backgroundColor
+        TopBar.backgroundColor = LightTheme.headerColor
         
         //Fake Data
         for _ in 0..<20 {
