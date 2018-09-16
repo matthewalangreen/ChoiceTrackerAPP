@@ -15,9 +15,10 @@ class LightTheme: ThemeProtocol {
     var backgroundColor: UIColor = UIColor(named: "light-background")!
     var textColor: UIColor = UIColor.black
     var historyCellTextColor: UIColor = UIColor.black
-    var historyButtonImage: String = "history-light"
-    var userButtonImage: String = "user-light"
+    //var historyButtonImage: String = "history-light"
+    //var userButtonImage: String = "user-light"
     var logoImage: String = "LogoTransparentBG"
+    var buttonTintColor: UIColor = UIColor.black
 }
 
 

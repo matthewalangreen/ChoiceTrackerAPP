@@ -15,7 +15,8 @@ class DarkTheme: ThemeProtocol {
     var backgroundColor: UIColor = UIColor(named: "dark-background")!
     var textColor: UIColor = UIColor.white
     var historyCellTextColor: UIColor = UIColor.white
-    var historyButtonImage: String = "history-dark"
-    var userButtonImage: String = "user-dark"
+    //var historyButtonImage: String = "history-dark"
+    //var userButtonImage: String = "user-dark"
     var logoImage: String = "logo-dark"
+    var buttonTintColor: UIColor = UIColor.white
 }

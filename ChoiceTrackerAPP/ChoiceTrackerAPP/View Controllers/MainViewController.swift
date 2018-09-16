@@ -53,11 +53,11 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentDailyRecord = getCurrentDailyRecord()
+        
         applyTheme()
         
-       // fillFakeData()
-        
-        currentDailyRecord = getCurrentDailyRecord()
+        //fillFakeData()
         
         renderChart()
     }
@@ -68,25 +68,22 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        currentDailyRecord = getCurrentDailyRecord()
+        
         // show choices
         //print("numGoodChoices: \(currentDailyRecord.numGoodChoices)")
         //print("numBadChoices: \(currentDailyRecord.numBadChoices)")
         
-        
-        // update background color
-        // set colors by theme
-       applyTheme()
+
+        applyTheme()
         
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
         
-        
         // show chart on load
-        currentDailyRecord = getCurrentDailyRecord()
-        
         renderChart()
         
-        print("numAllChoices: \(currentDailyRecord.numAllChoices)")
+        //print("numAllChoices: \(currentDailyRecord.numAllChoices)")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -143,7 +140,7 @@ class MainViewController: UIViewController {
     
     //MARK:- Choice Logic
     public func incrementChoice(choice: String) {
-        print(" \(choice) choice")
+        //print(" \(choice) choice")
         
         switch choice {
         case "Good":
@@ -156,9 +153,11 @@ class MainViewController: UIViewController {
             print("not a valid choice")
         }
     }
-    
+    //MARK:- **BUG** in sim, deploy iPhone 8 and X, unwrapped nil
     func doesRecordExist(_ day: String) -> Bool {
-        return dailyRecordStore.allDailyRecords.keys.contains(day)
+       // print("running doesRecordExist")
+       // print("keys: \(dailyRecordStore)")
+            return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
     
     func getCurrentDailyRecord() -> DailyRecord {
@@ -177,11 +176,9 @@ class MainViewController: UIViewController {
         BGView.backgroundColor = Theme.current.backgroundColor
         view.backgroundColor = Theme.current.backgroundColor
         
-        // set button images
-        let userImage = UIImage.init(named: Theme.current.userButtonImage)
-        let historyImage = UIImage.init(named: Theme.current.historyButtonImage)
-        userButton.setImage(userImage, for: .normal)
-        historyButton.setImage(historyImage, for: .normal)
+        // change button tint color
+        userButton.tintColor = Theme.current.buttonTintColor
+        historyButton.tintColor = Theme.current.buttonTintColor
         
         // set logo image
         logoImage.image = UIImage.init(named: Theme.current.logoImage)

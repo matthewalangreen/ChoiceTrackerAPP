@@ -26,18 +26,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-       
-        // set theme with ternary operation
-        
-        if UserDefaults.standard.object(forKey: "LightTheme") != nil {
-            // condition ? [true] : [false]
-            Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
-        }
         
         // access the view controller and set its dailyRecordScore
         let vc = window!.rootViewController as! MainViewController
         vc.dailyRecordStore = dailyRecordStore
         vc.currentDailyRecord = currentDailyRecord
+       
+        // set theme with ternary operation
+        if UserDefaults.standard.object(forKey: "LightTheme") != nil {
+            // condition ? [true] : [false]
+            Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
+        }
         
         return true
     }
