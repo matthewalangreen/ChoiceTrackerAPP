@@ -569,6 +569,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                         <outlet property="ThemeLabel" destination="hh9-mo-6J5" id="6c7-Oe-25P"/>
                         <outlet property="ThemeSwitchOutlet" destination="A1V-2U-hR8" id="Hrw-AW-9Sv"/>
                         <outlet property="YearlyLabel" destination="cHH-OW-9Zu" id="PYW-t3-cJf"/>
+                        <outlet property="currentDataLabel" destination="T7P-qn-3EW" id="diF-Pd-2jK"/>
                         <outlet property="exportDataCell" destination="X7i-cB-0PW" id="x0Y-7p-8Ie"/>
                         <outlet property="infoCell" destination="SWc-5s-KE3" id="hpc-bQ-TJI"/>
                         <outlet property="labelYourData" destination="o0w-1g-9FS" id="i2Z-8u-fpG"/>

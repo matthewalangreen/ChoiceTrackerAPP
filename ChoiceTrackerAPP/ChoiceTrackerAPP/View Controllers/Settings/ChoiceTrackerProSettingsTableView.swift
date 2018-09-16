@@ -9,6 +9,8 @@
 import UIKit
 
 class ChoiceTrackerProSettingsTableView: UITableViewController {
+    var userDataLabelField: UITextField?
+    
     //MARK:- Outlets to cells
     @IBOutlet var infoCell: SettingsInfoCell!
     @IBOutlet var monthly: UITableViewCell!
@@ -24,10 +26,11 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     @IBOutlet var ThemeLabel: UILabel!
     @IBOutlet var LabelYourDataLabel: UILabel!
     @IBOutlet var ExportDataLabel: UILabel!
+    @IBOutlet var currentDataLabel: UILabel!
     
     //MARK:- Properties
-    
     @IBOutlet var ThemeSwitchOutlet: UISwitch!
+    
     fileprivate func ApplyTheme() {
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
@@ -73,20 +76,32 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     // this will be set by "prepareForSegue"
     var dailyRecordStore: DailyRecordStore!
     
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       ApplyTheme()
+       
+        
+        ApplyTheme()
 
         // if never set user default theme
         if UserDefaults.standard.object(forKey: "LightTheme") == nil {
             UserDefaults.standard.set(true, forKey: "LightTheme")
         }
         
+        // if never set user default label
+        if UserDefaults.standard.object(forKey: "dataLabel") == nil {
+            UserDefaults.standard.set("Default Data Label", forKey: "dataLabel")
+        }
+        
+        
        // set theme
         ThemeSwitchOutlet.isOn = UserDefaults.standard.bool(forKey: "LightTheme")
+        
+        // set label
+        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
+        userDataLabelField?.text = goalText
+        currentDataLabel.text = goalText
         
          monthly.accessoryType = .disclosureIndicator
          yearly.accessoryType = .disclosureIndicator
@@ -98,11 +113,10 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // if we clicked on the "export data" row
         if indexPath.section  == 2 {
             //MARK:- Change Data Label
             if indexPath.row == 1 {
-                var userDataLabelField: UITextField?
+//                var userDataLabelField: UITextField?
                 
                 // 2.
                 let alertController = UIAlertController(
@@ -114,18 +128,21 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
                 let labelAction = UIAlertAction(title: "Accept", style: .destructive) {
                     (action) -> Void in
                     
-                    if let userDataLabel = userDataLabelField?.text {
-                        print(" label = \(userDataLabel)")
+                    if let userDataLabel = self.userDataLabelField?.text {
+                        UserDefaults.standard.set(userDataLabel, forKey: "dataLabel")
+                        let label = UserDefaults.standard.string(forKey: "dataLabel")
+                        self.currentDataLabel.text = label
+                        //print("label: \(String(describing: label))")
                     } else {
-                        print("no label entered")
+                        print("no change")
                     }
                 }
                 
                 // 4.
                 alertController.addTextField {
                     (userLabel) -> Void in
-                    userDataLabelField = userLabel
-                    userDataLabelField!.placeholder = "<Your New Label Here>"
+                    self.userDataLabelField = userLabel
+                    self.userDataLabelField!.placeholder = UserDefaults.standard.string(forKey: "dataLabel")
                 }
                 
                 let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -136,8 +153,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
             
+            //MARK:- Data Export
             if indexPath.row == 2 {
-                //MARK:- Data Export
                 let nowString = exportFileNameDateFormatter.string(from: Date())
                 exportCSV(fileName: nowString, data: dailyRecordStore.allDailyRecords, viewController: self)
                 print("you pressed export")
@@ -156,6 +173,11 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock
         // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+        
+        // set label
+        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
+        userDataLabelField?.text = goalText
+        currentDataLabel.text = goalText
         
     }
     
