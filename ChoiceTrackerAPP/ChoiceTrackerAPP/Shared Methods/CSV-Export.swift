@@ -14,7 +14,7 @@ func exportCSV(fileName: String, data: [String:DailyRecord], viewController: UIV
     let fileName = "\(fileName).csv"
     let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
     
-    var csvText = "Date,Good_Choices,Bad_Choices,Total_Choices\n"
+    var csvText = "Date,Good_Choices,Bad_Choices,Total_Choices,Goal\n"
     
     let sortedTuple: [(key: String, value: DailyRecord)] = data.sorted(by: { $0.0 < $1.0 })
     
@@ -23,8 +23,9 @@ func exportCSV(fileName: String, data: [String:DailyRecord], viewController: UIV
         sortedObjectArray.append(r.value)
     }
     
+    let goalText = UserDefaults.standard.string(forKey: "dataLabel")!
     for r in sortedObjectArray {
-        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices)\n"
+        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices),\(goalText)\n"
         csvText.append(contentsOf: newLine)
     }
     
