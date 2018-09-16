@@ -13,4 +13,5 @@ protocol ThemeProtocol {
     var badColor: UIColor { get }
     var headerColor: UIColor { get }
     var backgroundColor: UIColor { get }
+    var textColor: UIColor { get }
 }

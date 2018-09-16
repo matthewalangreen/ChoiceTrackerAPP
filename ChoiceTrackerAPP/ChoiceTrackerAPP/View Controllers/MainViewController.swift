@@ -48,6 +48,12 @@ class MainViewController: UIViewController {
     // if the popup was the settings view and you deleted all records then
     // it makes sure the UI is updated with the new empty record.
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // update background color
+        // set colors by theme
+        BGView.backgroundColor = Theme.current.backgroundColor
+        TopBar.backgroundColor = Theme.current.headerColor
+        
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
         

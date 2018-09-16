@@ -11,6 +11,13 @@ import UIKit
 class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- Properties
     
+    @IBOutlet var ThemeSwitchOutlet: UISwitch!
+    @IBAction func ThemeSwitch(_ sender: UISwitch) {
+        Theme.current = sender.isOn ? LightTheme() : DarkTheme()
+        UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
+    }
+    
+    
     // set by prepareForSegue from SettingsTableView
     // this will be set by "prepareForSegue"
     var dailyRecordStore: DailyRecordStore!
@@ -23,9 +30,17 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // if never set user default theme
+        if UserDefaults.standard.object(forKey: "LightTheme") == nil {
+            UserDefaults.standard.set(true, forKey: "LightTheme")
+        }
+        
+        // set theme
+        ThemeSwitchOutlet.isOn = UserDefaults.standard.bool(forKey: "LightTheme")
+        
          monthly.accessoryType = .disclosureIndicator
          yearly.accessoryType = .disclosureIndicator
-         themes.accessoryType = .disclosureIndicator
+         //themes.accessoryType = .disclosureIndicator
          labelYourData.accessoryType = .disclosureIndicator
   
         // set footer to blank to hide extra rows

@@ -26,7 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        // set theme with ternary operation
+        
+        if UserDefaults.standard.object(forKey: "LightTheme") != nil {
+            // condition ? [true] : [false]
+            Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
+        }
         
         // access the view controller and set its dailyRecordScore
         let vc = window!.rootViewController as! MainViewController
