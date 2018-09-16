@@ -48,7 +48,7 @@ func formatChart(chart: PieChartView) {
     chart.drawEntryLabelsEnabled = false
     chart.entryLabelColor = NSUIColor.black
     //chart.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
-    chart.holeColor = LightTheme.backgroundColor
+    chart.holeColor = DarkTheme.backgroundColor
     chart.legend.enabled = false
     chart.noDataText = "Make a great choice!"
     chart.noDataTextColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)

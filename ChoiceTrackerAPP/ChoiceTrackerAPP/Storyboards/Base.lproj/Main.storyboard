@@ -66,7 +66,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUK-z0-htW" userLabel="GreyBGView">
                                 <rect key="frame" x="0.0" y="70" width="320" height="498"/>
-                                <color key="backgroundColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Y5s-ut-tav" userLabel="MainContainer">
                                 <rect key="frame" x="0.0" y="100" width="320" height="448"/>
@@ -153,6 +153,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="BGView" destination="pUK-z0-htW" id="7Yf-Ii-8HD"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
                     </connections>
                 </viewController>
@@ -300,14 +301,14 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <mutableString key="content">ChoiceTracker provides a simple way to keep track of your choices over time. The Quantified Self movement (http://quantifiedself.com/) has united data-nerds like us. We are keenly interested in knowing about our lives and looking at our personal worlds through the lens of data. ChoiceTracker is a simple, and elegant way to track your choices.
+                                                        <string key="content">ChoiceTracker provides a simple way to keep track of your choices over time. The Quantified Self movement (http://quantifiedself.com/) has united data-nerds like us. We are keenly interested in knowing about our lives and looking at our personal worlds through the lens of data. ChoiceTracker is a simple, and elegant way to track your choices.
 
 Unlike other choice trackers available for iOS, ChoiceTracker focuses on a single metric. When working to shift behavior, focus matters. As a result, ChoiceTracker is designed to allow you to think only about a single choice parameter at a time. 
 
 All of the essential features are included in ChoiceTracker for free. You’ll discover that with a ChoiceTracker pro subscription you’ll enable the ability to name your choice parameter (what type of choice are you tracking?) and export your data as a CSV file.
 
 Would you be willing to share your thoughts about ChoiceTracker with me? Please connect with me via twitter: http://twitter.com/stematthewgreen
-</mutableString>
+</string>
                                                         <attributes>
                                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="13" name="Avenir-Medium"/>

@@ -20,9 +20,13 @@ class MainViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
     
+    @IBOutlet var BGView: UIView!
     //MARK:- Override built-in functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set background color
+        BGView.backgroundColor = DarkTheme.backgroundColor
         
         //Fake Data
         for _ in 0..<20 {

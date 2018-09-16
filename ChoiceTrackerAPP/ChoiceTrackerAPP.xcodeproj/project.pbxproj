@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB37214DD3350063186A /* ForcePortrait.swift */; };
 		D049CB3B214DDAFE0063186A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D049CB3A214DDAFE0063186A /* Colors.xcassets */; };
+		D049CB3D214DE2E20063186A /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB3C214DE2E20063186A /* DarkTheme.swift */; };
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		D049CB37214DD3350063186A /* ForcePortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcePortrait.swift; sourceTree = "<group>"; };
 		D049CB3A214DDAFE0063186A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D049CB3C214DE2E20063186A /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				D07913DF214DC19C0025D382 /* LightTheme.swift */,
 				D049CB3A214DDAFE0063186A /* Colors.xcassets */,
+				D049CB3C214DE2E20063186A /* DarkTheme.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			files = (
 				D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */,
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
+				D049CB3D214DE2E20063186A /* DarkTheme.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
 				D0B6F39A213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift in Sources */,
 				D0DA5631212B9519002657DB /* Various-Methods.swift in Sources */,
