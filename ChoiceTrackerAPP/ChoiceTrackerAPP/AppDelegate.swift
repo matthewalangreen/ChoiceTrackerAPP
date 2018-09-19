@@ -38,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
         }
         
+        // set default goal if not defined
+        if UserDefaults.standard.object(forKey: "dataLabel") == nil {
+            UserDefaults.standard.set("no goal set", forKey: "dataLabel")
+        }
+        
         return true
     }
 

@@ -13,16 +13,28 @@ class DailyRecord: NSObject, NSCoding {
     //MARK:- properties
     var choices: [Int]
     var dateString: String   // encode using "sortableShortDate" closure
+    var goalString: String
     
     //MARK:- init
     override init() {
         self.choices = genRandomData(40)
         self.dateString = sortableShortDate.string(from: Date.init())
+        if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
+            self.goalString = goal
+        } else {
+            self.goalString = "no goal set"
+        }
+        
     }
     
     init(nowDateString: String) {
         self.dateString = nowDateString
         self.choices = genRandomData(40)
+        if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
+            self.goalString = goal
+        } else {
+            self.goalString = "no goal set"
+        }
     }
     
     init(nowDateString: String, firstTimeToday: Bool) {
@@ -32,21 +44,30 @@ class DailyRecord: NSObject, NSCoding {
         } else {
             self.choices = genRandomData(40)
         }
+        if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
+            self.goalString = goal
+        } else {
+            self.goalString = "no goal set"
+        }
     }
     
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
         aCoder.encode(choices, forKey: "choices")
         aCoder.encode(dateString, forKey: "dateString")
+        aCoder.encode(goalString, forKey: "goalString")
     }
     
     required init(coder aDecoder: NSCoder) {
         choices = aDecoder.decodeObject(forKey: "choices") as! [Int]
         dateString = aDecoder.decodeObject(forKey: "dateString") as! String
+        goalString = aDecoder.decodeObject(forKey: "goalString") as! String
         super.init()
     }
     
     //MARK:- computed properties
+    
+    
     var sum: Int {
         return choices.reduce(0,+)
     }
@@ -94,6 +115,10 @@ class DailyRecord: NSObject, NSCoding {
     
     func badChoice() {
         choices.append(-1)
+    }
+    
+    func changeGoal(_ newGoal: String) {
+        goalString = newGoal
     }
     
 }
