@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
         
         applyTheme()
         
-        fillFakeData()
+       // fillFakeData()
         
         renderChart()
     }

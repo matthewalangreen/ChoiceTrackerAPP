@@ -403,6 +403,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                     <connections>
                         <outlet property="aboutTextView" destination="NtM-3h-lRj" id="0zu-1h-sUH"/>
                         <outlet property="bgView" destination="6I6-Iq-InB" id="DSf-Fv-xBs"/>
+                        <outlet property="logoImage" destination="VEy-b5-Bsr" id="mME-ds-XSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
