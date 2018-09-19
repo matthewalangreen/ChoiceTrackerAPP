@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // set default goal if not defined
         if UserDefaults.standard.object(forKey: "dataLabel") == nil {
-            UserDefaults.standard.set("no goal set", forKey: "dataLabel")
+            UserDefaults.standard.set("No goal set", forKey: "dataLabel")
         }
         
         return true

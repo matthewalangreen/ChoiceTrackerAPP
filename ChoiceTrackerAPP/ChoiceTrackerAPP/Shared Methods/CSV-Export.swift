@@ -23,9 +23,8 @@ func exportCSV(fileName: String, data: [String:DailyRecord], viewController: UIV
         sortedObjectArray.append(r.value)
     }
     
-    let goalText = UserDefaults.standard.string(forKey: "dataLabel")!
     for r in sortedObjectArray {
-        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices),\(goalText)\n"
+        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices),\(r.goalString)\n"
         csvText.append(contentsOf: newLine)
     }
     

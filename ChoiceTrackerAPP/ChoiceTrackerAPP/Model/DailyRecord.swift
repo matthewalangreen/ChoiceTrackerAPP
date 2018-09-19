@@ -22,7 +22,7 @@ class DailyRecord: NSObject, NSCoding {
         if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
             self.goalString = goal
         } else {
-            self.goalString = "no goal set"
+            self.goalString = "No goal set"
         }
         
     }
@@ -33,7 +33,7 @@ class DailyRecord: NSObject, NSCoding {
         if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
             self.goalString = goal
         } else {
-            self.goalString = "no goal set"
+            self.goalString = "No goal set"
         }
     }
     
@@ -47,7 +47,7 @@ class DailyRecord: NSObject, NSCoding {
         if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
             self.goalString = goal
         } else {
-            self.goalString = "no goal set"
+            self.goalString = "No goal set"
         }
     }
     

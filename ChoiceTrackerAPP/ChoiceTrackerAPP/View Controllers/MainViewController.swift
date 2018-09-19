@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var userButton: UIButton!
     @IBOutlet var historyButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
+    @IBOutlet var setGoalButton: UIButton!
     
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
@@ -57,7 +58,7 @@ class MainViewController: UIViewController {
         
         applyTheme()
         
-        //fillFakeData()
+        fillFakeData()
         
         renderChart()
     }
@@ -97,6 +98,46 @@ class MainViewController: UIViewController {
     
 
     //MARK:- Actions
+    @IBAction func goalChangeButton(_ sender: Any) {
+         var userGoalField: UITextField?
+        
+        // 2.
+        let alertController = UIAlertController(
+            title: "Set Goal",
+            message: "What are you focused on today?",
+            preferredStyle: UIAlertControllerStyle.alert)
+        
+        // 3.
+        let goalAction = UIAlertAction(title: "Set Goal", style: .destructive) {
+            (action) -> Void in
+            
+            if let newGoal = userGoalField?.text {
+                // set the goal to the match the text entered
+                self.currentDailyRecord.changeGoal(newGoal)
+
+            } else {
+                print("no goal entered")
+            }
+        }
+        
+        // 4.
+        alertController.addTextField {
+            (userGoal) -> Void in
+            userGoalField = userGoal
+            userGoalField!.placeholder = self.currentDailyRecord.goalString
+        }
+        
+        let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        // 5.
+        alertController.addAction(goalAction)
+        alertController.addAction(noAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
@@ -153,7 +194,6 @@ class MainViewController: UIViewController {
             print("not a valid choice")
         }
     }
-    //MARK:- **BUG** in sim, deploy iPhone 8 and X, unwrapped nil
     func doesRecordExist(_ day: String) -> Bool {
        // print("running doesRecordExist")
        // print("keys: \(dailyRecordStore)")
@@ -162,12 +202,17 @@ class MainViewController: UIViewController {
     
     func getCurrentDailyRecord() -> DailyRecord {
         let todayString = sortableShortDate.string(from: Date.init())
-        // check allDailyRecords for today, if today exists return
+        // check allDailyRecords for today, if today exists return it
         if (doesRecordExist(todayString)) {
             return dailyRecordStore.allDailyRecords[todayString]! // eew
         } else {
             // if today doesn't exist, make it and return it.
-            return dailyRecordStore.createDailyRecord()
+            // this is the edit point to ask for a new goal
+            let newRecord: DailyRecord = dailyRecordStore.createDailyRecord()
+            // write the code to ask for the goal
+            
+            // set that goal to the new record, then return it
+            return newRecord
         }
     }
     
@@ -179,6 +224,7 @@ class MainViewController: UIViewController {
         // change button tint color
         userButton.tintColor = Theme.current.buttonTintColor
         historyButton.tintColor = Theme.current.buttonTintColor
+        setGoalButton.tintColor = Theme.current.buttonTintColor
         
         // set logo image
         logoImage.image = UIImage.init(named: Theme.current.logoImage)

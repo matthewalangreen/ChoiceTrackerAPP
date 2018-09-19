@@ -80,8 +80,23 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-gk-pr2" customClass="PieChartView" customModule="Charts">
                                         <rect key="frame" x="20" y="39" width="280" height="280"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-gb-tqg" userLabel="Goal Change">
+                                                <rect key="frame" x="115" y="115" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="WJQ-cy-av8"/>
+                                                    <constraint firstAttribute="height" constant="50" id="l2W-uH-EyI"/>
+                                                </constraints>
+                                                <state key="normal" image="target"/>
+                                                <connections>
+                                                    <action selector="goalChangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8m-N9-Ay3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="aTg-gb-tqg" firstAttribute="centerX" secondItem="MPr-gk-pr2" secondAttribute="centerX" id="JVz-nT-A8l"/>
+                                            <constraint firstItem="aTg-gb-tqg" firstAttribute="centerY" secondItem="MPr-gk-pr2" secondAttribute="centerY" id="klk-PO-iEq"/>
                                             <constraint firstAttribute="width" secondItem="MPr-gk-pr2" secondAttribute="height" multiplier="1:1" id="zYS-cZ-MVc"/>
                                         </constraints>
                                     </view>
@@ -157,6 +172,7 @@
                         <outlet property="historyButton" destination="cV7-sq-Xx7" id="RG7-9a-Bot"/>
                         <outlet property="logoImage" destination="633-6r-5oz" id="XLf-Gk-P5l"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
+                        <outlet property="setGoalButton" destination="aTg-gb-tqg" id="fOU-mU-3nY"/>
                         <outlet property="userButton" destination="g8h-Qy-wsO" id="Aa7-KZ-BCz"/>
                     </connections>
                 </viewController>
@@ -587,7 +603,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
         <scene sceneID="EAm-dK-qb2">
             <objects>
                 <tableViewController id="kGL-B2-MFn" customClass="HistoryTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BOe-CL-6Jq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BOe-CL-6Jq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -596,7 +612,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                 <rect key="frame" x="0.0" y="28" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5f4-2G-vxq" id="aSi-i2-DCX">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
@@ -700,6 +716,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
     <resources>
         <image name="LogoTransparentBG" width="350" height="65"/>
         <image name="history-dark" width="600" height="600"/>
+        <image name="target" width="600" height="600"/>
         <image name="user-dark" width="600" height="600"/>
         <image name="whiteMinus" width="600" height="600"/>
         <image name="whitePlus" width="600" height="600"/>
