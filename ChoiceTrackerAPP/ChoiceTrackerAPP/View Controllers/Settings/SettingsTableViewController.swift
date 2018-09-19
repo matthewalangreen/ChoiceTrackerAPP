@@ -13,7 +13,7 @@ class SettingsTableViewController: UITableViewController {
     
     //MARK:- Properties
     
-    // this will be set by "prepareForSegue"
+    // this will be set by "prepareForSegue" from Main View Controller
     var settingsDailyRecordStore: DailyRecordStore!
     
     //MARK:- Outlets to cells

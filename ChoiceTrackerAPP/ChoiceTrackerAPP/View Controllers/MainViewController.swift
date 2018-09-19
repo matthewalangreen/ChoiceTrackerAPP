@@ -114,6 +114,7 @@ class MainViewController: UIViewController {
             if let newGoal = userGoalField?.text {
                 // set the goal to the match the text entered
                 self.currentDailyRecord.changeGoal(newGoal)
+                UserDefaults.standard.set(newGoal, forKey: "dataLabel")
 
             } else {
                 print("no goal entered")
