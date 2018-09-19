@@ -8,7 +8,10 @@
 //
 //import UIKit
 //
-//class CustomAlert() -> UIAlertController {
+//class CustomAlert {
+//    
+//    static alert: UIAlertController
+//    
 //    
 //    var userGoalField: UITextField?
 //    
