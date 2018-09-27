@@ -50,8 +50,15 @@ class HistoryTableViewController: UITableViewController {
         cell.goalLabel?.text = currentDailyRecord.goalString
        // print("goal string: \(currentDailyRecord.goalString)")
         
-        
-        styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
+        //
+        if currentDailyRecord.numAllChoices == 0 {
+            setupChart(chart: cell.pieChart)
+            // remove all highlights
+            cell.pieChart.highlightValue(x: 1, dataSetIndex: -1)
+        } else {
+             styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
+        }
+   
         return cell
     }
  

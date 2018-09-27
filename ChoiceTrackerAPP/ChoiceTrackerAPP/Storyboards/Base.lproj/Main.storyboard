@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV7-sq-Xx7" userLabel="ListButton">
-                                        <rect key="frame" x="60" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="54" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cV7-sq-Xx7" secondAttribute="height" multiplier="1:1" id="Lnh-Wu-ARF"/>
                                         </constraints>
@@ -44,24 +44,37 @@
                                             <segue destination="ezk-PU-ufk" kind="presentation" identifier="showHistory" id="BL5-F9-G9P"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparentBG" translatesAutoresizingMaskIntoConstraints="NO" id="633-6r-5oz">
-                                        <rect key="frame" x="146" y="10" width="166" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-gb-tqg" userLabel="Goal Change">
+                                        <rect key="frame" x="108" y="4" width="41" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="AEv-Q8-M5D"/>
+                                            <constraint firstAttribute="width" secondItem="aTg-gb-tqg" secondAttribute="height" multiplier="1:1" id="FSd-Qy-edT"/>
+                                        </constraints>
+                                        <state key="normal" image="target"/>
+                                        <connections>
+                                            <action selector="goalChangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8m-N9-Ay3"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparentBG" translatesAutoresizingMaskIntoConstraints="NO" id="633-6r-5oz">
+                                        <rect key="frame" x="168" y="12" width="144" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="AEv-Q8-M5D"/>
                                             <constraint firstAttribute="width" secondItem="633-6r-5oz" secondAttribute="height" multiplier="105:19" id="p4M-Wi-RrV"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="633-6r-5oz" secondAttribute="trailing" constant="8" id="4DF-iO-SlT"/>
-                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="12" id="74v-vY-tbO"/>
+                                    <constraint firstAttribute="bottom" secondItem="aTg-gb-tqg" secondAttribute="bottom" constant="5" id="5x1-WX-Cgp"/>
+                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="6" id="74v-vY-tbO"/>
                                     <constraint firstItem="633-6r-5oz" firstAttribute="centerY" secondItem="72D-GA-26t" secondAttribute="centerY" id="A2F-pc-5KB"/>
                                     <constraint firstItem="cV7-sq-Xx7" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" id="G0E-QR-bFB"/>
+                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="4" id="Mlq-1J-emq"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="leading" secondItem="72D-GA-26t" secondAttribute="leading" constant="12" id="Obu-3o-XSl"/>
                                     <constraint firstAttribute="bottom" secondItem="cV7-sq-Xx7" secondAttribute="bottom" id="SwK-Gq-RDj"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="8" id="Wcn-1L-NNl"/>
                                     <constraint firstAttribute="height" constant="50" id="cya-Fg-tJX"/>
                                     <constraint firstAttribute="bottom" secondItem="g8h-Qy-wsO" secondAttribute="bottom" constant="6" id="rc4-YC-6Kg"/>
+                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="leading" secondItem="cV7-sq-Xx7" secondAttribute="trailing" constant="4" id="s6v-0q-0B7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUK-z0-htW" userLabel="GreyBGView">
@@ -80,23 +93,8 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-gk-pr2" customClass="PieChartView" customModule="Charts">
                                         <rect key="frame" x="20" y="39" width="280" height="280"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-gb-tqg" userLabel="Goal Change">
-                                                <rect key="frame" x="115" y="115" width="50" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="WJQ-cy-av8"/>
-                                                    <constraint firstAttribute="height" constant="50" id="l2W-uH-EyI"/>
-                                                </constraints>
-                                                <state key="normal" image="target"/>
-                                                <connections>
-                                                    <action selector="goalChangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8m-N9-Ay3"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="aTg-gb-tqg" firstAttribute="centerX" secondItem="MPr-gk-pr2" secondAttribute="centerX" id="JVz-nT-A8l"/>
-                                            <constraint firstItem="aTg-gb-tqg" firstAttribute="centerY" secondItem="MPr-gk-pr2" secondAttribute="centerY" id="klk-PO-iEq"/>
                                             <constraint firstAttribute="width" secondItem="MPr-gk-pr2" secondAttribute="height" multiplier="1:1" id="zYS-cZ-MVc"/>
                                         </constraints>
                                     </view>
