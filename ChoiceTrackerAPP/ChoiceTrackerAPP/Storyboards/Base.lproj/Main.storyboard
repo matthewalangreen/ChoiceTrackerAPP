@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-gb-tqg" userLabel="Goal Change">
-                                        <rect key="frame" x="108" y="4" width="41" height="41"/>
+                                        <rect key="frame" x="111" y="4" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aTg-gb-tqg" secondAttribute="height" multiplier="1:1" id="FSd-Qy-edT"/>
                                         </constraints>
@@ -55,7 +52,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparentBG" translatesAutoresizingMaskIntoConstraints="NO" id="633-6r-5oz">
-                                        <rect key="frame" x="168" y="12" width="144" height="26"/>
+                                        <rect key="frame" x="168.5" y="12" width="143.5" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="AEv-Q8-M5D"/>
                                             <constraint firstAttribute="width" secondItem="633-6r-5oz" secondAttribute="height" multiplier="105:19" id="p4M-Wi-RrV"/>
@@ -74,7 +71,7 @@
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="8" id="Wcn-1L-NNl"/>
                                     <constraint firstAttribute="height" constant="50" id="cya-Fg-tJX"/>
                                     <constraint firstAttribute="bottom" secondItem="g8h-Qy-wsO" secondAttribute="bottom" constant="6" id="rc4-YC-6Kg"/>
-                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="leading" secondItem="cV7-sq-Xx7" secondAttribute="trailing" constant="4" id="s6v-0q-0B7"/>
+                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="leading" secondItem="cV7-sq-Xx7" secondAttribute="trailing" constant="7" id="s6v-0q-0B7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUK-z0-htW" userLabel="GreyBGView">
@@ -499,7 +496,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A1V-2U-hR8">
-                                                    <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="255" y="6.5" width="51" height="31"/>
                                                     <color key="onTintColor" name="light-good"/>
                                                     <connections>
                                                         <action selector="ThemeSwitch:" destination="XmP-51-Udd" eventType="valueChanged" id="JNB-jM-d8m"/>
