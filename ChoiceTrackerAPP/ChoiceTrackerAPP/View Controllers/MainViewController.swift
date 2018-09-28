@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         currentDailyRecord = getCurrentDailyRecord()
-        
+    
         applyTheme()
         
        // fillFakeData()
@@ -85,6 +85,7 @@ class MainViewController: UIViewController {
         renderChart()
         
         //print("numAllChoices: \(currentDailyRecord.numAllChoices)")
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -201,6 +202,10 @@ class MainViewController: UIViewController {
             return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
     
+    //MARK:-**START HERE**
+    // do I need to effect the return type of this method to also return a flag
+    // indicating that this is a new record?
+    // I can't call an alert from this scope, so I'll have to do it outside here....
     func getCurrentDailyRecord() -> DailyRecord {
         let todayString = sortableShortDate.string(from: Date.init())
         // check allDailyRecords for today, if today exists return it
@@ -211,6 +216,7 @@ class MainViewController: UIViewController {
             // this is the edit point to ask for a new goal
             let newRecord: DailyRecord = dailyRecordStore.createDailyRecord()
             // write the code to ask for the goal
+        
             
             // set that goal to the new record, then return it
             return newRecord
