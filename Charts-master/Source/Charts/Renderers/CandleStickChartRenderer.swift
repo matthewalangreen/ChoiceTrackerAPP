@@ -71,7 +71,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
         let phaseY = animator.phaseY
         let barSpace = dataSet.barSpace
         let showCandleBar = dataSet.showCandleBar
-        let entryCount = dataSet.entryCount
+        //let entryCount = dataSet.entryCount
         
         _xBounds.set(chart: dataProvider, dataSet: dataSet, animator: animator)
         
@@ -346,7 +346,7 @@ open class CandleStickChartRenderer: LineScatterCandleRadarRenderer
                                 x: pt.x,
                                 y: pt.y - yOffset),
                             align: .center,
-                            attributes: [NSAttributedStringKey.font: valueFont, NSAttributedStringKey.foregroundColor: dataSet.valueTextColorAt(j)])
+                            attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: dataSet.valueTextColorAt(j)])
                     }
                     
                     if let icon = e.icon, dataSet.isDrawIconsEnabled

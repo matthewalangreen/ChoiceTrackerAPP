@@ -76,7 +76,7 @@ class HistoryTableViewController: UITableViewController {
         navBar?.tintColor = Theme.current.textColor
         navBar?.isTranslucent = false
         //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         
         tableView.allowsSelection = false
@@ -107,7 +107,7 @@ class HistoryTableViewController: UITableViewController {
         navBar?.tintColor = Theme.current.textColor
         navBar?.isTranslucent = false
         //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock

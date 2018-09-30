@@ -9,6 +9,11 @@
 import UIKit
 
 class ChoiceTrackerProSettingsTableView: UITableViewController {
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+    }
+    
     var userDataLabelField: UITextField?
     
     //MARK:- Outlets to cells
@@ -40,7 +45,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         navBar?.tintColor = Theme.current.textColor
         navBar?.isTranslucent = false
         //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         infoCell.backgroundColor = Theme.current.backgroundColor
         monthly.backgroundColor = Theme.current.backgroundColor
@@ -64,7 +69,10 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
        
         // set the status bar style based on which theme we are using
-        UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        // deprecated in ios 9. Did this:
+        // https://stackoverflow.com/questions/52238121/how-to-change-status-bar-style-ios-12
+        // UIApplication.shared.statusBarStyle = UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        
         
         ApplyTheme()
         

@@ -10,6 +10,11 @@ import UIKit
 import Charts
 
 class MainViewController: UIViewController {
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+    }
+    
     //MARK:- IBOutlets
     @IBOutlet var userButton: UIButton!
     @IBOutlet var logoImage: UIImageView!

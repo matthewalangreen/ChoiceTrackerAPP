@@ -9,7 +9,10 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-    
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+    }
     
     //MARK:- Properties
     
@@ -61,7 +64,7 @@ class SettingsTableViewController: UITableViewController {
         navBar?.tintColor = Theme.current.textColor
         navBar?.isTranslucent = false
         //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         
         // add the little arrow to the right side of the cells
@@ -76,7 +79,7 @@ class SettingsTableViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
 
-        print("Success String Value: \(successString)")
+        //print("Success String Value: \(successString)")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -165,7 +168,7 @@ class SettingsTableViewController: UITableViewController {
         navBar?.tintColor = Theme.current.textColor
         navBar?.isTranslucent = false
         //  title color
-        navBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: Theme.current.textColor]
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         
         AppUtility.lockOrientation(.portrait)

@@ -45,7 +45,7 @@ func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
     let alertController = UIAlertController(
         title: "Set Goal",
         message: "What are you focused on today?",
-        preferredStyle: UIAlertControllerStyle.alert)
+        preferredStyle: UIAlertController.Style.alert)
     
     // 3.
     let goalAction = UIAlertAction(title: "Set Goal", style: .destructive) {
