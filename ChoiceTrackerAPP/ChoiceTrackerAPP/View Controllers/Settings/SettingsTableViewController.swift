@@ -15,6 +15,7 @@ class SettingsTableViewController: UITableViewController {
     
     // this will be set by "prepareForSegue" from Main View Controller
     var settingsDailyRecordStore: DailyRecordStore!
+    var settingsCurrentDailyRecord: DailyRecord!
     
     //MARK:- Outlets to cells
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
@@ -137,6 +138,7 @@ class SettingsTableViewController: UITableViewController {
         case "showChoiceTrackerPro"?:
             let destinationVC = segue.destination as! ChoiceTrackerProSettingsTableView
                 destinationVC.dailyRecordStore = settingsDailyRecordStore
+                destinationVC.currentDailyRecord = settingsCurrentDailyRecord
         default:
             preconditionFailure("Unexpected segue identifier")
         }

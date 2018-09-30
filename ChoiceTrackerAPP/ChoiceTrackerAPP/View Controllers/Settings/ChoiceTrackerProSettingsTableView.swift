@@ -75,6 +75,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     // set by prepareForSegue from SettingsTableView
     // this will be set by "prepareForSegue"
     var dailyRecordStore: DailyRecordStore!
+    var currentDailyRecord: DailyRecord!
     
   
     override func viewDidLoad() {
@@ -113,40 +114,44 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
             if indexPath.row == 1 {
 //                var userDataLabelField: UITextField?
                 
-                // 2.
-                let alertController = UIAlertController(
-                    title: "Change Goal",
-                    message: "All previously saved data will be relabeled with this goal.",
-                    preferredStyle: UIAlertControllerStyle.alert)
+//                // 2.
+//                let alertController = UIAlertController(
+//                    title: "Change Goal",
+//                    message: "All previously saved data will be relabeled with this goal.",
+//                    preferredStyle: UIAlertControllerStyle.alert)
+//
+//                // 3.
+//                let labelAction = UIAlertAction(title: "Accept", style: .destructive) {
+//                    (action) -> Void in
+//
+//                    if let userDataLabel = self.userDataLabelField?.text {
+//                        UserDefaults.standard.set(userDataLabel, forKey: "dataLabel")
+//                        let label = UserDefaults.standard.string(forKey: "dataLabel")
+//                        self.currentDataLabel.text = label
+//                        //print("label: \(String(describing: label))")
+//                    } else {
+//                        print("no change")
+//                    }
+//                }
+//
+//                // 4.
+//                alertController.addTextField {
+//                    (userLabel) -> Void in
+//                    self.userDataLabelField = userLabel
+//                    self.userDataLabelField!.placeholder = UserDefaults.standard.string(forKey: "dataLabel")
+//                }
+//
+//                let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+//
+//                // 5.
+//                alertController.addAction(noAction)
+//                alertController.addAction(labelAction)
                 
-                // 3.
-                let labelAction = UIAlertAction(title: "Accept", style: .destructive) {
-                    (action) -> Void in
-                    
-                    if let userDataLabel = self.userDataLabelField?.text {
-                        UserDefaults.standard.set(userDataLabel, forKey: "dataLabel")
-                        let label = UserDefaults.standard.string(forKey: "dataLabel")
-                        self.currentDataLabel.text = label
-                        //print("label: \(String(describing: label))")
-                    } else {
-                        print("no change")
-                    }
-                }
+                let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
                 
-                // 4.
-                alertController.addTextField {
-                    (userLabel) -> Void in
-                    self.userDataLabelField = userLabel
-                    self.userDataLabelField!.placeholder = UserDefaults.standard.string(forKey: "dataLabel")
-                }
-                
-                let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-                
-                // 5.
-                alertController.addAction(noAction)
-                alertController.addAction(labelAction)
-                
-                self.present(alertController, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
+                self.currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
+                //self.present(alertController, animated: true, completion: nil)
             }
             
             //MARK:- Data Export

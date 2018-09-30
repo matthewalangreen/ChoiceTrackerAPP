@@ -38,6 +38,45 @@ func genRandomData(_ arrayLength: Int) -> [Int] {
     return results
 }
 
+func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
+    var userGoalField: UITextField?
+    
+    // 2.
+    let alertController = UIAlertController(
+        title: "Set Goal",
+        message: "What are you focused on today?",
+        preferredStyle: UIAlertControllerStyle.alert)
+    
+    // 3.
+    let goalAction = UIAlertAction(title: "Set Goal", style: .destructive) {
+        (action) -> Void in
+        
+        if let newGoal = userGoalField?.text {
+            // set the goal to the match the text entered
+            currentDailyRecord.changeGoal(newGoal)
+            UserDefaults.standard.set(newGoal, forKey: "dataLabel")
+            
+        } else {
+            print("no goal entered")
+        }
+    }
+    
+    // 4.
+    alertController.addTextField {
+        (userGoal) -> Void in
+        userGoalField = userGoal
+        userGoalField!.placeholder = currentDailyRecord.goalString
+    }
+    
+    let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    
+    // 5.
+    alertController.addAction(noAction)
+    alertController.addAction(goalAction)
+    return alertController
+    //present(alertController, animated: true, completion: nil)
+}
+
 
 
 

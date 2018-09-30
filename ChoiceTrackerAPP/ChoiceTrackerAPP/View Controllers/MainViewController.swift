@@ -12,9 +12,8 @@ import Charts
 class MainViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var userButton: UIButton!
-//    @IBOutlet var historyButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
-    @IBOutlet var setGoalButton: UIButton!
+   // @IBOutlet var setGoalButton: UIButton!
     
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
@@ -99,47 +98,7 @@ class MainViewController: UIViewController {
     
 
     //MARK:- Actions
-    @IBAction func goalChangeButton(_ sender: Any) {
-         var userGoalField: UITextField?
-        
-        // 2.
-        let alertController = UIAlertController(
-            title: "Set Goal",
-            message: "What are you focused on today?",
-            preferredStyle: UIAlertControllerStyle.alert)
-        
-        // 3.
-        let goalAction = UIAlertAction(title: "Set Goal", style: .destructive) {
-            (action) -> Void in
-            
-            if let newGoal = userGoalField?.text {
-                // set the goal to the match the text entered
-                self.currentDailyRecord.changeGoal(newGoal)
-                UserDefaults.standard.set(newGoal, forKey: "dataLabel")
-
-            } else {
-                print("no goal entered")
-            }
-        }
-        
-        // 4.
-        alertController.addTextField {
-            (userGoal) -> Void in
-            userGoalField = userGoal
-            userGoalField!.placeholder = self.currentDailyRecord.goalString
-        }
-        
-        let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        
-        // 5.
-        alertController.addAction(goalAction)
-        alertController.addAction(noAction)
-        self.present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    
-    
+ 
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
@@ -171,6 +130,7 @@ class MainViewController: UIViewController {
             let destinationVC = navVC.viewControllers.first as! SettingsTableViewController
             destinationVC.successString = "showSettings"
             destinationVC.settingsDailyRecordStore = dailyRecordStore
+            destinationVC.settingsCurrentDailyRecord = currentDailyRecord
         default:
             preconditionFailure("Unexpected segue identifier")
         }
@@ -231,7 +191,7 @@ class MainViewController: UIViewController {
         // change button tint color
         userButton.tintColor = Theme.current.buttonTintColor
        // historyButton.tintColor = Theme.current.buttonTintColor
-        setGoalButton.tintColor = Theme.current.buttonTintColor
+       // setGoalButton.tintColor = Theme.current.buttonTintColor
         
         // set logo image
         logoImage.image = UIImage.init(named: Theme.current.logoImage)
