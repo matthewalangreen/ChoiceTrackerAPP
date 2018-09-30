@@ -12,7 +12,7 @@ import Charts
 class MainViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var userButton: UIButton!
-    @IBOutlet var historyButton: UIButton!
+//    @IBOutlet var historyButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
     @IBOutlet var setGoalButton: UIButton!
     
@@ -160,11 +160,11 @@ class MainViewController: UIViewController {
     // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "showHistory"?:
-            let navVC = segue.destination as! UINavigationController
-            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
-            destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
-            destinationVC.recordDictionary = dailyRecordStore.allDailyRecords
+//        case "showHistory"?:
+//            let navVC = segue.destination as! UINavigationController
+//            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
+//            destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
+//            destinationVC.recordDictionary = dailyRecordStore.allDailyRecords
             
         case "showSettings"?:
             let navVC = segue.destination as! SettingsNavigationController
@@ -230,7 +230,7 @@ class MainViewController: UIViewController {
         
         // change button tint color
         userButton.tintColor = Theme.current.buttonTintColor
-        historyButton.tintColor = Theme.current.buttonTintColor
+       // historyButton.tintColor = Theme.current.buttonTintColor
         setGoalButton.tintColor = Theme.current.buttonTintColor
         
         // set logo image

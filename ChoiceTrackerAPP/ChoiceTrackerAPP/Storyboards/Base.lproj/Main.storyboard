@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,18 +32,8 @@
                                             <segue destination="8Cn-2W-bv7" kind="presentation" identifier="showSettings" id="si2-if-TCL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cV7-sq-Xx7" userLabel="ListButton">
-                                        <rect key="frame" x="54" y="0.0" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="cV7-sq-Xx7" secondAttribute="height" multiplier="1:1" id="Lnh-Wu-ARF"/>
-                                        </constraints>
-                                        <state key="normal" image="history-dark"/>
-                                        <connections>
-                                            <segue destination="ezk-PU-ufk" kind="presentation" identifier="showHistory" id="BL5-F9-G9P"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-gb-tqg" userLabel="Goal Change">
-                                        <rect key="frame" x="111" y="4" width="41" height="41"/>
+                                        <rect key="frame" x="54" y="4" width="41" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="aTg-gb-tqg" secondAttribute="height" multiplier="1:1" id="FSd-Qy-edT"/>
                                         </constraints>
@@ -62,16 +53,13 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="633-6r-5oz" secondAttribute="trailing" constant="8" id="4DF-iO-SlT"/>
                                     <constraint firstAttribute="bottom" secondItem="aTg-gb-tqg" secondAttribute="bottom" constant="5" id="5x1-WX-Cgp"/>
-                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="6" id="74v-vY-tbO"/>
                                     <constraint firstItem="633-6r-5oz" firstAttribute="centerY" secondItem="72D-GA-26t" secondAttribute="centerY" id="A2F-pc-5KB"/>
-                                    <constraint firstItem="cV7-sq-Xx7" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" id="G0E-QR-bFB"/>
                                     <constraint firstItem="aTg-gb-tqg" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="4" id="Mlq-1J-emq"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="leading" secondItem="72D-GA-26t" secondAttribute="leading" constant="12" id="Obu-3o-XSl"/>
-                                    <constraint firstAttribute="bottom" secondItem="cV7-sq-Xx7" secondAttribute="bottom" id="SwK-Gq-RDj"/>
                                     <constraint firstItem="g8h-Qy-wsO" firstAttribute="top" secondItem="72D-GA-26t" secondAttribute="top" constant="8" id="Wcn-1L-NNl"/>
+                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="leading" secondItem="g8h-Qy-wsO" secondAttribute="trailing" constant="6" id="bnm-4x-p30"/>
                                     <constraint firstAttribute="height" constant="50" id="cya-Fg-tJX"/>
                                     <constraint firstAttribute="bottom" secondItem="g8h-Qy-wsO" secondAttribute="bottom" constant="6" id="rc4-YC-6Kg"/>
-                                    <constraint firstItem="aTg-gb-tqg" firstAttribute="leading" secondItem="cV7-sq-Xx7" secondAttribute="trailing" constant="7" id="s6v-0q-0B7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUK-z0-htW" userLabel="GreyBGView">
@@ -164,7 +152,6 @@
                     <connections>
                         <outlet property="BGView" destination="pUK-z0-htW" id="7Yf-Ii-8HD"/>
                         <outlet property="TopBar" destination="72D-GA-26t" id="W83-1f-fq3"/>
-                        <outlet property="historyButton" destination="cV7-sq-Xx7" id="RG7-9a-Bot"/>
                         <outlet property="logoImage" destination="633-6r-5oz" id="XLf-Gk-P5l"/>
                         <outlet property="pieChartView" destination="MPr-gk-pr2" id="Glc-ZB-ZYv"/>
                         <outlet property="setGoalButton" destination="aTg-gb-tqg" id="fOU-mU-3nY"/>
@@ -232,10 +219,46 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="6eh-uR-IdK">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNe-XK-gxt">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNe-XK-gxt" id="tq8-cu-wCB">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Choice History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czo-3n-Mx7">
+                                                    <rect key="frame" x="16" y="11" width="154" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ezk-PU-ufk" kind="show" identifier="showHistory" id="uRf-nS-Yww"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Jfs-wB-cPT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Psh-of-jsz">
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Psh-of-jsz" id="PEs-1r-XJZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection id="dgB-y3-oTV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W8L-Q4-H0c">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8L-Q4-H0c" id="chL-S8-jRu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -252,9 +275,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
-                            </tableViewSection>
-                            <tableViewSection id="Jfs-wB-cPT">
-                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -403,7 +423,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="587"/>
+            <point key="canvasLocation" x="-863" y="683"/>
         </scene>
         <!--ChoiceTracker Pro-->
         <scene sceneID="u1W-eW-RRx">
@@ -416,19 +436,24 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                         <sections>
                             <tableViewSection id="xMq-WQ-3eu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="124" id="SWc-5s-KE3" customClass="SettingsInfoCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="340" id="SWc-5s-KE3" customClass="SettingsInfoCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWc-5s-KE3" id="Kpw-F8-t6c">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="123.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="339.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-fu-kZh">
-                                                    <rect key="frame" x="8" y="8" width="304" height="107.5"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="323.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Subscribe to ChoiceTracker Pro and enable Data Export (CSV), App Themes and the ability to label your data -- both within the app and for exprted data.</string>
+                                                    <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
+
+All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting (CSV) and a dark color theme. 
+
+Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -444,7 +469,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                             <tableViewSection headerTitle="Subscription Options" id="Zjr-Hq-fuC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zE0-DQ-Drr">
-                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="368" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zE0-DQ-Drr" id="Cnc-NU-LGX">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -461,7 +486,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mrT-Zl-9au">
-                                        <rect key="frame" x="0.0" y="196" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="412" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrT-Zl-9au" id="ecu-d7-7sj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -482,7 +507,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                             <tableViewSection headerTitle="Pro Settings" id="w7J-jS-lzF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XP3-QF-9i7">
-                                        <rect key="frame" x="0.0" y="268" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="484" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XP3-QF-9i7" id="4FQ-S9-lvb">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -510,29 +535,29 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="94" id="o0w-1g-9FS">
-                                        <rect key="frame" x="0.0" y="312" width="320" height="94"/>
+                                        <rect key="frame" x="0.0" y="528" width="320" height="94"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o0w-1g-9FS" id="fn4-lx-ZbA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-Pj-8Rv">
-                                                    <rect key="frame" x="16" y="19" width="100.5" height="23.5"/>
+                                                    <rect key="frame" x="8" y="16" width="100.5" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" spacing="2" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ik-bR-FsB">
-                                                    <rect key="frame" x="16" y="52.5" width="288" height="23.5"/>
+                                                    <rect key="frame" x="8" y="49.5" width="398" height="23.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Today's Goal:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKY-QK-197">
-                                                            <rect key="frame" x="0.0" y="0.0" width="117" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="227" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Don't eat sugar today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7P-qn-3EW">
-                                                            <rect key="frame" x="119" y="0.0" width="169" height="23.5"/>
+                                                            <rect key="frame" x="229" y="0.0" width="169" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <color key="textColor" name="light-good"/>
                                                             <nil key="highlightedColor"/>
@@ -550,7 +575,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="X7i-cB-0PW">
-                                        <rect key="frame" x="0.0" y="406" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="622" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7i-cB-0PW" id="rRU-U0-7Dj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -593,7 +618,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gp-MX-Khc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="-48"/>
+            <point key="canvasLocation" x="823" y="275"/>
         </scene>
         <!--History-->
         <scene sceneID="EAm-dK-qb2">
@@ -667,7 +692,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2417" y="492"/>
+            <point key="canvasLocation" x="1155" y="-472"/>
         </scene>
         <!--History Navigation Controller-->
         <scene sceneID="7qN-nb-l5C">
@@ -688,7 +713,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-ej-Ckl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2417" y="-190"/>
+            <point key="canvasLocation" x="431" y="-472"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="xkw-Ff-8of">
@@ -711,7 +736,6 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
     </scenes>
     <resources>
         <image name="LogoTransparentBG" width="350" height="65"/>
-        <image name="history-dark" width="600" height="600"/>
         <image name="target" width="600" height="600"/>
         <image name="user-dark" width="600" height="600"/>
         <image name="whiteMinus" width="600" height="600"/>

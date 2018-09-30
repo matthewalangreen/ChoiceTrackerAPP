@@ -79,22 +79,27 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // change the row height of info cell
+        //tableView.estimatedRowHeight = YourTableViewHeight
+        //tableView.estimatedRowHeight = 250
+        //tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "Reset All Data" row
-        if indexPath.section  == 2 {
+        if indexPath.section  == 4 {
             if indexPath.row == 0 {
                 
                 //Reset All data -- add action
                 
                 let alert = UIAlertController(title: "Reset All Data", message: "Are you sure? You cannot undo this action", preferredStyle: .alert)
                 
-                let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+                let yesAction = UIAlertAction(title: "Reset", style: .destructive, handler: { action in
                     self.settingsDailyRecordStore.deleteAllRecords()
                     print("All records deleted")
                 })
-                let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+                let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                 
                 alert.addAction(yesAction)
                 alert.addAction(noAction)
@@ -111,6 +116,11 @@ class SettingsTableViewController: UITableViewController {
     // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
+        case "showHistory"?:
+            let navVC = segue.destination as! UINavigationController
+            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
+            destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
+            destinationVC.recordDictionary = settingsDailyRecordStore.allDailyRecords
         case "showChoiceTrackerPro"?:
             let destinationVC = segue.destination as! ChoiceTrackerProSettingsTableView
                 destinationVC.dailyRecordStore = settingsDailyRecordStore
