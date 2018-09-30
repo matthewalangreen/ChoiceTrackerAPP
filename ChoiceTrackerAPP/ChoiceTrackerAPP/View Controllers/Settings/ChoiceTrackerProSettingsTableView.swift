@@ -79,9 +79,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        
+   
         ApplyTheme()
 
         // if never set user default theme
@@ -93,9 +91,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         if UserDefaults.standard.object(forKey: "dataLabel") == nil {
             UserDefaults.standard.set("Default Data Label", forKey: "dataLabel")
         }
-        
-        
-       // set theme
+   
+        // set theme
         ThemeSwitchOutlet.isOn = UserDefaults.standard.bool(forKey: "LightTheme")
         
         // set label
@@ -103,11 +100,9 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         userDataLabelField?.text = goalText
         currentDataLabel.text = goalText
         
-         monthly.accessoryType = .disclosureIndicator
-         yearly.accessoryType = .disclosureIndicator
-         //themes.accessoryType = .disclosureIndicator
-         //labelYourData.accessoryType = .disclosureIndicator
-  
+        monthly.accessoryType = .disclosureIndicator
+        yearly.accessoryType = .disclosureIndicator
+
         // set footer to blank to hide extra rows
         tableView.tableFooterView = UIView()
     }
@@ -161,6 +156,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
                 print("you pressed export")
             }
         }
+        // remove the higlighting right after the cell is selected
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 
@@ -169,7 +166,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       ApplyTheme()
+        ApplyTheme()
         
         AppUtility.lockOrientation(.portrait)
         // Or to rotate and lock

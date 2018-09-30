@@ -18,13 +18,14 @@ class SettingsTableViewController: UITableViewController {
     
     //MARK:- Outlets to cells
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
-   // @IBOutlet var About_Cell: UITableViewCell!
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
+    @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
+   
     
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
-   // @IBOutlet var AboutLabel: UILabel!
     @IBOutlet var ResetLabel: UILabel!
+    @IBOutlet var ChoiceHistoryLabel: UILabel!
     
     var successString: String!
     
@@ -43,11 +44,12 @@ class SettingsTableViewController: UITableViewController {
         
         view.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-       // About_Cell.backgroundColor = Theme.current.backgroundColor
         ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
+        ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
+        
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-       // AboutLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = Theme.current.textColor
+        ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         
         // apply bar color theme
@@ -86,9 +88,17 @@ class SettingsTableViewController: UITableViewController {
         //tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = UITableViewCell()
+//        let view = UIView.init()
+//        view.backgroundColor = Theme.current.backgroundColor
+//        cell.selectedBackgroundView = view
+//        return cell
+//    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "Reset All Data" row
-        if indexPath.section  == 3 {
+        if indexPath.section  == 2 {
             if indexPath.row == 0 {
                 
                 //Reset All data -- add action
@@ -108,6 +118,8 @@ class SettingsTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        // remove the higlighting right after the cell is selected
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
@@ -136,11 +148,12 @@ class SettingsTableViewController: UITableViewController {
         
         view.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-       // About_Cell.backgroundColor = Theme.current.backgroundColor
         ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
+        ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
+        
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-       // AboutLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = Theme.current.textColor
+        ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
@@ -158,6 +171,7 @@ class SettingsTableViewController: UITableViewController {
         // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
         
     }
+   
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
