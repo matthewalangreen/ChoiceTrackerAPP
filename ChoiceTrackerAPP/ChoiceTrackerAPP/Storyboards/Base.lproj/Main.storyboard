@@ -195,34 +195,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="dl1-or-8vU">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eyp-qN-dVj">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eyp-qN-dVj" id="XQk-b1-CAG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WB-ki-uSr">
-                                                    <rect key="frame" x="16" y="11" width="49" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="8KK-eR-4ol" kind="show" identifier="showAbout" id="yYt-Vq-w4M"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection id="6eh-uR-IdK">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="uNe-XK-gxt">
-                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uNe-XK-gxt" id="tq8-cu-wCB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -246,7 +222,7 @@
                             <tableViewSection id="Jfs-wB-cPT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Psh-of-jsz">
-                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Psh-of-jsz" id="PEs-1r-XJZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -258,7 +234,7 @@
                             <tableViewSection id="dgB-y3-oTV">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W8L-Q4-H0c">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="132" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W8L-Q4-H0c" id="chL-S8-jRu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -290,8 +266,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AboutLabel" destination="8WB-ki-uSr" id="5BR-eX-LDJ"/>
-                        <outlet property="About_Cell" destination="eyp-qN-dVj" id="9PA-Dv-ZMk"/>
                         <outlet property="ChoiceTrackerProLabel" destination="jp1-Kq-bHN" id="V0p-Ng-lwS"/>
                         <outlet property="ChoiceTrackerPro_Cell" destination="bEz-kQ-S7D" id="Jff-0C-tgg"/>
                         <outlet property="ResetAllData_Cell" destination="W8L-Q4-H0c" id="P55-jg-GLM"/>
@@ -305,125 +279,6 @@
                 </button>
             </objects>
             <point key="canvasLocation" x="-296" y="-100"/>
-        </scene>
-        <!--About-->
-        <scene sceneID="so9-2a-hp1">
-            <objects>
-                <viewController title="About" id="8KK-eR-4ol" customClass="AboutViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6I6-Iq-InB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SGk-PJ-dfY">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lrj-9r-i4M">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="5" id="H5A-Rj-TGb"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VtZ-5Q-gmD" userLabel="TextField">
-                                        <rect key="frame" x="0.0" y="15" width="320" height="352"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-nj-giU">
-                                                <rect key="frame" x="0.0" y="0.0" width="10" height="352"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="10" id="fpz-gA-qxz"/>
-                                                </constraints>
-                                            </view>
-                                            <textView clipsSubviews="YES" contentMode="scaleToFill" pagingEnabled="YES" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtM-3h-lRj">
-                                                <rect key="frame" x="10" y="0.0" width="300" height="352"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="tintColor" name="light-good"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">ChoiceTracker is a simple, and elegant way to track your choices, one choice parameter at a time. ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
-
-All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting (CSV) and a dark color theme. 
-
-Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="17" name="Avenir-Medium"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                            </textView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfv-k8-H46">
-                                                <rect key="frame" x="310" y="0.0" width="10" height="352"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="10" id="xWx-Nw-Clk"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQN-Q1-hk3">
-                                        <rect key="frame" x="0.0" y="377" width="320" height="20"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="xrj-XJ-SsF"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN1-fZ-c3E" userLabel="Logo Stack View">
-                                        <rect key="frame" x="0.0" y="407" width="320" height="37"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-pd-eO2">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="37"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="eZM-Di-Rba"/>
-                                                </constraints>
-                                            </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoTransparentBG" translatesAutoresizingMaskIntoConstraints="NO" id="VEy-b5-Bsr">
-                                                <rect key="frame" x="60" y="0.0" width="200" height="37"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="VEy-b5-Bsr" secondAttribute="height" multiplier="70:13" id="yhQ-Gn-eoS"/>
-                                                </constraints>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IN-Ok-vYd">
-                                                <rect key="frame" x="260" y="0.0" width="60" height="37"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="l3k-r1-A7P"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-Cq-Duz" userLabel="Bottom Padding">
-                                        <rect key="frame" x="0.0" y="454" width="320" height="50"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="aY7-4H-GPM"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="nZl-Ck-4x8" firstAttribute="bottom" secondItem="SGk-PJ-dfY" secondAttribute="bottom" id="0In-S0-bOz"/>
-                            <constraint firstItem="SGk-PJ-dfY" firstAttribute="leading" secondItem="nZl-Ck-4x8" secondAttribute="leading" id="LfN-My-dpz"/>
-                            <constraint firstItem="SGk-PJ-dfY" firstAttribute="top" secondItem="nZl-Ck-4x8" secondAttribute="top" id="iy5-pQ-nll"/>
-                            <constraint firstItem="nZl-Ck-4x8" firstAttribute="trailing" secondItem="SGk-PJ-dfY" secondAttribute="trailing" id="vYx-aR-IeY"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="nZl-Ck-4x8"/>
-                    </view>
-                    <connections>
-                        <outlet property="aboutTextView" destination="NtM-3h-lRj" id="0zu-1h-sUH"/>
-                        <outlet property="bgView" destination="6I6-Iq-InB" id="DSf-Fv-xBs"/>
-                        <outlet property="logoImage" destination="VEy-b5-Bsr" id="mME-ds-XSe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-yx-8T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-863" y="683"/>
         </scene>
         <!--ChoiceTracker Pro-->
         <scene sceneID="u1W-eW-RRx">

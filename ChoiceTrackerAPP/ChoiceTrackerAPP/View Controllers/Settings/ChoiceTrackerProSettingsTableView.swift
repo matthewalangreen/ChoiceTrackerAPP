@@ -148,8 +148,9 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
                 let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                 
                 // 5.
-                alertController.addAction(labelAction)
                 alertController.addAction(noAction)
+                alertController.addAction(labelAction)
+                
                 self.present(alertController, animated: true, completion: nil)
             }
             

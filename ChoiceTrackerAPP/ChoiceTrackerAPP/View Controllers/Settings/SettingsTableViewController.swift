@@ -18,12 +18,12 @@ class SettingsTableViewController: UITableViewController {
     
     //MARK:- Outlets to cells
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
-    @IBOutlet var About_Cell: UITableViewCell!
+   // @IBOutlet var About_Cell: UITableViewCell!
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
     
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
-    @IBOutlet var AboutLabel: UILabel!
+   // @IBOutlet var AboutLabel: UILabel!
     @IBOutlet var ResetLabel: UILabel!
     
     var successString: String!
@@ -43,10 +43,10 @@ class SettingsTableViewController: UITableViewController {
         
         view.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-        About_Cell.backgroundColor = Theme.current.backgroundColor
+       // About_Cell.backgroundColor = Theme.current.backgroundColor
         ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        AboutLabel.textColor = Theme.current.textColor
+       // AboutLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = Theme.current.textColor
         
         
@@ -63,7 +63,7 @@ class SettingsTableViewController: UITableViewController {
         
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
-        About_Cell.accessoryType = .disclosureIndicator
+        //About_Cell.accessoryType = .disclosureIndicator
         
         // hides extra rows at end of tableview
 //        let bottomView = UIView()
@@ -88,7 +88,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "Reset All Data" row
-        if indexPath.section  == 4 {
+        if indexPath.section  == 3 {
             if indexPath.row == 0 {
                 
                 //Reset All data -- add action
@@ -101,8 +101,9 @@ class SettingsTableViewController: UITableViewController {
                 })
                 let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                 
-                alert.addAction(yesAction)
                 alert.addAction(noAction)
+                alert.addAction(yesAction)
+                
                 
                 self.present(alert, animated: true, completion: nil)
             }
@@ -124,8 +125,6 @@ class SettingsTableViewController: UITableViewController {
         case "showChoiceTrackerPro"?:
             let destinationVC = segue.destination as! ChoiceTrackerProSettingsTableView
                 destinationVC.dailyRecordStore = settingsDailyRecordStore
-        case "showAbout"?:
-            print("you selected showAbout")
         default:
             preconditionFailure("Unexpected segue identifier")
         }
@@ -137,10 +136,10 @@ class SettingsTableViewController: UITableViewController {
         
         view.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-        About_Cell.backgroundColor = Theme.current.backgroundColor
+       // About_Cell.backgroundColor = Theme.current.backgroundColor
         ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        AboutLabel.textColor = Theme.current.textColor
+       // AboutLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
