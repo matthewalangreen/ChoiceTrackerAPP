@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.object(forKey: "LightTheme") != nil {
             // condition ? [true] : [false]
             Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
+        } else {
+            UserDefaults.standard.set(true, forKey: "LightTheme")
         }
         
         // set default goal if not defined

@@ -133,11 +133,13 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- OVERRIDE
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section  == 2 {
-            //MARK:- Change Data Label
+            //MARK:- Change Goal
             if indexPath.row == 1 {
                 let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
                 self.present(alert, animated: true, completion: nil)
-                self.currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
+                currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
+                DispatchQueue.main.async { self.tableView.reloadData() }
+                view.setNeedsDisplay()
             }
             
             //MARK:- Data Export

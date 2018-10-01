@@ -491,8 +491,8 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                     <rect key="frame" x="0.0" y="28.666666666666668" width="120" height="62.666666666666657"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="77.666666666666671" height="23.333333333333332"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="88" height="23.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
