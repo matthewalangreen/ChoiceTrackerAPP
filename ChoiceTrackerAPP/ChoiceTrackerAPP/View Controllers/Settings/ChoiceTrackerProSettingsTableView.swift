@@ -129,7 +129,6 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
             if indexPath.row == 2 {
                 let nowString = exportFileNameDateFormatter.string(from: Date())
                 exportCSV(fileName: nowString, data: dailyRecordStore.allDailyRecords, viewController: self)
-                print("you pressed export")
             }
         }
         // remove the higlighting right after the cell is selected
