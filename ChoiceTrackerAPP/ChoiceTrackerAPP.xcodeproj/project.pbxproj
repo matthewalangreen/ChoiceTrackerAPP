@@ -29,7 +29,6 @@
 		D0ACA1612126358300C955FB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; };
 		D0ACA1622126358300C955FB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0ACA15E2126352500C955FB /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0B6F39A213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B6F399213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift */; };
-		D0D22C132151E4420090880A /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D22C122151E4420090880A /* CustomAlert.swift */; };
 		D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA562D212B93F9002657DB /* DateFormatters.swift */; };
 		D0DA5631212B9519002657DB /* Various-Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA5630212B9519002657DB /* Various-Methods.swift */; };
 		D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */; };
@@ -99,7 +98,6 @@
 		D0ACA1562126315D00C955FB /* DailyRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordStore.swift; sourceTree = "<group>"; };
 		D0ACA1582126352500C955FB /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
 		D0B6F399213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTrackerProSettingsTableView.swift; sourceTree = "<group>"; };
-		D0D22C122151E4420090880A /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		D0DA562D212B93F9002657DB /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		D0DA5630212B9519002657DB /* Various-Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Various-Methods.swift"; sourceTree = "<group>"; };
 		D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigationController.swift; sourceTree = "<group>"; };
@@ -122,11 +120,11 @@
 		D049CB39214DDA870063186A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D07913DF214DC19C0025D382 /* LightTheme.swift */,
-				D049CB3A214DDAFE0063186A /* Colors.xcassets */,
-				D049CB3C214DE2E20063186A /* DarkTheme.swift */,
 				D049CB3E214DE8D90063186A /* ThemeProtocol.swift */,
+				D07913DF214DC19C0025D382 /* LightTheme.swift */,
+				D049CB3C214DE2E20063186A /* DarkTheme.swift */,
 				D049CB40214DEAB10063186A /* Theme.swift */,
+				D049CB3A214DDAFE0063186A /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -158,7 +156,6 @@
 				D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */,
 				D08550C8212BAA92002A6C04 /* CSV-Export.swift */,
 				D049CB37214DD3350063186A /* ForcePortrait.swift */,
-				D0D22C122151E4420090880A /* CustomAlert.swift */,
 			);
 			path = "Shared Methods";
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */,
 				D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */,
 				D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */,
-				D0D22C132151E4420090880A /* CustomAlert.swift in Sources */,
 				D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,

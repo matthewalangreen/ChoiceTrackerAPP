@@ -11,5 +11,4 @@ import Charts
 
 class SettingsInfoCell: UITableViewCell {
     
-    
 }

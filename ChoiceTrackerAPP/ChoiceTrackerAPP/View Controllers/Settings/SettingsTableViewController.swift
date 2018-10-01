@@ -15,24 +15,20 @@ class SettingsTableViewController: UITableViewController {
     }
     
     //MARK:- Properties
-    
-    // this will be set by "prepareForSegue" from Main View Controller
-    var settingsDailyRecordStore: DailyRecordStore!
-    var settingsCurrentDailyRecord: DailyRecord!
+    var settingsDailyRecordStore: DailyRecordStore!  // set by "prepareForSegue" from Main View Controller
+    var settingsCurrentDailyRecord: DailyRecord! // set by "prepareForSegue" from Main View Controller
     
     //MARK:- Outlets to cells
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
     @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
    
-    
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
     @IBOutlet var ResetLabel: UILabel!
     @IBOutlet var ChoiceHistoryLabel: UILabel!
     
-    var successString: String!
-    
+    //MARK:- IBActions
     @IBAction func dismissPopup(_ sender: Any) {
         if let presenter = presentingViewController as? MainViewController {
            presenter.dailyRecordStore = settingsDailyRecordStore
@@ -40,9 +36,8 @@ class SettingsTableViewController: UITableViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
-   
-    
-    
+  
+    //MARK:- OVERRIDE
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +49,6 @@ class SettingsTableViewController: UITableViewController {
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = Theme.current.textColor
         ChoiceHistoryLabel.textColor = Theme.current.textColor
-        
         
         // apply bar color theme
         let navBar = self.navigationController?.navigationBar
@@ -69,37 +63,10 @@ class SettingsTableViewController: UITableViewController {
         
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
-        //About_Cell.accessoryType = .disclosureIndicator
-        
-        // hides extra rows at end of tableview
-//        let bottomView = UIView()
-//        bottomView.backgroundColor = UIColor(red: 239/255, green: 0, blue: 0, alpha: 1)
-        
-        // r: 244, g: 244, b: 239
-        
+       
         tableView.tableFooterView = UIView()
-
-        //print("Success String Value: \(successString)")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-        // change the row height of info cell
-        //tableView.estimatedRowHeight = YourTableViewHeight
-        //tableView.estimatedRowHeight = 250
-        //tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell()
-//        let view = UIView.init()
-//        view.backgroundColor = Theme.current.backgroundColor
-//        cell.selectedBackgroundView = view
-//        return cell
-//    }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "Reset All Data" row
         if indexPath.section  == 2 {
@@ -128,9 +95,6 @@ class SettingsTableViewController: UITableViewController {
     
     
     //MARK:- Segue
-    
-    // send ove/Users/mgreen/GitHub Clones/ChoiceTrackerAPP/ChoiceTrackerAPP/ChoiceTrackerAPP/View Controllers/Settings/SettingsTableViewController.swiftr the [DailyRecord] array of all the records that we've got here
-    // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showHistory"?:
@@ -170,11 +134,7 @@ class SettingsTableViewController: UITableViewController {
         //  title color
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
-        
         AppUtility.lockOrientation(.portrait)
-        // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-        
     }
    
     
@@ -184,5 +144,4 @@ class SettingsTableViewController: UITableViewController {
         // Don't forget to reset when view is being removed
         AppUtility.lockOrientation(.all)
     }
-
 }

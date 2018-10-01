@@ -66,8 +66,6 @@ class DailyRecord: NSObject, NSCoding {
     }
     
     //MARK:- computed properties
-    
-    
     var sum: Int {
         return choices.reduce(0,+)
     }
@@ -120,7 +118,6 @@ class DailyRecord: NSObject, NSCoding {
     func changeGoal(_ newGoal: String) {
         goalString = newGoal
     }
-    
 }
 
 

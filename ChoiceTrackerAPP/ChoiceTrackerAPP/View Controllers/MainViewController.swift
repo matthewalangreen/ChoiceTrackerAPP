@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var userButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
-   // @IBOutlet var setGoalButton: UIButton!
     
     //MARK:- Model
     var dailyRecordStore: DailyRecordStore!
@@ -26,14 +25,10 @@ class MainViewController: UIViewController {
     
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
-    
     @IBOutlet var BGView: UIView!
     @IBOutlet var TopBar: UIView!
     
-    
     //MARK:- Override built-in functions
-    
-    
     fileprivate func renderChart() {
         // show chart that's not totally empty
         if currentDailyRecord.numAllChoices == 0 {
@@ -57,13 +52,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         currentDailyRecord = getCurrentDailyRecord()
-    
         applyTheme()
-        
-       // fillFakeData()
-        
+        // fillFakeData()
         renderChart()
     }
     
@@ -72,14 +63,7 @@ class MainViewController: UIViewController {
     // it makes sure the UI is updated with the new empty record.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         currentDailyRecord = getCurrentDailyRecord()
-        
-        // show choices
-        //print("numGoodChoices: \(currentDailyRecord.numGoodChoices)")
-        //print("numBadChoices: \(currentDailyRecord.numBadChoices)")
-        
-
         applyTheme()
         
         // Force Portrait
@@ -87,23 +71,16 @@ class MainViewController: UIViewController {
         
         // show chart on load
         renderChart()
-        
-        //print("numAllChoices: \(currentDailyRecord.numAllChoices)")
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Don't forget to reset when view is being removed
-        
         //Force Portrait
         AppUtility.lockOrientation(.all)
     }
-    
 
     //MARK:- Actions
- 
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
@@ -119,21 +96,11 @@ class MainViewController: UIViewController {
     }
 
     //MARK:- Segue
-    
-    // send over the [DailyRecord] array of all the records that we've got here
-    // this will be used to populated the table
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-//        case "showHistory"?:
-//            let navVC = segue.destination as! UINavigationController
-//            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
-//            destinationVC.allRecords = [DailyRecord](dailyRecordStore.allDailyRecords.values)
-//            destinationVC.recordDictionary = dailyRecordStore.allDailyRecords
-            
         case "showSettings"?:
             let navVC = segue.destination as! SettingsNavigationController
             let destinationVC = navVC.viewControllers.first as! SettingsTableViewController
-            destinationVC.successString = "showSettings"
             destinationVC.settingsDailyRecordStore = dailyRecordStore
             destinationVC.settingsCurrentDailyRecord = currentDailyRecord
         default:
@@ -148,23 +115,17 @@ class MainViewController: UIViewController {
     
     //MARK:- Choice Logic
     public func incrementChoice(choice: String) {
-        //print(" \(choice) choice")
-        
         switch choice {
         case "Good":
             currentDailyRecord.goodChoice()
-           // gaugeValue += 5
         case "Bad":
             currentDailyRecord.badChoice()
-           // gaugeValue -= 5
         default:
             print("not a valid choice")
         }
     }
     func doesRecordExist(_ day: String) -> Bool {
-       // print("running doesRecordExist")
-       // print("keys: \(dailyRecordStore)")
-            return dailyRecordStore.allDailyRecords.keys.contains(day)
+        return dailyRecordStore.allDailyRecords.keys.contains(day)
     }
     
     //MARK:-**START HERE**
@@ -195,14 +156,9 @@ class MainViewController: UIViewController {
         
         // change button tint color
         userButton.tintColor = Theme.current.buttonTintColor
-       // historyButton.tintColor = Theme.current.buttonTintColor
-       // setGoalButton.tintColor = Theme.current.buttonTintColor
-        
+      
         // set logo image
         logoImage.image = UIImage.init(named: Theme.current.logoImage)
-    }
-    
-   
-    
+    }   
 }
 

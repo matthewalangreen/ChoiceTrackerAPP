@@ -45,10 +45,6 @@ func updateChartData(chart: PieChartView, numberOfDataEntries: [PieChartDataEntr
     // not sure about this forced unwrapping...
     let goodColor = Theme.current.goodColor
     let badColor = Theme.current.badColor
-    
-    // let otherBadColor = UIColor.init(red: 247/255, green: 113/255, blue: 93/255, alpha: 1)
-    //let otherGoodColor = UIColor.init(red: 1/255, green: 165/255, blue: 141/255, alpha: 1)
-    //let colors = [otherGoodColor, otherBadColor]
     let colors = [goodColor, badColor]
     chartDataSet.colors = colors
     
@@ -62,7 +58,6 @@ func formatChart(chart: PieChartView) {
     chart.chartDescription?.text = ""
     chart.drawEntryLabelsEnabled = false
     chart.entryLabelColor = NSUIColor.black
-    //chart.holeColor = UIColor.init(red: 243/255, green: 242/255, blue: 240/255, alpha: 1)
     chart.holeColor = Theme.current.backgroundColor
     chart.legend.enabled = false
     chart.noDataText = "Make a great choice!"

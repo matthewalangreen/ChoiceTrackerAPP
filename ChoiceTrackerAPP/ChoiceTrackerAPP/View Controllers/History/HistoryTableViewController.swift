@@ -13,7 +13,7 @@ import Charts
 class HistoryTableViewController: UITableViewController {
     
     
-    //MARK:- Actions
+    //MARK:- IBActions
     @IBAction func dismissPopup(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -37,7 +37,6 @@ class HistoryTableViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-       // let record = allRecords[indexPath.row]
         let dateStringOldFormat = sortedRecords[indexPath.row].key
         let currentDailyRecord = sortedRecords[indexPath.row].value
        
@@ -46,11 +45,8 @@ class HistoryTableViewController: UITableViewController {
         cell.dateLabel?.text = newDateString
         cell.backgroundColor = Theme.current.backgroundColor
         cell.dateLabel?.textColor = Theme.current.historyCellTextColor
-        //cell.goalLabel?.text = UserDefaults.standard.string(forKey: "dataLabel")
         cell.goalLabel?.text = currentDailyRecord.goalString
-       // print("goal string: \(currentDailyRecord.goalString)")
-        
-        //
+       
         if currentDailyRecord.numAllChoices == 0 {
             setupChart(chart: cell.pieChart)
             // remove all highlights
@@ -58,7 +54,6 @@ class HistoryTableViewController: UITableViewController {
         } else {
              styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         }
-   
         return cell
     }
  
@@ -84,11 +79,7 @@ class HistoryTableViewController: UITableViewController {
         
         // remove bottom of table view
         tableView.tableFooterView = UIView()
-        
-        // remove today from the dictionary... hope this works!
-        //MARK:- **BUG -- FIXED?** This solution created an index out of range error on the last cell
-        // of the table view... not sure why... nor how to fix it at this time
-        //recordDictionary[sortableShortDate.string(from: Date.init())] = nil
+    
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
     }
     
@@ -110,9 +101,6 @@ class HistoryTableViewController: UITableViewController {
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         AppUtility.lockOrientation(.portrait)
-        // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -17,8 +17,4 @@ protocol ThemeProtocol {
     var historyCellTextColor: UIColor { get }
     var logoImage: String { get }
     var buttonTintColor: UIColor { get }
-    
-    // deprecated
-    //var historyButtonImage: String { get }
-    // var userButtonImage: String { get }
 }

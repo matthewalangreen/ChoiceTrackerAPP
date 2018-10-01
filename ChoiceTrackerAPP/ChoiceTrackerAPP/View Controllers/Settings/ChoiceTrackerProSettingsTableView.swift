@@ -120,46 +120,9 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         if indexPath.section  == 2 {
             //MARK:- Change Data Label
             if indexPath.row == 1 {
-//                var userDataLabelField: UITextField?
-                
-//                // 2.
-//                let alertController = UIAlertController(
-//                    title: "Change Goal",
-//                    message: "All previously saved data will be relabeled with this goal.",
-//                    preferredStyle: UIAlertControllerStyle.alert)
-//
-//                // 3.
-//                let labelAction = UIAlertAction(title: "Accept", style: .destructive) {
-//                    (action) -> Void in
-//
-//                    if let userDataLabel = self.userDataLabelField?.text {
-//                        UserDefaults.standard.set(userDataLabel, forKey: "dataLabel")
-//                        let label = UserDefaults.standard.string(forKey: "dataLabel")
-//                        self.currentDataLabel.text = label
-//                        //print("label: \(String(describing: label))")
-//                    } else {
-//                        print("no change")
-//                    }
-//                }
-//
-//                // 4.
-//                alertController.addTextField {
-//                    (userLabel) -> Void in
-//                    self.userDataLabelField = userLabel
-//                    self.userDataLabelField!.placeholder = UserDefaults.standard.string(forKey: "dataLabel")
-//                }
-//
-//                let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-//
-//                // 5.
-//                alertController.addAction(noAction)
-//                alertController.addAction(labelAction)
-                
                 let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
-                
                 self.present(alert, animated: true, completion: nil)
                 self.currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
-                //self.present(alertController, animated: true, completion: nil)
             }
             
             //MARK:- Data Export
@@ -172,9 +135,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         // remove the higlighting right after the cell is selected
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 
-    
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -182,9 +143,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         ApplyTheme()
         
         AppUtility.lockOrientation(.portrait)
-        // Or to rotate and lock
-        // AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
-        
+   
         // set label
         let goalText = UserDefaults.standard.string(forKey: "dataLabel")
         userDataLabelField?.text = goalText

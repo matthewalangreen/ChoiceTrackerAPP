@@ -18,12 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return self.orientationLock
     }
     
-    
     //MARK:- Properties
     var window: UIWindow?
     let dailyRecordStore = DailyRecordStore()
     let currentDailyRecord = DailyRecord()
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -42,14 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.object(forKey: "dataLabel") == nil {
             UserDefaults.standard.set("No goal set", forKey: "dataLabel")
         }
-        
         return true
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
         let success = dailyRecordStore.saveChanges()
         if (success) {
             print("Saved all of the items")
