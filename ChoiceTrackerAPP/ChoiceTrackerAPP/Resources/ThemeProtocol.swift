@@ -17,4 +17,5 @@ protocol ThemeProtocol {
     var historyCellTextColor: UIColor { get }
     var logoImage: String { get }
     var buttonTintColor: UIColor { get }
+    var tableHeaderColor: UIColor { get }
 }

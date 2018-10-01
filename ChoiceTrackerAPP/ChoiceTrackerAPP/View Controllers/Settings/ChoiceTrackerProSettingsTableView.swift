@@ -83,8 +83,10 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         
         ApplyTheme()
         
+        DispatchQueue.main.async { self.tableView.reloadData() }
         view.setNeedsDisplay()
         setNeedsStatusBarAppearanceUpdate()
+        
     }
     
     
@@ -128,6 +130,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         setNeedsStatusBarAppearanceUpdate()
     }
     
+    //MARK:- OVERRIDE
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section  == 2 {
             //MARK:- Change Data Label
@@ -146,7 +149,14 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         // remove the higlighting right after the cell is selected
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.backgroundColor = Theme.current.tableHeaderColor
+        header.contentView.backgroundColor = Theme.current.tableHeaderColor
+        header.textLabel?.textColor = Theme.current.textColor
+    }
+    
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

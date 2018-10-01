@@ -17,4 +17,5 @@ class DarkTheme: ThemeProtocol {
     var historyCellTextColor: UIColor = UIColor.white
     var logoImage: String = "logo-dark"
     var buttonTintColor: UIColor = UIColor.white
+    var tableHeaderColor: UIColor = UIColor(named: "dark-background-header")!
 }

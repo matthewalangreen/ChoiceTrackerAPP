@@ -17,6 +17,7 @@ class LightTheme: ThemeProtocol {
     var historyCellTextColor: UIColor = UIColor.black
     var logoImage: String = "LogoTransparentBG"
     var buttonTintColor: UIColor = UIColor.black
+    var tableHeaderColor: UIColor = UIColor(named: "light-background-header")!
 }
 
 
