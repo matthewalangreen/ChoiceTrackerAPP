@@ -47,15 +47,19 @@ class MainViewController: UIViewController {
             dailyRecordStore.createRandomDailyRecord()
         }
     }
-    
   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentDailyRecord = getCurrentDailyRecord()
+        let checkRecord = getCurrentDailyRecordTuple()
+        currentDailyRecord = checkRecord.0
+        if (checkRecord.1 == true) { // if its a new daily record
+            let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
+            self.present(alert, animated: true, completion: nil)
+        } 
         applyTheme()
         // fillFakeData()
         renderChart()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     // this happens when we dismiss either modal popup
@@ -71,6 +75,7 @@ class MainViewController: UIViewController {
         
         // show chart on load
         renderChart()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -146,6 +151,23 @@ class MainViewController: UIViewController {
             
             // set that goal to the new record, then return it
             return newRecord
+        }
+    }
+    
+    func getCurrentDailyRecordTuple() -> (DailyRecord,Bool) {
+        let todayString = sortableShortDate.string(from: Date.init())
+        // check allDailyRecords for today, if today exists return it
+        if (doesRecordExist(todayString)) {
+            return (dailyRecordStore.allDailyRecords[todayString]!,false) // eew
+        } else {
+            // if today doesn't exist, make it and return it.
+            // this is the edit point to ask for a new goal
+            let newRecord: DailyRecord = dailyRecordStore.createDailyRecord()
+            // write the code to ask for the goal
+            
+            
+            // set that goal to the new record, then return it
+            return (newRecord,true)
         }
     }
     

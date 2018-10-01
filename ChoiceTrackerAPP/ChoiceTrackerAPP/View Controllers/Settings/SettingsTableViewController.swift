@@ -65,6 +65,7 @@ class SettingsTableViewController: UITableViewController {
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
        
         tableView.tableFooterView = UIView()
+        setNeedsStatusBarAppearanceUpdate()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -14,6 +14,13 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
     }
     
+    func adjustUITextViewHeight(arg : UITextView)
+    {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
+    }
+    
     var userDataLabelField: UITextField?
     
     //MARK:- Outlets to cells
@@ -77,6 +84,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         ApplyTheme()
         
         view.setNeedsDisplay()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     
@@ -88,6 +96,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        adjustUITextViewHeight(arg: HeaderTextView)
    
         ApplyTheme()
 
@@ -114,6 +124,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
 
         // set footer to blank to hide extra rows
         tableView.tableFooterView = UIView()
+        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -24,6 +24,8 @@ class AboutViewController: UIViewController {
         logoImage.image = UIImage.init(named: Theme.current.logoImage)
         
         AppUtility.lockOrientation(.portrait)
+        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

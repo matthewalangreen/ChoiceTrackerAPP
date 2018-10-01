@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         let success = dailyRecordStore.saveChanges()
         if (success) {
-            print("Saved all of the items")
+            print("Saved all records")
         } else {
-            print("could not save any of the items")
+            print("could not save records")
         }
     }
 }

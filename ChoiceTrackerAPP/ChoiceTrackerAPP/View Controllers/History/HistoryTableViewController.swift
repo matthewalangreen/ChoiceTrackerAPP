@@ -11,7 +11,11 @@ import Charts
 
 
 class HistoryTableViewController: UITableViewController {
-    
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        return .lightContent
+    }
     
     //MARK:- IBActions
     @IBAction func dismissPopup(_ sender: Any) {

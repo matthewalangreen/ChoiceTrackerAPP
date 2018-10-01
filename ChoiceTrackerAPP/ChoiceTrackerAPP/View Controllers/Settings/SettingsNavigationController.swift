@@ -9,8 +9,14 @@
 import UIKit
 
 class SettingsNavigationController: UINavigationController {
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
     }
 
     override func didReceiveMemoryWarning() {

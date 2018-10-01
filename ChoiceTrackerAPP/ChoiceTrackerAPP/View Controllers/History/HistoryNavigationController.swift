@@ -9,7 +9,10 @@
 import UIKit
 
 class HistoryNavigationController: UINavigationController {
-
+    //MARK:- Status bar style
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+    }
 
 }
 
