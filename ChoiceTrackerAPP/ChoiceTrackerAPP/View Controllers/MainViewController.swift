@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     @IBOutlet var userButton: UIButton!
     @IBOutlet var logoImage: UIImageView!
     
-    //MARK:- Model
+    //MARK:- Properties
     var dailyRecordStore: DailyRecordStore!
     var currentDailyRecord: DailyRecord!
     
@@ -28,7 +28,6 @@ class MainViewController: UIViewController {
     @IBOutlet var BGView: UIView!
     @IBOutlet var TopBar: UIView!
     
-    //MARK:- Override built-in functions
     fileprivate func renderChart() {
         // show chart that's not totally empty
         if currentDailyRecord.numAllChoices == 0 {
@@ -50,16 +49,35 @@ class MainViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        let checkRecord = getCurrentDailyRecordTuple()
-        currentDailyRecord = checkRecord.0
-        if (checkRecord.1 == true) { // if its a new daily record
-            let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
-            self.present(alert, animated: true, completion: nil)
-        } 
-        applyTheme()
-        // fillFakeData()
-        renderChart()
-        setNeedsStatusBarAppearanceUpdate()
+        
+       
+        
+//        let checkRecord = getCurrentDailyRecordTuple()
+//        print("checkRecord.0 \(checkRecord.0)")
+//        currentDailyRecord = checkRecord.0
+//        print(currentDailyRecord!)
+//        if (checkRecord.1 == true) { // if its a new daily record
+//            let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
+//            self.present(alert, animated: true, completion: nil)
+//            print("first time you've used this app today")
+//        } else {
+//            print("you've used this app at least once today")
+//        }
+        
+        
+//        let checkRecord = getCurrentDailyRecordTuple()
+//        print("checkRecord.0 \(checkRecord.0) checkRecord.1 \(checkRecord.1)")
+//        currentDailyRecord = checkRecord.0
+//        if (checkRecord.1 == true) { // if its a new daily record
+//            let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
+//            self.present(alert, animated: true, completion: nil)
+//        }
+//        applyTheme()
+
+//        renderChart()
+//        setNeedsStatusBarAppearanceUpdate()
+        
+         // fillFakeData()
     }
     
     // this happens when we dismiss either modal popup
@@ -67,13 +85,32 @@ class MainViewController: UIViewController {
     // it makes sure the UI is updated with the new empty record.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        currentDailyRecord = getCurrentDailyRecord()
-        applyTheme()
-        
+    
+//        applyTheme()
+//        renderChart()
+//        setNeedsStatusBarAppearanceUpdate()
+    
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // check record
+        let recordCheck = getCurrentDailyRecordTuple()
         
-        // show chart on load
+        // assign record
+        currentDailyRecord = recordCheck.0
+        
+        // show alert if this is the first time you've used the app today
+        if (recordCheck.1 == true) { // if its a new daily record
+            print("you haven't used the app yet today")
+            let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+         print("you've used the app at least once today")
+        }
+        
+        applyTheme()
         renderChart()
         setNeedsStatusBarAppearanceUpdate()
     }
