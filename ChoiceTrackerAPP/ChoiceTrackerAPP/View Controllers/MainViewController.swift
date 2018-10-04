@@ -92,6 +92,8 @@ class MainViewController: UIViewController {
     
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
+        applyTheme()
+        renderChart()
     }
     
     override func viewDidAppear(_ animated: Bool) {

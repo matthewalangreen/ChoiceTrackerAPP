@@ -135,11 +135,15 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         if indexPath.section  == 2 {
             //MARK:- Change Goal
             if indexPath.row == 1 {
-                let alert: UIAlertController = changeGoalAlert(currentDailyRecord: currentDailyRecord)
+                let alert: UIAlertController = changeGoalAlertWithHandler(currentDailyRecord: currentDailyRecord, handler: {
+                    self.currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
+                    let indexPath = NSIndexPath(row: 1, section: 2)
+                    tableView.reloadRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.none)
+                })
                 self.present(alert, animated: true, completion: nil)
-                currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
-                DispatchQueue.main.async { self.tableView.reloadData() }
-                view.setNeedsDisplay()
+//                DispatchQueue.main.async { self.tableView.reloadData() }
+                //view.setNeedsDisplay()
+                //dself.currentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
             }
             
             //MARK:- Data Export
