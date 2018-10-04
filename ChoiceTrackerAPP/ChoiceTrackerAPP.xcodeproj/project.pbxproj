@@ -18,6 +18,7 @@
 		D064D375213CD91D0059608E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D374213CD91D0059608E /* AboutViewController.swift */; };
 		D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D377213CDE540059608E /* SettingsInfoCell.swift */; };
 		D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07913DF214DC19C0025D382 /* LightTheme.swift */; };
+		D07A640A2166C7870018901C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A64092166C7870018901C /* StoreKit.framework */; };
 		D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08550C8212BAA92002A6C04 /* CSV-Export.swift */; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
@@ -86,6 +87,8 @@
 		D064D374213CD91D0059608E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D064D377213CDE540059608E /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
 		D07913DF214DC19C0025D382 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		D07A64092166C7870018901C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D07A640B2166C7AA0018901C /* ChoiceTrackerAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChoiceTrackerAPP.entitlements; sourceTree = "<group>"; };
 		D08550C8212BAA92002A6C04 /* CSV-Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSV-Export.swift"; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0ACA1422126310200C955FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0ACA1612126358300C955FB /* Charts.framework in Frameworks */,
+				D07A640A2166C7870018901C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +152,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D07A64082166C7870018901C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D07A64092166C7870018901C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D08550C3212BA4A5002A6C04 /* Shared Methods */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 				D0ACA1412126310200C955FB /* ChoiceTrackerAPP */,
 				D0ACA1402126310200C955FB /* Products */,
 				D0ACA1582126352500C955FB /* Charts.xcodeproj */,
+				D07A64082166C7870018901C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +193,7 @@
 		D0ACA1412126310200C955FB /* ChoiceTrackerAPP */ = {
 			isa = PBXGroup;
 			children = (
+				D07A640B2166C7AA0018901C /* ChoiceTrackerAPP.entitlements */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
 				D049CB39214DDA870063186A /* Resources */,
 				D08550C3212BA4A5002A6C04 /* Shared Methods */,
@@ -275,6 +289,14 @@
 					D0ACA13E2126310200C955FB = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
