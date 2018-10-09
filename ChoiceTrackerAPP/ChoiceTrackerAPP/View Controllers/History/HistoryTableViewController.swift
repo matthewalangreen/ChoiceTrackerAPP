@@ -26,6 +26,7 @@ class HistoryTableViewController: UITableViewController {
     var allRecords: [DailyRecord]!
     var recordDictionary: [String:DailyRecord]!
     var sortedRecords: [(key: String, value: DailyRecord)]!
+    var reverseSortedRecords: [(key: String, value: DailyRecord)]!
     
     
     //MARK:- TableView methods
@@ -41,8 +42,11 @@ class HistoryTableViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
-        let dateStringOldFormat = sortedRecords[indexPath.row].key
-        let currentDailyRecord = sortedRecords[indexPath.row].value
+       // let dateStringOldFormat = sortedRecords[indexPath.row].key
+       // let currentDailyRecord = sortedRecords[indexPath.row].value
+        
+        let dateStringOldFormat = reverseSortedRecords[indexPath.row].key
+        let currentDailyRecord = reverseSortedRecords[indexPath.row].value
        
         let dateObject = sortableShortDate.date(from: dateStringOldFormat)
         let newDateString = prettyDateFormatter.string(from: dateObject!)  //eew
@@ -86,6 +90,7 @@ class HistoryTableViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
+        reverseSortedRecords = recordDictionary.sorted(by: { $0.0 > $1.0 } )
     }
     
     //MARK:- Force Portrait

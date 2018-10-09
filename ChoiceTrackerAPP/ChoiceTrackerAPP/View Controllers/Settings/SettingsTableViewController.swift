@@ -47,7 +47,7 @@ class SettingsTableViewController: UITableViewController {
         ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
         
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = Theme.current.textColor
+        ResetLabel.textColor = UIColor.init(named: "alert-red")
         ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
@@ -63,6 +63,7 @@ class SettingsTableViewController: UITableViewController {
         
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
+        ViewChoiceHistory_Cell.accessoryType = .disclosureIndicator
        
         tableView.tableFooterView = UIView()
         setNeedsStatusBarAppearanceUpdate()
@@ -122,7 +123,7 @@ class SettingsTableViewController: UITableViewController {
         ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
         
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = Theme.current.textColor
+        ResetLabel.textColor = UIColor.init(named: "alert-red")
         ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
