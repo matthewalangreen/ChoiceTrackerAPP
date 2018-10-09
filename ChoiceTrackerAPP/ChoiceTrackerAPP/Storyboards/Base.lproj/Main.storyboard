@@ -29,7 +29,7 @@
                                             <constraint firstAttribute="width" secondItem="g8h-Qy-wsO" secondAttribute="height" multiplier="1:1" id="BuP-lo-pby"/>
                                             <constraint firstAttribute="width" constant="32" id="rzi-PF-Fk3"/>
                                         </constraints>
-                                        <state key="normal" image="sprocket"/>
+                                        <state key="normal" image="user-icon-white"/>
                                         <connections>
                                             <segue destination="8Cn-2W-bv7" kind="presentation" identifier="showSettings" id="si2-if-TCL"/>
                                         </connections>
@@ -589,7 +589,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
     </scenes>
     <resources>
         <image name="LogoTransparentBG" width="350" height="65"/>
-        <image name="sprocket" width="600" height="600"/>
+        <image name="user-icon-white" width="200" height="200"/>
         <image name="whiteMinus" width="600" height="600"/>
         <image name="whitePlus" width="600" height="600"/>
         <namedColor name="light-bad">
