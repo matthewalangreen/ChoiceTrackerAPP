@@ -18,9 +18,9 @@ class HistoryTableViewController: UITableViewController {
     }
     
     //MARK:- IBActions
-    @IBAction func dismissPopup(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func dismissPopup(_ sender: Any) {
+//        presentingViewController?.dismiss(animated: true, completion: nil)
+//    }
     
     //MARK:- Parameters
     var allRecords: [DailyRecord]!

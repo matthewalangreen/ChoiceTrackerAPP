@@ -207,7 +207,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ezk-PU-ufk" kind="show" identifier="showHistory" id="uRf-nS-Yww"/>
+                                            <segue destination="kGL-B2-MFn" kind="show" identifier="showHistory" id="xqv-fX-3ug"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -470,12 +470,12 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
             </objects>
             <point key="canvasLocation" x="823" y="275"/>
         </scene>
-        <!--History-->
+        <!--Choice History-->
         <scene sceneID="EAm-dK-qb2">
             <objects>
                 <tableViewController id="kGL-B2-MFn" customClass="HistoryTableViewController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BOe-CL-6Jq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -536,39 +536,12 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="History" id="ml5-Aq-uEU">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="z2v-M2-e8u">
-                            <connections>
-                                <action selector="dismissPopup:" destination="kGL-B2-MFn" id="WuC-oR-QY2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Choice History" id="ml5-Aq-uEU"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="-472"/>
-        </scene>
-        <!--History Navigation Controller-->
-        <scene sceneID="7qN-nb-l5C">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ezk-PU-ufk" customClass="HistoryNavigationController" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="siy-dE-qkm">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="29d-By-CDa">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="kGL-B2-MFn" kind="relationship" relationship="rootViewController" id="WsK-V1-yfi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-ej-Ckl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="431" y="-472"/>
+            <point key="canvasLocation" x="821" y="-447"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="xkw-Ff-8of">

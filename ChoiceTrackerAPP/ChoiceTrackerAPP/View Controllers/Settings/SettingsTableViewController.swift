@@ -100,8 +100,7 @@ class SettingsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showHistory"?:
-            let navVC = segue.destination as! UINavigationController
-            let destinationVC = navVC.viewControllers.first as! HistoryTableViewController
+            let destinationVC = segue.destination as! HistoryTableViewController
             destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
             destinationVC.recordDictionary = settingsDailyRecordStore.allDailyRecords
         case "showChoiceTrackerPro"?:
