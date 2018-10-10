@@ -277,33 +277,35 @@
                         <sections>
                             <tableViewSection id="xMq-WQ-3eu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SWc-5s-KE3" customClass="SettingsInfoCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" id="SWc-5s-KE3" customClass="SettingsInfoCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SWc-5s-KE3" id="Kpw-F8-t6c">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zH-fu-kZh">
-                                                    <rect key="frame" x="12" y="8" width="296" height="27.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m6a-31-dFX">
+                                                    <rect key="frame" x="8" y="12" width="304" height="19.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
 
 All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting (CSV) and a dark color theme. 
 
 Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
-                                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="1zH-fu-kZh" secondAttribute="bottom" constant="8" id="nTX-TI-66j"/>
-                                                <constraint firstItem="1zH-fu-kZh" firstAttribute="leading" secondItem="Kpw-F8-t6c" secondAttribute="leading" constant="12" id="ruh-5A-EEX"/>
-                                                <constraint firstItem="1zH-fu-kZh" firstAttribute="top" secondItem="Kpw-F8-t6c" secondAttribute="top" constant="8" id="yGe-hn-cap"/>
-                                                <constraint firstAttribute="trailing" secondItem="1zH-fu-kZh" secondAttribute="trailing" constant="12" id="yno-NN-bH2"/>
+                                                <constraint firstItem="m6a-31-dFX" firstAttribute="leading" secondItem="Kpw-F8-t6c" secondAttribute="leading" constant="8" id="YkD-sG-wLg"/>
+                                                <constraint firstAttribute="bottom" secondItem="m6a-31-dFX" secondAttribute="bottom" constant="12" id="cR8-CG-ZLK"/>
+                                                <constraint firstItem="m6a-31-dFX" firstAttribute="top" secondItem="Kpw-F8-t6c" secondAttribute="top" constant="12" id="poO-Mt-Qkh"/>
+                                                <constraint firstAttribute="trailing" secondItem="m6a-31-dFX" secondAttribute="trailing" constant="8" id="zZ8-va-BLv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -392,8 +394,8 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VhN-sX-TjU">
                                                     <rect key="frame" x="16" y="8" width="288" height="53.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal (tap to change):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-Pj-8Rv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="162.5" height="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Goal (tap to change):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnT-Pj-8Rv">
+                                                            <rect key="frame" x="0.0" y="0.0" width="225" height="25"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -449,7 +451,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                     </tableView>
                     <connections>
                         <outlet property="ExportDataLabel" destination="bYP-ud-iSb" id="3bX-EU-WXI"/>
-                        <outlet property="HeaderTextView" destination="1zH-fu-kZh" id="xZj-7A-gpy"/>
+                        <outlet property="HeaderTextView" destination="m6a-31-dFX" id="BUg-vJ-JRS"/>
                         <outlet property="LabelYourDataLabel" destination="BnT-Pj-8Rv" id="eLc-lL-Zng"/>
                         <outlet property="MonthlyLabel" destination="R5F-ci-6SZ" id="tzp-m3-5OW"/>
                         <outlet property="ThemeLabel" destination="hh9-mo-6J5" id="6c7-Oe-25P"/>

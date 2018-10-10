@@ -48,7 +48,7 @@ func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
         preferredStyle: UIAlertController.Style.alert)
     
     // 3.
-    let goalAction = UIAlertAction(title: "Set Goal", style: .destructive) {
+    let goalAction = UIAlertAction(title: "Set Goal", style: .default) {
         (action) -> Void in
         
         if let newGoal = userGoalField?.text {
@@ -68,11 +68,13 @@ func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
         userGoalField!.placeholder = currentDailyRecord.goalString
     }
     
-    let noAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+    let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
     
     // 5.
     alertController.addAction(noAction)
     alertController.addAction(goalAction)
+    alertController.view.tintColor = UIColor.init(named: "light-good")
+    
     return alertController
     //present(alertController, animated: true, completion: nil)
 }

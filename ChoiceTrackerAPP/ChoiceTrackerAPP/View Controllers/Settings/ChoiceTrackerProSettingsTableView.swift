@@ -158,14 +158,14 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.backgroundColor = Theme.current.tableHeaderColor
+        //header.backgroundColor = Theme.current.tableHeaderColor
         header.contentView.backgroundColor = Theme.current.tableHeaderColor
         header.textLabel?.textColor = Theme.current.textColor
     }
     
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewWillAppear(animated) 
         
         ApplyTheme()
         
@@ -175,6 +175,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         let goalText = UserDefaults.standard.string(forKey: "dataLabel")
         userDataLabelField?.text = goalText
         currentDataLabel.text = goalText
+        
+        infoCell.selectionStyle = UITableViewCell.SelectionStyle.none
         
     }
     
