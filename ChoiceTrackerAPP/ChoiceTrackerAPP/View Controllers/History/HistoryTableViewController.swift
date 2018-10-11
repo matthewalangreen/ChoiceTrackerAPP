@@ -54,7 +54,8 @@ class HistoryTableViewController: UITableViewController {
         cell.backgroundColor = Theme.current.backgroundColor
         cell.dateLabel?.textColor = Theme.current.historyCellTextColor
         cell.goalLabel?.text = currentDailyRecord.goalString
-        cell.goalLabel?.textColor = Theme.current.historyCellTextColor
+        cell.goalLabel?.textColor = UIColor.init(named: "light-good")
+        cell.goalLabel.sizeToFit()
        
         if currentDailyRecord.numAllChoices == 0 {
             setupChart(chart: cell.pieChart)
