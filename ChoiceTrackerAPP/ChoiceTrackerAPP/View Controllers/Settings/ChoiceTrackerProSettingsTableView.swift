@@ -24,7 +24,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     var userDataLabelField: UITextField?
     
     //MARK:- Outlets to cells
-    @IBOutlet var infoCell: SettingsInfoCell!
+    @IBOutlet var infoCell: UITableViewCell!
     @IBOutlet var monthly: UITableViewCell!
     @IBOutlet var yearly: UITableViewCell!
     @IBOutlet var themes: UITableViewCell!
@@ -68,7 +68,6 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         ThemeLabel.textColor = Theme.current.textColor
         LabelYourDataLabel.textColor = Theme.current.textColor
         ExportDataLabel.textColor = Theme.current.textColor
-        
     }
     
     @IBAction func ThemeSwitch(_ sender: UISwitch) {
@@ -176,7 +175,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         userDataLabelField?.text = goalText
         currentDataLabel.text = goalText
         
-        infoCell.selectionStyle = UITableViewCell.SelectionStyle.none
+       // infoCell.selectionStyle = UITableViewCell.SelectionStyle.none
         
     }
     
