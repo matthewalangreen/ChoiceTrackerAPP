@@ -32,7 +32,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     @IBOutlet var exportDataCell: UITableViewCell!
     
     //MARK:- Outlets to cell labels
-    @IBOutlet var HeaderTextView: UITextView!
+    @IBOutlet var HeaderTextLabel: UILabel!
     @IBOutlet var MonthlyLabel: UILabel!
     @IBOutlet var YearlyLabel: UILabel!
     @IBOutlet var ThemeLabel: UILabel!
@@ -61,8 +61,8 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         labelYourData.backgroundColor = Theme.current.backgroundColor
         exportDataCell.backgroundColor = Theme.current.backgroundColor
         view.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.backgroundColor = Theme.current.backgroundColor
-        HeaderTextView.textColor = Theme.current.textColor
+        HeaderTextLabel.backgroundColor = Theme.current.backgroundColor
+        HeaderTextLabel.textColor = Theme.current.textColor
         MonthlyLabel.textColor = Theme.current.textColor
         YearlyLabel.textColor = Theme.current.textColor
         ThemeLabel.textColor = Theme.current.textColor
@@ -98,7 +98,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        adjustUITextViewHeight(arg: HeaderTextView)
+        //adjustUITextViewHeight(arg: HeaderTextView)
    
         ApplyTheme()
 

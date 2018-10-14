@@ -277,31 +277,30 @@
                         <sections>
                             <tableViewSection headerTitle="About" id="fLy-0t-gZY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="osj-qn-w4n">
+                                    <tableViewCell autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" id="osj-qn-w4n">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="osj-qn-w4n" id="BWN-2l-ZHj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBP-un-Xer">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-Et-agm" userLabel="AboutLabel">
                                                     <rect key="frame" x="12" y="8" width="296" height="27.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
 
 All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting as CSV and a Dark Theme. 
 
 Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
-                                                    <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
+                                                    <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="uBP-un-Xer" secondAttribute="trailing" constant="12" id="1dd-Vn-8AA"/>
-                                                <constraint firstAttribute="bottom" secondItem="uBP-un-Xer" secondAttribute="bottom" constant="8" id="1qB-hB-yLa"/>
-                                                <constraint firstItem="uBP-un-Xer" firstAttribute="top" secondItem="BWN-2l-ZHj" secondAttribute="top" constant="8" id="3yn-6t-OiP"/>
-                                                <constraint firstItem="uBP-un-Xer" firstAttribute="leading" secondItem="BWN-2l-ZHj" secondAttribute="leading" constant="12" id="FAI-3q-VX3"/>
+                                                <constraint firstAttribute="bottom" secondItem="vDG-Et-agm" secondAttribute="bottom" constant="8" id="0yc-9A-kby"/>
+                                                <constraint firstItem="vDG-Et-agm" firstAttribute="leading" secondItem="BWN-2l-ZHj" secondAttribute="leading" constant="12" id="DmS-FF-94j"/>
+                                                <constraint firstAttribute="trailing" secondItem="vDG-Et-agm" secondAttribute="trailing" constant="12" id="NT4-tX-SDX"/>
+                                                <constraint firstItem="vDG-Et-agm" firstAttribute="top" secondItem="BWN-2l-ZHj" secondAttribute="top" constant="8" id="iri-zb-n9n"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -449,7 +448,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                     </tableView>
                     <connections>
                         <outlet property="ExportDataLabel" destination="bYP-ud-iSb" id="3bX-EU-WXI"/>
-                        <outlet property="HeaderTextView" destination="uBP-un-Xer" id="buk-dA-yWK"/>
+                        <outlet property="HeaderTextLabel" destination="vDG-Et-agm" id="RUK-WI-OcC"/>
                         <outlet property="LabelYourDataLabel" destination="BnT-Pj-8Rv" id="eLc-lL-Zng"/>
                         <outlet property="MonthlyLabel" destination="R5F-ci-6SZ" id="tzp-m3-5OW"/>
                         <outlet property="ThemeLabel" destination="hh9-mo-6J5" id="6c7-Oe-25P"/>
@@ -488,7 +487,7 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                             <rect key="frame" x="8" y="8" width="304" height="133.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LpQ-nU-bvG">
-                                                    <rect key="frame" x="0.0" y="39.5" width="148" height="55"/>
+                                                    <rect key="frame" x="0.0" y="37.5" width="148" height="59"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
                                                             <rect key="frame" x="0.0" y="0.0" width="88" height="23.5"/>
@@ -497,8 +496,8 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Text" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHV-v8-bdP">
-                                                            <rect key="frame" x="0.0" y="35.5" width="60.5" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="14"/>
+                                                            <rect key="frame" x="0.0" y="35.5" width="73.5" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
