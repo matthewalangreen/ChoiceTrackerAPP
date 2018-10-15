@@ -11,7 +11,7 @@ import UIKit
 class ChoiceTrackerProSettingsTableView: UITableViewController {
     //MARK:- Status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .lightContent : .default
     }
     
     func adjustUITextViewHeight(arg : UITextView)
@@ -71,7 +71,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     }
     
     @IBAction func ThemeSwitch(_ sender: UISwitch) {
-        Theme.current = sender.isOn ? LightTheme() : DarkTheme()
+        Theme.current = sender.isOn ? DarkTheme() : LightTheme()
         UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
        
         // set the status bar style based on which theme we are using
@@ -104,7 +104,7 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
 
         // if never set user default theme
         if UserDefaults.standard.object(forKey: "LightTheme") == nil {
-            UserDefaults.standard.set(true, forKey: "LightTheme")
+            UserDefaults.standard.set(false, forKey: "LightTheme")
         }
         
         // if never set user default label

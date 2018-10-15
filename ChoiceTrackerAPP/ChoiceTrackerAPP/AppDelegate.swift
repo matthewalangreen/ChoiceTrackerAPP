@@ -33,9 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set theme with ternary operation
         if UserDefaults.standard.object(forKey: "LightTheme") != nil {
             // condition ? [true] : [false]
-            Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
+            Theme.current = UserDefaults.standard.bool(forKey: "LightTheme") ? DarkTheme() : LightTheme()
         } else {
-            UserDefaults.standard.set(true, forKey: "LightTheme")
+            UserDefaults.standard.set(false, forKey: "LightTheme")
         }
         
         // set default goal if not defined

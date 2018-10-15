@@ -11,7 +11,7 @@ import UIKit
 class SettingsNavigationController: UINavigationController {
     //MARK:- Status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
+        return UserDefaults.standard.bool(forKey: "LightTheme") ? .lightContent : .default
     }
     
     override func viewDidLoad() {
