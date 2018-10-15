@@ -17,10 +17,6 @@ class HistoryTableViewController: UITableViewController {
         return .lightContent
     }
     
-    //MARK:- IBActions
-//    @IBAction func dismissPopup(_ sender: Any) {
-//        presentingViewController?.dismiss(animated: true, completion: nil)
-//    }
     
     //MARK:- Parameters
     var allRecords: [DailyRecord]!
