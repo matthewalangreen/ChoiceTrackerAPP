@@ -11,9 +11,7 @@ import Foundation
 import Foundation
 
 enum IAPProduct: String {
-    case consumable         = "Matt_Green.TestPurchases.myConsumable"
-    case nonConsumable      = "Matt_Green.TestPurchases.myNonConsumable"
-    case autoRenewMonthly   = "Matt_Green.TestPurchases.myAutoRenewMonthly"
-    case autoRenewYearly    = "Matt_Green.TestPurchases.myAutoRenewYearly"
+    case autoRenewMonthly   = "Matt_Green.ChoiceTrackerAPP.monthly.subscription.auto.renewing"
+    case autoRenewYearly    = "Matt_Green.ChoiceTrackerAPP.Yearly.Subscription.Auto.Renewing"
 }
 
