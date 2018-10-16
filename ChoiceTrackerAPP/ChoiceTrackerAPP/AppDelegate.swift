@@ -42,6 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserDefaults.standard.object(forKey: "dataLabel") == nil {
             UserDefaults.standard.set("No goal set", forKey: "dataLabel")
         }
+        
+        IAPManager.sharedInstance.setupPurchases { (canPurchase) in
+            if canPurchase {
+                IAPManager.sharedInstance.performProductRequestForIdentifiers(identifiers: IAPManager.sharedInstance.getProductIdentifiers())
+            }
+        }
         return true
     }
 

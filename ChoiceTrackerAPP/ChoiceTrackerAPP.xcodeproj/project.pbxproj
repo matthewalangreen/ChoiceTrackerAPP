@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0494DD12175932100440547 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0494DD02175932100440547 /* IAPManager.swift */; };
+		D0494DD82175984D00440547 /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0494DD72175984D00440547 /* products.plist */; };
 		D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB37214DD3350063186A /* ForcePortrait.swift */; };
 		D049CB3B214DDAFE0063186A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D049CB3A214DDAFE0063186A /* Colors.xcassets */; };
 		D049CB3D214DE2E20063186A /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB3C214DE2E20063186A /* DarkTheme.swift */; };
@@ -15,8 +17,6 @@
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
-		D05C0FBF2174120E00AEF8AF /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C0FBE2174120E00AEF8AF /* IAPProduct.swift */; };
-		D05C0FC32174125300AEF8AF /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05C0FC22174125300AEF8AF /* IAPService.swift */; };
 		D064D375213CD91D0059608E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D374213CD91D0059608E /* AboutViewController.swift */; };
 		D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D377213CDE540059608E /* SettingsInfoCell.swift */; };
 		D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07913DF214DC19C0025D382 /* LightTheme.swift */; };
@@ -78,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D0494DD02175932100440547 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		D0494DD72175984D00440547 /* products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
 		D049CB37214DD3350063186A /* ForcePortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcePortrait.swift; sourceTree = "<group>"; };
 		D049CB3A214DDAFE0063186A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D049CB3C214DE2E20063186A /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
@@ -86,8 +88,6 @@
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
-		D05C0FBE2174120E00AEF8AF /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
-		D05C0FC22174125300AEF8AF /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		D064D374213CD91D0059608E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D064D377213CDE540059608E /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
 		D07913DF214DC19C0025D382 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
@@ -125,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0494DD22175945F00440547 /* In-App Purchase */ = {
+			isa = PBXGroup;
+			children = (
+				D0494DD02175932100440547 /* IAPManager.swift */,
+			);
+			path = "In-App Purchase";
+			sourceTree = "<group>";
+		};
 		D049CB39214DDA870063186A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,15 +162,6 @@
 				D0ACA1562126315D00C955FB /* DailyRecordStore.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		D05C0FC12174121700AEF8AF /* In-App Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				D05C0FBE2174120E00AEF8AF /* IAPProduct.swift */,
-				D05C0FC22174125300AEF8AF /* IAPService.swift */,
-			);
-			path = "In-App Purchase";
 			sourceTree = "<group>";
 		};
 		D07A64082166C7870018901C /* Frameworks */ = {
@@ -208,7 +207,7 @@
 			children = (
 				D07A640B2166C7AA0018901C /* ChoiceTrackerAPP.entitlements */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
-				D05C0FC12174121700AEF8AF /* In-App Purchase */,
+				D0494DD22175945F00440547 /* In-App Purchase */,
 				D049CB39214DDA870063186A /* Resources */,
 				D08550C3212BA4A5002A6C04 /* Shared Methods */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
@@ -216,6 +215,7 @@
 				D0B6F396213CD70E00581F9B /* Storyboards */,
 				D04AE6CF2128D2CD002F8F6A /* View Controllers */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
+				D0494DD72175984D00440547 /* products.plist */,
 				D0ACA14E2126310300C955FB /* Info.plist */,
 			);
 			path = ChoiceTrackerAPP;
@@ -361,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0ACA14D2126310300C955FB /* LaunchScreen.storyboard in Resources */,
+				D0494DD82175984D00440547 /* products.plist in Resources */,
 				D049CB3B214DDAFE0063186A /* Colors.xcassets in Resources */,
 				D0ACA14A2126310300C955FB /* Assets.xcassets in Resources */,
 				D0ACA1482126310200C955FB /* Main.storyboard in Resources */,
@@ -376,6 +377,7 @@
 			files = (
 				D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */,
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
+				D0494DD12175932100440547 /* IAPManager.swift in Sources */,
 				D049CB3D214DE2E20063186A /* DarkTheme.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
 				D0B6F39A213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift in Sources */,
@@ -387,7 +389,6 @@
 				D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */,
 				D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */,
 				D0ACA1452126310200C955FB /* MainViewController.swift in Sources */,
-				D05C0FC32174125300AEF8AF /* IAPService.swift in Sources */,
 				D0ACA1552126313400C955FB /* DailyRecord.swift in Sources */,
 				D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
@@ -395,7 +396,6 @@
 				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
 				D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */,
 				D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */,
-				D05C0FBF2174120E00AEF8AF /* IAPProduct.swift in Sources */,
 				D0FF87CE2127AB16003C8644 /* SettingsNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

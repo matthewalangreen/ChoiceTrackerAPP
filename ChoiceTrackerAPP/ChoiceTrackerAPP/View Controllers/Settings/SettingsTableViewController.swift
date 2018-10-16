@@ -47,7 +47,7 @@ class SettingsTableViewController: UITableViewController {
         ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
         
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = UIColor.init(named: "alert-red")
+        ResetLabel.textColor = UIColor.init(named: "light-bad")
         ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
@@ -122,7 +122,7 @@ class SettingsTableViewController: UITableViewController {
         ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
         
         ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = UIColor.init(named: "alert-red")
+        ResetLabel.textColor = UIColor.init(named: "light-bad")
         ChoiceHistoryLabel.textColor = Theme.current.textColor
         
         // apply bar color theme
