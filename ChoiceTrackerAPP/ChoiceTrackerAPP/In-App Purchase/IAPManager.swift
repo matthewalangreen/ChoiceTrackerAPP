@@ -48,10 +48,18 @@ class IAPManager: NSObject, SKProductsRequestDelegate {
         self.request.start()
     }
     
-    //MARK:- SKProductsRequestDelegate
+    //MARK: SKProductsRequestDelegate
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         self.products = response.products
         print("products: \(self.products)")
+    }
+    
+    //MARK: SKPaymentObject
+    func createPaymentReqeustForProduct(product: SKProduct) {
+        let payment = SKMutablePayment(product: product)
+        payment.quantity = 1
+        
+        SKPaymentQueue.default().add(payment)
     }
     
 }

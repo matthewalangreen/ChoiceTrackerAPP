@@ -131,6 +131,18 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
     
     //MARK:- OVERRIDE
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            // clicked on Monthly subscription
+            if indexPath.row == 0 {
+                print("clicked monthly subscription")
+            }
+            
+            // clicked on yearly subscription
+            if indexPath.row == 1 {
+                  print("clicked yearly subscription")
+            }
+        }
+        
         if indexPath.section  == 2 {
             //MARK:- Change Goal
             if indexPath.row == 1 {
