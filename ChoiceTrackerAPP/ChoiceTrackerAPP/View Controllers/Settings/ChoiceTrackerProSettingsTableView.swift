@@ -177,6 +177,12 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         
        // infoCell.selectionStyle = UITableViewCell.SelectionStyle.none
         
+        let monthly = IAPManager.sharedInstance.products[1]
+        MonthlyLabel.text = monthly.localizedTitle
+        
+        let yearly = IAPManager.sharedInstance.products[0]
+        YearlyLabel.text = yearly.localizedTitle
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

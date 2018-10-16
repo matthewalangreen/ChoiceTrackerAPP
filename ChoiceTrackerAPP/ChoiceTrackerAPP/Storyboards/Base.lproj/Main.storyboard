@@ -285,7 +285,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDG-Et-agm" userLabel="AboutLabel">
-                                                    <rect key="frame" x="12" y="8" width="296" height="27.5"/>
+                                                    <rect key="frame" x="16" y="12" width="288" height="19.5"/>
                                                     <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.
 
 All essential tracking features are free with ChoiceTracker. By subscribing to ChoiceTrackerPro you will enable Data Exporting as CSV and a Dark Theme. 
@@ -297,10 +297,10 @@ Thoughts and comments welcome: twitter.com/choicetrackerapp</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="vDG-Et-agm" secondAttribute="bottom" constant="8" id="0yc-9A-kby"/>
-                                                <constraint firstItem="vDG-Et-agm" firstAttribute="leading" secondItem="BWN-2l-ZHj" secondAttribute="leading" constant="12" id="DmS-FF-94j"/>
-                                                <constraint firstAttribute="trailing" secondItem="vDG-Et-agm" secondAttribute="trailing" constant="12" id="NT4-tX-SDX"/>
-                                                <constraint firstItem="vDG-Et-agm" firstAttribute="top" secondItem="BWN-2l-ZHj" secondAttribute="top" constant="8" id="iri-zb-n9n"/>
+                                                <constraint firstAttribute="bottom" secondItem="vDG-Et-agm" secondAttribute="bottom" constant="12" id="0yc-9A-kby"/>
+                                                <constraint firstItem="vDG-Et-agm" firstAttribute="leading" secondItem="BWN-2l-ZHj" secondAttribute="leading" constant="16" id="DmS-FF-94j"/>
+                                                <constraint firstAttribute="trailing" secondItem="vDG-Et-agm" secondAttribute="trailing" constant="16" id="NT4-tX-SDX"/>
+                                                <constraint firstItem="vDG-Et-agm" firstAttribute="top" secondItem="BWN-2l-ZHj" secondAttribute="top" constant="12" id="iri-zb-n9n"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
