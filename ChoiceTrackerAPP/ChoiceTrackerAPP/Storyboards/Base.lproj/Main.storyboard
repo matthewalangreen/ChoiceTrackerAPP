@@ -372,6 +372,8 @@
                         <outlet property="ChoiceTrackerProLabel" destination="jp1-Kq-bHN" id="V0p-Ng-lwS"/>
                         <outlet property="ChoiceTrackerPro_Cell" destination="bEz-kQ-S7D" id="Jff-0C-tgg"/>
                         <outlet property="CurrentDataLabel" destination="t7r-Zg-TNn" id="uEq-XL-XmN"/>
+                        <outlet property="ExportDataCell" destination="dAV-9W-Dyk" id="k4f-KT-2nG"/>
+                        <outlet property="ExportDataLabel" destination="6qx-xs-adx" id="tMA-VZ-GEb"/>
                         <outlet property="GoalChangeCell" destination="cS3-Rl-Db0" id="aXY-qf-91J"/>
                         <outlet property="GoalChangeLabel" destination="xTT-NY-G9O" id="sun-YJ-M4Z"/>
                         <outlet property="ResetAllData_Cell" destination="W8L-Q4-H0c" id="P55-jg-GLM"/>

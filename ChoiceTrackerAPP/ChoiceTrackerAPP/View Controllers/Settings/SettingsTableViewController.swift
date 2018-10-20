@@ -27,6 +27,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
     @IBOutlet var AboutCell: UITableViewCell!
     @IBOutlet var GoalChangeCell: UITableViewCell!
+    @IBOutlet var ExportDataCell: UITableViewCell!
     
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
@@ -35,6 +36,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var AboutTextLabel: UILabel!
     @IBOutlet var GoalChangeLabel: UILabel!
     @IBOutlet var CurrentDataLabel: UILabel!
+    @IBOutlet var ExportDataLabel: UILabel!
     
     //MARK:- ApplyTheme
     fileprivate func ApplyTheme() {
@@ -64,8 +66,11 @@ class SettingsTableViewController: UITableViewController {
         GoalChangeCell.backgroundColor = Theme.current.backgroundColor
         GoalChangeLabel.backgroundColor = Theme.current.backgroundColor
         GoalChangeLabel.textColor = Theme.current.textColor
-       
         
+        ExportDataCell.backgroundColor = Theme.current.backgroundColor
+        ExportDataLabel.backgroundColor = Theme.current.backgroundColor
+        ExportDataLabel.textColor = Theme.current.textColor
+       
     }
     
     //MARK:- IBActions
@@ -110,8 +115,13 @@ class SettingsTableViewController: UITableViewController {
             
         }
         
-        // if we clicked on the "Reset All Data" row
         if indexPath.section  == 3 {
+            // "Export Data" row option
+            if indexPath.row == 0 {
+                let nowString = exportFileNameDateFormatter.string(from: Date())
+                exportCSV(fileName: nowString, data: settingsDailyRecordStore.allDailyRecords, viewController: self)
+            }
+             // "Reset All Data" row action
             if indexPath.row == 1 {
                 
                 //Reset All data -- add action
