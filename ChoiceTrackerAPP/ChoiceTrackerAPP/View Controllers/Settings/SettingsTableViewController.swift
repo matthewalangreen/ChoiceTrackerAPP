@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-    //MARK:- Status bar style
+   //MARK:- Status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UserDefaults.standard.bool(forKey: "LightTheme") ? .lightContent : .default
     }
@@ -22,11 +22,41 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
     @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
-   
+    @IBOutlet var AboutCell: UITableViewCell!
+    
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
     @IBOutlet var ResetLabel: UILabel!
     @IBOutlet var ChoiceHistoryLabel: UILabel!
+    @IBOutlet var AboutTextLabel: UILabel!
+    
+    //MARK:- ApplyTheme
+    fileprivate func ApplyTheme() {
+        // apply bar color theme
+        let navBar = self.navigationController?.navigationBar
+        // change the bar tint color to change what the color of the bar itself looks like
+        navBar?.barTintColor = Theme.current.headerColor
+        // back button
+        navBar?.tintColor = Theme.current.textColor
+        navBar?.isTranslucent = false
+        //  title color
+        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
+        
+        view.backgroundColor = Theme.current.backgroundColor
+        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
+        ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
+        ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
+        
+        ChoiceTrackerProLabel.textColor = Theme.current.textColor
+        ResetLabel.textColor = UIColor.init(named: "light-bad")
+        ChoiceHistoryLabel.textColor = Theme.current.textColor
+        
+        AboutCell.backgroundColor = Theme.current.backgroundColor
+        AboutTextLabel.backgroundColor = Theme.current.backgroundColor
+        AboutTextLabel.textColor = Theme.current.textColor
+       
+        
+    }
     
     //MARK:- IBActions
     @IBAction func dismissPopup(_ sender: Any) {
@@ -41,25 +71,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Theme.current.backgroundColor
-        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-        ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
-        ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
-        
-        ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = UIColor.init(named: "light-bad")
-        ChoiceHistoryLabel.textColor = Theme.current.textColor
-        
-        // apply bar color theme
-        let navBar = self.navigationController?.navigationBar
-        // change the bar tint color to change what the color of the bar itself looks like
-        navBar?.barTintColor = Theme.current.headerColor
-        // back button
-        navBar?.tintColor = Theme.current.textColor
-        navBar?.isTranslucent = false
-        //  title color
-        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
-        
+        ApplyTheme()
         
         // add the little arrow to the right side of the cells
         ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
@@ -116,24 +128,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        view.backgroundColor = Theme.current.backgroundColor
-        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
-        ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
-        ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
-        
-        ChoiceTrackerProLabel.textColor = Theme.current.textColor
-        ResetLabel.textColor = UIColor.init(named: "light-bad")
-        ChoiceHistoryLabel.textColor = Theme.current.textColor
-        
-        // apply bar color theme
-        let navBar = self.navigationController?.navigationBar
-        // change the bar tint color to change what the color of the bar itself looks like
-        navBar?.barTintColor = Theme.current.headerColor
-        // back button
-        navBar?.tintColor = Theme.current.textColor
-        navBar?.isTranslucent = false
-        //  title color
-        navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
+        ApplyTheme()
         
         AppUtility.lockOrientation(.portrait)
     }

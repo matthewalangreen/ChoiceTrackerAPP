@@ -160,7 +160,7 @@
                         <sections>
                             <tableViewSection id="tkq-S0-mJN">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HD8-vD-MSM">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HD8-vD-MSM">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HD8-vD-MSM" id="h80-jB-CjJ">
@@ -366,6 +366,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AboutCell" destination="HD8-vD-MSM" id="NsY-zi-tqh"/>
+                        <outlet property="AboutTextLabel" destination="Nd8-x9-WWd" id="YTb-HS-fK3"/>
                         <outlet property="ChoiceHistoryLabel" destination="Czo-3n-Mx7" id="oIG-xB-Uak"/>
                         <outlet property="ChoiceTrackerProLabel" destination="jp1-Kq-bHN" id="V0p-Ng-lwS"/>
                         <outlet property="ChoiceTrackerPro_Cell" destination="bEz-kQ-S7D" id="Jff-0C-tgg"/>
