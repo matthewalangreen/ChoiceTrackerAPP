@@ -9,6 +9,9 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    // for alert controller
+    var userDataLabelField: UITextField?
+    
    //MARK:- Status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UserDefaults.standard.bool(forKey: "LightTheme") ? .lightContent : .default
@@ -23,12 +26,15 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
     @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
     @IBOutlet var AboutCell: UITableViewCell!
+    @IBOutlet var GoalChangeCell: UITableViewCell!
     
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
     @IBOutlet var ResetLabel: UILabel!
     @IBOutlet var ChoiceHistoryLabel: UILabel!
     @IBOutlet var AboutTextLabel: UILabel!
+    @IBOutlet var GoalChangeLabel: UILabel!
+    @IBOutlet var CurrentDataLabel: UILabel!
     
     //MARK:- ApplyTheme
     fileprivate func ApplyTheme() {
@@ -54,6 +60,10 @@ class SettingsTableViewController: UITableViewController {
         AboutCell.backgroundColor = Theme.current.backgroundColor
         AboutTextLabel.backgroundColor = Theme.current.backgroundColor
         AboutTextLabel.textColor = Theme.current.textColor
+        
+        GoalChangeCell.backgroundColor = Theme.current.backgroundColor
+        GoalChangeLabel.backgroundColor = Theme.current.backgroundColor
+        GoalChangeLabel.textColor = Theme.current.textColor
        
         
     }
@@ -71,6 +81,11 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set label
+        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
+        userDataLabelField?.text = goalText
+        CurrentDataLabel.text = goalText
+        
         ApplyTheme()
         
         // add the little arrow to the right side of the cells
@@ -82,8 +97,21 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Change goal tapped
+        if indexPath.section == 1 {
+            if indexPath.row == 1 {
+                let alert: UIAlertController = changeGoalAlertWithHandler(currentDailyRecord: settingsCurrentDailyRecord, handler: {
+                    self.CurrentDataLabel.text = UserDefaults.standard.string(forKey: "dataLabel")
+                    let indexPath = NSIndexPath(row: 1, section: 1)  // reload this row
+                    tableView.reloadRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.none)
+                })
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+        }
+        
         // if we clicked on the "Reset All Data" row
-        if indexPath.section  == 4 {
+        if indexPath.section  == 3 {
             if indexPath.row == 1 {
                 
                 //Reset All data -- add action
@@ -103,6 +131,10 @@ class SettingsTableViewController: UITableViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
+       
+        
+        
         // remove the higlighting right after the cell is selected
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -127,6 +159,10 @@ class SettingsTableViewController: UITableViewController {
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
+        userDataLabelField?.text = goalText
+        CurrentDataLabel.text = goalText
         
         ApplyTheme()
         
