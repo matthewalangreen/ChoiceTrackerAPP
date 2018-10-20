@@ -83,8 +83,8 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // if we clicked on the "Reset All Data" row
-        if indexPath.section  == 2 {
-            if indexPath.row == 0 {
+        if indexPath.section  == 4 {
+            if indexPath.row == 1 {
                 
                 //Reset All data -- add action
                 
