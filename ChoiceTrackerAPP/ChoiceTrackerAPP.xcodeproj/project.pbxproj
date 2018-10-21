@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0494DD12175932100440547 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0494DD02175932100440547 /* IAPManager.swift */; };
 		D0494DD82175984D00440547 /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0494DD72175984D00440547 /* products.plist */; };
 		D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB37214DD3350063186A /* ForcePortrait.swift */; };
 		D049CB3B214DDAFE0063186A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D049CB3A214DDAFE0063186A /* Colors.xcassets */; };
@@ -19,8 +18,8 @@
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
 		D064D375213CD91D0059608E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D374213CD91D0059608E /* AboutViewController.swift */; };
 		D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D377213CDE540059608E /* SettingsInfoCell.swift */; };
+		D06CCF5A217D4116007B4E82 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06CCF59217D4116007B4E82 /* StoreKit.framework */; };
 		D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07913DF214DC19C0025D382 /* LightTheme.swift */; };
-		D07A640A2166C7870018901C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07A64092166C7870018901C /* StoreKit.framework */; };
 		D08550C9212BAA92002A6C04 /* CSV-Export.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08550C8212BAA92002A6C04 /* CSV-Export.swift */; };
 		D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1422126310200C955FB /* AppDelegate.swift */; };
 		D0ACA1452126310200C955FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ACA1442126310200C955FB /* MainViewController.swift */; };
@@ -78,7 +77,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D0494DD02175932100440547 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		D0494DD72175984D00440547 /* products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
 		D049CB37214DD3350063186A /* ForcePortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcePortrait.swift; sourceTree = "<group>"; };
 		D049CB3A214DDAFE0063186A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -90,8 +88,8 @@
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
 		D064D374213CD91D0059608E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D064D377213CDE540059608E /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
+		D06CCF59217D4116007B4E82 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D07913DF214DC19C0025D382 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
-		D07A64092166C7870018901C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D07A640B2166C7AA0018901C /* ChoiceTrackerAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChoiceTrackerAPP.entitlements; sourceTree = "<group>"; };
 		D08550C8212BAA92002A6C04 /* CSV-Export.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSV-Export.swift"; sourceTree = "<group>"; };
 		D0ACA13F2126310200C955FB /* ChoiceTrackerAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceTrackerAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,21 +116,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0ACA1612126358300C955FB /* Charts.framework in Frameworks */,
-				D07A640A2166C7870018901C /* StoreKit.framework in Frameworks */,
+				D06CCF5A217D4116007B4E82 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D0494DD22175945F00440547 /* In-App Purchase */ = {
-			isa = PBXGroup;
-			children = (
-				D0494DD02175932100440547 /* IAPManager.swift */,
-			);
-			path = "In-App Purchase";
-			sourceTree = "<group>";
-		};
 		D049CB39214DDA870063186A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +157,7 @@
 		D07A64082166C7870018901C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D07A64092166C7870018901C /* StoreKit.framework */,
+				D06CCF59217D4116007B4E82 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,7 +197,6 @@
 			children = (
 				D07A640B2166C7AA0018901C /* ChoiceTrackerAPP.entitlements */,
 				D0ACA1422126310200C955FB /* AppDelegate.swift */,
-				D0494DD22175945F00440547 /* In-App Purchase */,
 				D049CB39214DDA870063186A /* Resources */,
 				D08550C3212BA4A5002A6C04 /* Shared Methods */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
@@ -377,7 +366,6 @@
 			files = (
 				D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */,
 				D0FF87D22127AE13003C8644 /* HistoryTableViewController.swift in Sources */,
-				D0494DD12175932100440547 /* IAPManager.swift in Sources */,
 				D049CB3D214DE2E20063186A /* DarkTheme.swift in Sources */,
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
 				D0B6F39A213CD7B600581F9B /* ChoiceTrackerProSettingsTableView.swift in Sources */,

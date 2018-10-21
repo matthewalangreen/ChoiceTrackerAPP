@@ -169,7 +169,9 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd8-x9-WWd" userLabel="AboutLabel">
                                                     <rect key="frame" x="16" y="12" width="288" height="19.5"/>
-                                                    <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices and using that data to shift our behavior.</string>
+                                                    <string key="text">ChoiceTracker is the perfect tool for those of us interested in collecting data about our choices, and using that data to shift our behavior.
+
+Twitter: @app_choice</string>
                                                     <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

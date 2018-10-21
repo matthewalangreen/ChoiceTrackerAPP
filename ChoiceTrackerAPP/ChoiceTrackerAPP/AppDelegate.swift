@@ -43,11 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UserDefaults.standard.set("No goal set", forKey: "dataLabel")
         }
         
-        IAPManager.sharedInstance.setupPurchases { (canPurchase) in
-            if canPurchase {
-                IAPManager.sharedInstance.performProductRequestForIdentifiers(identifiers: IAPManager.sharedInstance.getProductIdentifiers())
-            }
-        }
+//        IAPManager.sharedInstance.setupPurchases { (canPurchase) in
+//            if canPurchase {
+//                IAPManager.sharedInstance.performProductRequestForIdentifiers(identifiers: IAPManager.sharedInstance.getProductIdentifiers())
+//            }
+//        }
         return true
     }
 

@@ -135,15 +135,15 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
             // clicked on Monthly subscription
             if indexPath.row == 0 {
                 print("clicked monthly subscription")
-                let product = IAPManager.sharedInstance.products[1]
-                IAPManager.sharedInstance.createPaymentReqeustForProduct(product: product)
+//                let product = IAPManager.sharedInstance.products[1]
+//                IAPManager.sharedInstance.createPaymentReqeustForProduct(product: product)
             }
             
             // clicked on yearly subscription
             if indexPath.row == 1 {
                   print("clicked yearly subscription")
-                let product = IAPManager.sharedInstance.products[0]
-                IAPManager.sharedInstance.createPaymentReqeustForProduct(product: product)
+//                let product = IAPManager.sharedInstance.products[0]
+//                IAPManager.sharedInstance.createPaymentReqeustForProduct(product: product)
             }
         }
         
@@ -193,11 +193,13 @@ class ChoiceTrackerProSettingsTableView: UITableViewController {
         
        // infoCell.selectionStyle = UITableViewCell.SelectionStyle.none
         
-        let monthly = IAPManager.sharedInstance.products[1]
-        MonthlyLabel.text = monthly.localizedTitle
+        //let monthly = IAPManager.sharedInstance.products[1]
+        //MonthlyLabel.text = monthly.localizedTitle
+        MonthlyLabel.text = "MONTHLY"
         
-        let yearly = IAPManager.sharedInstance.products[0]
-        YearlyLabel.text = yearly.localizedTitle
+        //let yearly = IAPManager.sharedInstance.products[0]
+        //YearlyLabel.text = yearly.localizedTitle
+        YearlyLabel.text = "YEARLY"
         
     }
     
