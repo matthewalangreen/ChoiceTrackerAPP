@@ -28,6 +28,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var AboutCell: UITableViewCell!
     @IBOutlet var GoalChangeCell: UITableViewCell!
     @IBOutlet var ExportDataCell: UITableViewCell!
+    @IBOutlet var ThemeCell: UITableViewCell!
     
     //MARK:- Outlets to labels in cells
     @IBOutlet var ChoiceTrackerProLabel: UILabel!
@@ -37,6 +38,12 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var GoalChangeLabel: UILabel!
     @IBOutlet var CurrentDataLabel: UILabel!
     @IBOutlet var ExportDataLabel: UILabel!
+    @IBOutlet var DarkModeLabel: UILabel!
+    
+    
+    //MARK: UISwitch Outlet
+    @IBOutlet var DarkModeSwitch: UISwitch!
+    
     
     //MARK:- ApplyTheme
     fileprivate func ApplyTheme() {
@@ -70,10 +77,28 @@ class SettingsTableViewController: UITableViewController {
         ExportDataCell.backgroundColor = Theme.current.backgroundColor
         ExportDataLabel.backgroundColor = Theme.current.backgroundColor
         ExportDataLabel.textColor = Theme.current.textColor
+        
+        ThemeCell.backgroundColor = Theme.current.backgroundColor
+        DarkModeLabel.backgroundColor = Theme.current.backgroundColor
+        DarkModeLabel.textColor = Theme.current.textColor
        
     }
     
     //MARK:- IBActions
+    @IBAction func DarkModeSwitchAction(_ sender: UISwitch) {
+        Theme.current = sender.isOn ? DarkTheme() : LightTheme()
+        UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
+        
+        ApplyTheme()
+        
+        DispatchQueue.main.async { self.tableView.reloadData() }
+        view.setNeedsDisplay()
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    
+    
+    
     @IBAction func dismissPopup(_ sender: Any) {
         if let presenter = presentingViewController as? MainViewController {
            presenter.dailyRecordStore = settingsDailyRecordStore
@@ -83,8 +108,28 @@ class SettingsTableViewController: UITableViewController {
     
   
     //MARK:- OVERRIDE
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        //header.backgroundColor = Theme.current.tableHeaderColor
+        header.contentView.backgroundColor = Theme.current.tableHeaderColor
+        header.textLabel?.textColor = Theme.current.textColor
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // if never set user default theme
+        if UserDefaults.standard.object(forKey: "LightTheme") == nil {
+            UserDefaults.standard.set(false, forKey: "LightTheme")
+        }
+        
+        // if never set user default label
+        if UserDefaults.standard.object(forKey: "dataLabel") == nil {
+            UserDefaults.standard.set("Default Data Label", forKey: "dataLabel")
+        }
+        
+        // set theme
+        DarkModeSwitch.isOn = UserDefaults.standard.bool(forKey: "LightTheme")
         
         // set label
         let goalText = UserDefaults.standard.string(forKey: "dataLabel")
@@ -170,13 +215,13 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
-        userDataLabelField?.text = goalText
-        CurrentDataLabel.text = goalText
-        
         ApplyTheme()
         
         AppUtility.lockOrientation(.portrait)
+        
+        let goalText = UserDefaults.standard.string(forKey: "dataLabel")
+        userDataLabelField?.text = goalText
+        CurrentDataLabel.text = goalText
     }
    
     

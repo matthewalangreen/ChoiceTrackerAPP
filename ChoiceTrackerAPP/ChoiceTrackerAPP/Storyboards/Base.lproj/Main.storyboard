@@ -262,6 +262,7 @@
                                                     <rect key="frame" x="255" y="6.5" width="51" height="31"/>
                                                     <color key="onTintColor" name="light-good"/>
                                                     <connections>
+                                                        <action selector="DarkModeSwitchAction:" destination="lbZ-dV-xVn" eventType="valueChanged" id="aSK-1c-2cG"/>
                                                         <action selector="ThemeSwitch:" destination="XmP-51-Udd" eventType="valueChanged" id="3KE-9m-7Ou"/>
                                                     </connections>
                                                 </switch>
@@ -372,12 +373,15 @@
                         <outlet property="ChoiceTrackerProLabel" destination="jp1-Kq-bHN" id="V0p-Ng-lwS"/>
                         <outlet property="ChoiceTrackerPro_Cell" destination="bEz-kQ-S7D" id="Jff-0C-tgg"/>
                         <outlet property="CurrentDataLabel" destination="t7r-Zg-TNn" id="uEq-XL-XmN"/>
+                        <outlet property="DarkModeLabel" destination="0qs-HX-lkT" id="7mg-W5-VVM"/>
+                        <outlet property="DarkModeSwitch" destination="jeB-m9-knF" id="B0r-Ln-Rfm"/>
                         <outlet property="ExportDataCell" destination="dAV-9W-Dyk" id="k4f-KT-2nG"/>
                         <outlet property="ExportDataLabel" destination="6qx-xs-adx" id="tMA-VZ-GEb"/>
                         <outlet property="GoalChangeCell" destination="cS3-Rl-Db0" id="aXY-qf-91J"/>
                         <outlet property="GoalChangeLabel" destination="xTT-NY-G9O" id="sun-YJ-M4Z"/>
                         <outlet property="ResetAllData_Cell" destination="W8L-Q4-H0c" id="P55-jg-GLM"/>
                         <outlet property="ResetLabel" destination="Mut-9I-8Dc" id="laC-I7-2Cl"/>
+                        <outlet property="ThemeCell" destination="OF9-N3-RpX" id="R05-nH-FD7"/>
                         <outlet property="ViewChoiceHistory_Cell" destination="uNe-XK-gxt" id="cRJ-GV-gs6"/>
                     </connections>
                 </tableViewController>
