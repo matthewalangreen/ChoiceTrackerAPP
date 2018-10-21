@@ -22,7 +22,7 @@ class SettingsTableViewController: UITableViewController {
     var settingsCurrentDailyRecord: DailyRecord! // set by "prepareForSegue" from Main View Controller
     
     //MARK:- Outlets to cells
-    @IBOutlet var ChoiceTrackerPro_Cell: UITableViewCell!
+    
     @IBOutlet var ResetAllData_Cell: UITableViewCell!
     @IBOutlet var ViewChoiceHistory_Cell: UITableViewCell!
     @IBOutlet var AboutCell: UITableViewCell!
@@ -31,7 +31,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet var ThemeCell: UITableViewCell!
     
     //MARK:- Outlets to labels in cells
-    @IBOutlet var ChoiceTrackerProLabel: UILabel!
+    
     @IBOutlet var ResetLabel: UILabel!
     @IBOutlet var ChoiceHistoryLabel: UILabel!
     @IBOutlet var AboutTextLabel: UILabel!
@@ -58,11 +58,10 @@ class SettingsTableViewController: UITableViewController {
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
         view.backgroundColor = Theme.current.backgroundColor
-        ChoiceTrackerPro_Cell.backgroundColor = Theme.current.backgroundColor
+      
         ResetAllData_Cell.backgroundColor = Theme.current.backgroundColor
         ViewChoiceHistory_Cell.backgroundColor = Theme.current.backgroundColor
         
-        ChoiceTrackerProLabel.textColor = Theme.current.textColor
         ResetLabel.textColor = UIColor.init(named: "light-bad")
         ChoiceHistoryLabel.textColor = Theme.current.textColor
         
@@ -139,7 +138,6 @@ class SettingsTableViewController: UITableViewController {
         ApplyTheme()
         
         // add the little arrow to the right side of the cells
-        ChoiceTrackerPro_Cell.accessoryType = .disclosureIndicator
         ViewChoiceHistory_Cell.accessoryType = .disclosureIndicator
        
         tableView.tableFooterView = UIView()
@@ -202,10 +200,7 @@ class SettingsTableViewController: UITableViewController {
             let destinationVC = segue.destination as! HistoryTableViewController
             destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
             destinationVC.recordDictionary = settingsDailyRecordStore.allDailyRecords
-        case "showChoiceTrackerPro"?:
-            let destinationVC = segue.destination as! ChoiceTrackerProSettingsTableView
-                destinationVC.dailyRecordStore = settingsDailyRecordStore
-                destinationVC.currentDailyRecord = settingsCurrentDailyRecord
+       
         default:
             preconditionFailure("Unexpected segue identifier")
         }
