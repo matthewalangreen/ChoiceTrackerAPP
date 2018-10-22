@@ -16,7 +16,6 @@
 		D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */; };
 		D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D12128D42C002F8F6A /* HistoryCell.swift */; };
 		D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */; };
-		D064D375213CD91D0059608E /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D374213CD91D0059608E /* AboutViewController.swift */; };
 		D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D064D377213CDE540059608E /* SettingsInfoCell.swift */; };
 		D06CCF5A217D4116007B4E82 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06CCF59217D4116007B4E82 /* StoreKit.framework */; };
 		D07913E0214DC19C0025D382 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07913DF214DC19C0025D382 /* LightTheme.swift */; };
@@ -85,7 +84,6 @@
 		D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationController.swift; sourceTree = "<group>"; };
 		D04AE6D12128D42C002F8F6A /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		D04AE6D32128D90F002F8F6A /* PieChartMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartMethods.swift; sourceTree = "<group>"; };
-		D064D374213CD91D0059608E /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D064D377213CDE540059608E /* SettingsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoCell.swift; sourceTree = "<group>"; };
 		D06CCF59217D4116007B4E82 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D07913DF214DC19C0025D382 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			children = (
 				D0FF87CD2127AB16003C8644 /* SettingsNavigationController.swift */,
 				D0FF87CF2127AB58003C8644 /* SettingsTableViewController.swift */,
-				D064D374213CD91D0059608E /* AboutViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -367,7 +364,6 @@
 				D0ACA1572126315D00C955FB /* DailyRecordStore.swift in Sources */,
 				D0DA5631212B9519002657DB /* Various-Methods.swift in Sources */,
 				D049CB41214DEAB10063186A /* Theme.swift in Sources */,
-				D064D375213CD91D0059608E /* AboutViewController.swift in Sources */,
 				D0FF87D02127AB58003C8644 /* SettingsTableViewController.swift in Sources */,
 				D04AE6D22128D42C002F8F6A /* HistoryCell.swift in Sources */,
 				D0DA562E212B93F9002657DB /* DateFormatters.swift in Sources */,
