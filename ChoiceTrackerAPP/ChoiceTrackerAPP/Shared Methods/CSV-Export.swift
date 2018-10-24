@@ -36,5 +36,12 @@ func exportCSV(fileName: String, data: [String:DailyRecord], viewController: UIV
     }
     
     let vc = UIActivityViewController(activityItems: [path!], applicationActivities: [])
+    
+    // iPad stuff
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        vc.popoverPresentationController?.sourceView = viewController.view
+        vc.popoverPresentationController?.sourceRect = CGRect(x: viewController.view.bounds.midX, y: viewController.view.bounds.midY, width: 0, height: 0)
+        vc.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+    }
     viewController.present(vc, animated: true, completion: nil)
 }

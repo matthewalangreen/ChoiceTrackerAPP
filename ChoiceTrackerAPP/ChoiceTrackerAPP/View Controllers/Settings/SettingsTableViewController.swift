@@ -172,7 +172,7 @@ class SettingsTableViewController: UITableViewController {
                 let alert = UIAlertController(title: "Reset All Data", message: "Are you sure? You cannot undo this action", preferredStyle: .alert)
                 
                 let yesAction = UIAlertAction(title: "Reset", style: .destructive, handler: { action in
-                    let newGoal:String = "What are you focused on today?"
+                    let newGoal:String = "What are you focused on today?    "
                     UserDefaults.standard.set(newGoal, forKey: "dataLabel")
                     self.CurrentDataLabel.text = newGoal
                     self.settingsDailyRecordStore.deleteAllRecords()
@@ -183,7 +183,6 @@ class SettingsTableViewController: UITableViewController {
                 
                 alert.addAction(noAction)
                 alert.addAction(yesAction)
-                
                 
                 self.present(alert, animated: true, completion: nil)
             }
