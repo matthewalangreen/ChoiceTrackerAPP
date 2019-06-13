@@ -138,7 +138,19 @@ class MainViewController: UIViewController {
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
+    
+    @IBAction func handleGesture(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began
+        {
+            print("long pressed good choice")
+        }
+    }
 
+    @IBAction func handeBadChoiceLongPress(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began {
+            print("long pressed bad choice")
+        }
+    }
     //MARK:- Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
