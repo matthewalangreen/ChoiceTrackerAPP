@@ -143,12 +143,14 @@ class MainViewController: UIViewController {
         if sender.state == .began
         {
             print("long pressed good choice")
+            //TODO: present popup for description
         }
     }
 
     @IBAction func handeBadChoiceLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             print("long pressed bad choice")
+            //TODO: Present popup for description text
         }
     }
     //MARK:- Segue

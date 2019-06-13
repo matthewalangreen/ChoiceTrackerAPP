@@ -445,6 +445,7 @@ Twitter: @app_choice</string>
                                     <outlet property="dateLabel" destination="FfL-t6-6AF" id="5Hd-Wr-FX0"/>
                                     <outlet property="goalLabel" destination="fHV-v8-bdP" id="9ho-M3-xjd"/>
                                     <outlet property="pieChart" destination="vcV-dD-BHj" id="es3-pc-8kb"/>
+                                    <segue destination="pXd-mr-bV3" kind="show" id="1jC-St-Y4k"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -460,6 +461,34 @@ Twitter: @app_choice</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-Rs-Doc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821" y="-447"/>
+        </scene>
+        <!--History NotesVC-->
+        <scene sceneID="GcL-46-54S">
+            <objects>
+                <tableViewController id="pXd-mr-bV3" customClass="HistoryNotesVC" customModule="ChoiceTrackerAPP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sLW-fi-qbB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gfE-PA-7V3">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfE-PA-7V3" id="vrb-It-FZy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pXd-mr-bV3" id="FIY-sa-coS"/>
+                            <outlet property="delegate" destination="pXd-mr-bV3" id="6r7-2H-HCQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PQA-YM-Non" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1935" y="-448"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="xkw-Ff-8of">
