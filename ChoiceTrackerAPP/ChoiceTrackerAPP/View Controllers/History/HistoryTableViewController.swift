@@ -89,6 +89,8 @@ class HistoryTableViewController: UITableViewController {
     
         sortedRecords = recordDictionary.sorted(by: { $0.0 < $1.0 } )
         reverseSortedRecords = recordDictionary.sorted(by: { $0.0 > $1.0 } )
+        
+        self.tableView.allowsSelection = true
     }
     
     //MARK:- Force Portrait
