@@ -23,6 +23,7 @@ class HistoryTableViewController: UITableViewController {
     var recordDictionary: [String:DailyRecord]!
     var sortedRecords: [(key: String, value: DailyRecord)]!
     var reverseSortedRecords: [(key: String, value: DailyRecord)]!
+    var selectedRow: Int = 0
     
     
     //MARK:- TableView methods
@@ -118,4 +119,24 @@ class HistoryTableViewController: UITableViewController {
     }
 
 }
+
+extension HistoryTableViewController {
+        //MARK:- Segue
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            switch segue.identifier {
+            case "HistoryNotesVC"?:
+                let destinationVC = segue.destination as! HistoryNotesVC
+                destinationVC.selectedRowIndex = self.selectedRow
+                print("you switched to HistoryNotesVC")
+                
+            default:
+                preconditionFailure("Unexpected segue identifier")
+            }
+        }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedRow = indexPath.row
+    }
+    }
+
 

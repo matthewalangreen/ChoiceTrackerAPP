@@ -445,7 +445,7 @@ Twitter: @app_choice</string>
                                     <outlet property="dateLabel" destination="FfL-t6-6AF" id="5Hd-Wr-FX0"/>
                                     <outlet property="goalLabel" destination="fHV-v8-bdP" id="9ho-M3-xjd"/>
                                     <outlet property="pieChart" destination="vcV-dD-BHj" id="es3-pc-8kb"/>
-                                    <segue destination="pXd-mr-bV3" kind="show" id="1jC-St-Y4k"/>
+                                    <segue destination="pXd-mr-bV3" kind="show" identifier="HistoryNotesVC" id="1jC-St-Y4k"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -471,13 +471,29 @@ Twitter: @app_choice</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gfE-PA-7V3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryNotesVCCell" id="gfE-PA-7V3" customClass="HistoryNotesVCCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfE-PA-7V3" id="vrb-It-FZy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp7-5l-umB">
+                                            <rect key="frame" x="16" y="12" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="leading" secondItem="vrb-It-FZy" secondAttribute="leadingMargin" id="F0N-DY-57T"/>
+                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="centerY" secondItem="vrb-It-FZy" secondAttribute="centerY" id="G69-ZS-CSq"/>
+                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="bottom" secondItem="vrb-It-FZy" secondAttribute="bottomMargin" id="HAn-Z4-9He"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="HistoryNotesLabel" destination="Fp7-5l-umB" id="XeG-4f-bzI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

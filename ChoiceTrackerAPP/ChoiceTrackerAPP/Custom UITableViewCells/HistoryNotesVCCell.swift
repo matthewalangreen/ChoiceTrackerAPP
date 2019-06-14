@@ -10,4 +10,6 @@ import UIKit
 import Charts
 
 class HistoryNotesVCCell: UITableViewCell {
+    
+    @IBOutlet weak var HistoryNotesLabel: UILabel!
 }
