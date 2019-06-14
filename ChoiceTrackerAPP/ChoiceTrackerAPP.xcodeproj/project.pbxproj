@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A784E94922B2E01900A38B33 /* HistoryNotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784E94822B2E01900A38B33 /* HistoryNotesVC.swift */; };
+		C9FC2F0422B3235B00D56DB0 /* HistoryNotesVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FC2F0322B3235B00D56DB0 /* HistoryNotesVCCell.swift */; };
 		D0494DD82175984D00440547 /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0494DD72175984D00440547 /* products.plist */; };
 		D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049CB37214DD3350063186A /* ForcePortrait.swift */; };
 		D049CB3B214DDAFE0063186A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D049CB3A214DDAFE0063186A /* Colors.xcassets */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		A784E94822B2E01900A38B33 /* HistoryNotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNotesVC.swift; sourceTree = "<group>"; };
+		C9FC2F0322B3235B00D56DB0 /* HistoryNotesVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNotesVCCell.swift; sourceTree = "<group>"; };
 		D0494DD72175984D00440547 /* products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
 		D049CB37214DD3350063186A /* ForcePortrait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForcePortrait.swift; sourceTree = "<group>"; };
 		D049CB3A214DDAFE0063186A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -139,7 +141,6 @@
 				D0ACA1442126310200C955FB /* MainViewController.swift */,
 				D0B6F39B213CD7C100581F9B /* Settings */,
 				D0B6F39C213CD7CE00581F9B /* History */,
-				A784E94822B2E01900A38B33 /* HistoryNotesVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -200,8 +201,8 @@
 				D08550C3212BA4A5002A6C04 /* Shared Methods */,
 				D04AE6D02128D3EB002F8F6A /* Model */,
 				D0B6F398213CD73400581F9B /* Custom UITableViewCells */,
-				D0B6F396213CD70E00581F9B /* Storyboards */,
 				D04AE6CF2128D2CD002F8F6A /* View Controllers */,
+				D0B6F396213CD70E00581F9B /* Storyboards */,
 				D0ACA1492126310300C955FB /* Assets.xcassets */,
 				D0494DD72175984D00440547 /* products.plist */,
 				D0ACA14E2126310300C955FB /* Info.plist */,
@@ -232,6 +233,7 @@
 			children = (
 				D04AE6D12128D42C002F8F6A /* HistoryCell.swift */,
 				D064D377213CDE540059608E /* SettingsInfoCell.swift */,
+				C9FC2F0322B3235B00D56DB0 /* HistoryNotesVCCell.swift */,
 			);
 			path = "Custom UITableViewCells";
 			sourceTree = "<group>";
@@ -250,6 +252,7 @@
 			children = (
 				D04AE6CD2128C358002F8F6A /* HistoryNavigationController.swift */,
 				D0FF87D12127AE13003C8644 /* HistoryTableViewController.swift */,
+				A784E94822B2E01900A38B33 /* HistoryNotesVC.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				D049CB38214DD3350063186A /* ForcePortrait.swift in Sources */,
 				D0ACA1432126310200C955FB /* AppDelegate.swift in Sources */,
 				D049CB3F214DE8D90063186A /* ThemeProtocol.swift in Sources */,
+				C9FC2F0422B3235B00D56DB0 /* HistoryNotesVCCell.swift in Sources */,
 				D04AE6CE2128C358002F8F6A /* HistoryNavigationController.swift in Sources */,
 				D04AE6D42128D90F002F8F6A /* PieChartMethods.swift in Sources */,
 				D064D378213CDE540059608E /* SettingsInfoCell.swift in Sources */,

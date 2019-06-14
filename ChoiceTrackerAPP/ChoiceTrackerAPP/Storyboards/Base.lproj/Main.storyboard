@@ -488,7 +488,7 @@ Twitter: @app_choice</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQA-YM-Non" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="-448"/>
+            <point key="canvasLocation" x="1556" y="-440"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="xkw-Ff-8of">
