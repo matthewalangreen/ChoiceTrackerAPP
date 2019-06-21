@@ -128,6 +128,8 @@ class MainViewController: UIViewController {
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
+        currentDailyRecord.addChoiceNote(note: "")
+        print("notes: \(currentDailyRecord.getNotes())")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
@@ -135,6 +137,8 @@ class MainViewController: UIViewController {
     @IBAction func addGoodChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         incrementChoice(choice: "Good")
+        currentDailyRecord.addChoiceNote(note: "")
+        print("notes: \(currentDailyRecord.getNotes())")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
@@ -144,8 +148,11 @@ class MainViewController: UIViewController {
         {
             //print("long pressed good choice")
             //TODO: present popup for description
+            incrementChoice(choice: "Good")
+            currentDailyRecord.addChoiceNote(note: "Custom good note")
             let ac = alertWithField()
             self.present(ac, animated: true, completion: nil)
+            print("notes: \(currentDailyRecord.getNotes())")
         }
     }
 
@@ -153,8 +160,11 @@ class MainViewController: UIViewController {
         if sender.state == .began {
             //print("long pressed bad choice")
             //TODO: Present popup for description text
+            incrementChoice(choice: "Bad")
+            currentDailyRecord.addChoiceNote(note: "Custom bad note")
             let ac = alertWithField()
             self.present(ac, animated: true, completion: nil)
+            print("notes: \(currentDailyRecord.getNotes())")
         }
     }
     //MARK:- Segue

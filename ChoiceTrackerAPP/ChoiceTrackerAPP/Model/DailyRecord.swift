@@ -12,12 +12,14 @@ class DailyRecord: NSObject, NSCoding {
     
     //MARK:- properties
     var choices: [Int]
+    var notes: [String] // new model
     var dateString: String   // encode using "sortableShortDate" closure
     var goalString: String
     
     //MARK:- init
     override init() {
         self.choices = genRandomData(40)
+        self.notes = [String]() // new model
         self.dateString = sortableShortDate.string(from: Date.init())
         if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
             self.goalString = goal
@@ -30,6 +32,7 @@ class DailyRecord: NSObject, NSCoding {
     init(nowDateString: String) {
         self.dateString = nowDateString
         self.choices = genRandomData(40)
+        self.notes = [String]() // new model
         if let goal = UserDefaults.standard.string(forKey: "dataLabel") {
             self.goalString = goal
         } else {
@@ -39,6 +42,7 @@ class DailyRecord: NSObject, NSCoding {
     
     init(nowDateString: String, firstTimeToday: Bool) {
         self.dateString = nowDateString
+        self.notes = [String]() // new model
         if firstTimeToday {
             self.choices = [0]
         } else {
@@ -56,12 +60,14 @@ class DailyRecord: NSObject, NSCoding {
         aCoder.encode(choices, forKey: "choices")
         aCoder.encode(dateString, forKey: "dateString")
         aCoder.encode(goalString, forKey: "goalString")
+        aCoder.encode(notes, forKey: "notes") // new model
     }
     
     required init(coder aDecoder: NSCoder) {
         choices = aDecoder.decodeObject(forKey: "choices") as! [Int]
         dateString = aDecoder.decodeObject(forKey: "dateString") as! String
         goalString = aDecoder.decodeObject(forKey: "goalString") as! String
+        notes = aDecoder.decodeObject(forKey: "notes") as! [String] // new model
         super.init()
     }
     
@@ -109,10 +115,20 @@ class DailyRecord: NSObject, NSCoding {
     //MARK:- setters
     func goodChoice() {
         choices.append(1)
+        // add new model
     }
     
     func badChoice() {
         choices.append(-1)
+        // add new model
+    }
+    
+    func addChoiceNote(note: String) {
+        notes.append(note)
+    }
+    
+    func getNotes() -> [String] {
+        return notes
     }
     
     func changeGoal(_ newGoal: String) {
