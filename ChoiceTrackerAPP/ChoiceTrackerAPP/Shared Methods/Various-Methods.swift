@@ -38,6 +38,48 @@ func genRandomData(_ arrayLength: Int) -> [Int] {
     return results
 }
 
+//MARK:- Alert with field
+func alertWithField() -> UIAlertController {
+    var userGoalField: UITextField?
+    
+    // 2.
+    let alertController = UIAlertController(
+        title: "What happened?",
+        message: "Write a note to describe the choice",
+        preferredStyle: UIAlertController.Style.alert)
+    
+    // 3.
+    let goalAction = UIAlertAction(title: "Add Note", style: .default) {
+        (action) -> Void in
+        
+        if let newGoal = userGoalField?.text {
+            // set the goal to the match the text entered
+//            currentDailyRecord.changeGoal(newGoal)
+//            UserDefaults.standard.set(newGoal, forKey: "dataLabel")
+            
+        } else {
+            print("no note added")
+        }
+    }
+    
+    // 4.
+    alertController.addTextField {
+        (userGoal) -> Void in
+        userGoalField = userGoal
+        userGoalField!.placeholder = "Placeholder text"
+    }
+    
+    let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+    
+    // 5.
+    alertController.addAction(noAction)
+    alertController.addAction(goalAction)
+    alertController.view.tintColor = UIColor.init(named: "light-good")
+    
+    return alertController
+    //present(alertController, animated: true, completion: nil)
+}
+
 func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
     var userGoalField: UITextField?
     
