@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Choice {
+class Choice: NSObject {
     enum ChoiceType: Int {
         case good = 1
         case bad = -1
@@ -18,7 +18,7 @@ class Choice {
     var type: ChoiceType
     var note: String
     
-    init() {
+    override init() {
         type = .good
         note = ""
     }
@@ -32,7 +32,8 @@ class Choice {
 class DailyRecordV2: NSObject, NSCoding {
     
     //MARK:- properties
-    var choices: [Choice]
+    var choices = [Choice]() //testing
+    //var choices: [Choice]
     var dateString: String   // encode using "sortableShortDate" closure
     var goalString: String
     
@@ -80,19 +81,21 @@ class DailyRecordV2: NSObject, NSCoding {
         }
     }
     
+    // https://stackoverflow.com/questions/48040763/how-do-i-encode-a-custom-class-object-using-userdefaults-that-has-a-variable-of
     //MARK:- NSCoding required methods
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(choices, forKey: "choices")
+        //aCoder.encode(choices, forKey: "choices") // crashing
+        //aCoder.encode(NSKeyedArchiver.archivedData(withRootObject: choices), forKey: "choices")
         aCoder.encode(dateString, forKey: "dateString")
         aCoder.encode(goalString, forKey: "goalString")
-        //aCoder.encode(notes, forKey: "notes") // new model
     }
     
+
     required init(coder aDecoder: NSCoder) {
-        choices = aDecoder.decodeObject(forKey: "choices") as! [Choice]
+        //choices = aDecoder.decodeObject(forKey: "choices") as! [Choice]
+        //choices = NSKeyedUnarchiver.unarchiveObject(with: (aDecoder.decodeObject(forKey: "choices") as! NSData) as Data) as! [Choice]
         dateString = aDecoder.decodeObject(forKey: "dateString") as! String
         goalString = aDecoder.decodeObject(forKey: "goalString") as! String
-        //notes = aDecoder.decodeObject(forKey: "notes") as! [String] // new model
         super.init()
     }
     

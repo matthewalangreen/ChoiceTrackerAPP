@@ -34,29 +34,20 @@ class HistoryNotesVC: UITableViewController {
         
         
         
-        //let choices = currentRecord.choices
-      //  let choice = choices[indexPath.row]
+        let choices = currentRecord.choices
+        let choice = choices[indexPath.row]
         //let notes = currentRecord.notes
         //let note = notes[indexPath.row]
-        
-//        if note != "" {
-//            if choice == 1 { //Good choice
-//                cell.HistoryNotesLabel?.text = "+ choice. Note: \(note)"
-//            }
-//
-//            if choice == -1 { // Bad choice
-//                cell.HistoryNotesLabel?.text = "- choice. Note: \(note)"
-//            }
-//        } else {
-//            if choice == 1 { //Good choice
-//                cell.HistoryNotesLabel?.text = "+ choice"
-//            }
-//
-//            if choice == -1 { // Bad choice
-//                cell.HistoryNotesLabel?.text = "- choice"
-//            }
-//        }
-//
+
+        if choice.type == .good  { //Good choice
+            cell.HistoryNotesLabel?.text = "+ choice. Note: \(choice.note)"
+        }
+
+        if choice.type == .bad { // Bad choice
+            cell.HistoryNotesLabel?.text = "- choice. Note: \(choice.note)"
+        }
+       
+
        
         
         
