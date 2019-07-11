@@ -129,6 +129,7 @@ extension HistoryTableViewController {
             case "HistoryNotesVC"?:
                 let destinationVC = segue.destination as! HistoryNotesVC
                 destinationVC.selectedRowIndex = self.selectedRow
+                destinationVC.currentRecord = reverseSortedRecords[self.selectedRow].value
                 print("you switched to HistoryNotesVC")
                 
             default:

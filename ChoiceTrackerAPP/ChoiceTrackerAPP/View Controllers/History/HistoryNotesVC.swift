@@ -11,6 +11,13 @@ import UIKit
 class HistoryNotesVC: UITableViewController {
     
     var selectedRowIndex: Int!
+    var currentRecord: DailyRecord!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        print("Current record: \(currentRecord)")
+        
+    }
    
     //MARK:-TableView Methods
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -18,12 +25,31 @@ class HistoryNotesVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return currentRecord.choices.count - 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryNotesVCCell", for: indexPath) as! HistoryNotesVCCell
-        cell.HistoryNotesLabel?.text = String(self.selectedRowIndex)
+        //cell.HistoryNotesLabel?.text = String(self.selectedRowIndex)
+        
+        
+        
+        let choices = currentRecord.choices
+        let choice = choices[indexPath.row]
+        let notes = currentRecord.notes
+        let note = notes[indexPath.row]
+        
+        cell.HistoryNotesLabel?.text = "Choice??? \(choice). Note: \(note)"
+        
+        if choice == 1 { //Good choice
+            cell.HistoryNotesLabel?.text = "Good choice. Note: \(note)"
+        }
+        
+        if choice == -1 { // Bad choice
+            cell.HistoryNotesLabel?.text = "Badf choice. Note: \(note)"
+        }
+        
+        
         return cell
     }
     
