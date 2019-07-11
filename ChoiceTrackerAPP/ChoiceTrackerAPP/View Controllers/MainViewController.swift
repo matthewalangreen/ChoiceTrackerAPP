@@ -149,10 +149,14 @@ class MainViewController: UIViewController {
             //print("long pressed good choice")
             //TODO: present popup for description
             incrementChoice(choice: "Good")
-            currentDailyRecord.addChoiceNote(note: "Custom good note")
-            let ac = alertWithField()
+          
+            let ac = alertWithField(dailyRecord: currentDailyRecord)
             self.present(ac, animated: true, completion: nil)
-            print("notes: \(currentDailyRecord.getNotes())")
+            
+            //currentDailyRecord.addChoiceNote(note: "Custom good note")
+            let notes = currentDailyRecord.getNotes()
+            print("notes: \(notes)\n")
+            print("notes count: \(notes.count)")
         }
     }
 
@@ -161,10 +165,14 @@ class MainViewController: UIViewController {
             //print("long pressed bad choice")
             //TODO: Present popup for description text
             incrementChoice(choice: "Bad")
-            currentDailyRecord.addChoiceNote(note: "Custom bad note")
-            let ac = alertWithField()
+            //currentDailyRecord.addChoiceNote(note: "Custom bad note")
+            let ac = alertWithField(dailyRecord: currentDailyRecord)
             self.present(ac, animated: true, completion: nil)
-            print("notes: \(currentDailyRecord.getNotes())")
+            
+            //currentDailyRecord.addChoiceNote(note: "Custom good note")
+            let notes = currentDailyRecord.getNotes()
+            print("notes: \(notes)\n")
+            print("notes count: \(notes.count)")
         }
     }
     //MARK:- Segue

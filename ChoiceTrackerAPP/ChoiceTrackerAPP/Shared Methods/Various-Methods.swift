@@ -39,7 +39,7 @@ func genRandomData(_ arrayLength: Int) -> [Int] {
 }
 
 //MARK:- Alert with field
-func alertWithField() -> UIAlertController {
+func alertWithField(dailyRecord: DailyRecord) -> UIAlertController {
     var userGoalField: UITextField?
     
     // 2.
@@ -56,6 +56,9 @@ func alertWithField() -> UIAlertController {
             // set the goal to the match the text entered
 //            currentDailyRecord.changeGoal(newGoal)
 //            UserDefaults.standard.set(newGoal, forKey: "dataLabel")
+            userGoalField?.autocorrectionType = .yes
+            userGoalField?.autocapitalizationType = .sentences
+            dailyRecord.addChoiceNote(note: newGoal)
             
         } else {
             print("no note added")
@@ -108,6 +111,8 @@ func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
         (userGoal) -> Void in
         userGoalField = userGoal
         userGoalField!.placeholder = currentDailyRecord.goalString
+        userGoalField?.autocorrectionType = .yes
+        userGoalField?.autocapitalizationType = .sentences
     }
     
     let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
