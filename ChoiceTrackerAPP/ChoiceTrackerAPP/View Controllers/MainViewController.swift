@@ -93,7 +93,7 @@ class MainViewController: UIViewController {
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
         applyTheme()
-        renderChart()
+        //renderChart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,8 +112,8 @@ class MainViewController: UIViewController {
          print("you've used the app at least once today")
         }
         
-        applyTheme()
-        renderChart()
+         //applyTheme()
+        //renderChart()
         setNeedsStatusBarAppearanceUpdate()
     }
     
