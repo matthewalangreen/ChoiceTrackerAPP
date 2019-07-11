@@ -202,6 +202,7 @@ class SettingsTableViewController: UITableViewController {
         case "showHistory"?:
             let destinationVC = segue.destination as! HistoryTableViewController
             //destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
+            destinationVC.allRecords = [DailyRecordV2](settingsDailyRecordStore.allDailyRecords.values)
             destinationVC.recordDictionary = settingsDailyRecordStore.allDailyRecords
        
         default:
