@@ -44,7 +44,9 @@ class DailyRecord: NSObject, NSCoding {
         self.dateString = nowDateString
         self.notes = [String]() // new model
         if firstTimeToday {
-            self.choices = [0]
+            //TODO: This is the offending line in the model...
+            //self.choices = [0]
+            self.choices = []
         } else {
             self.choices = genRandomData(40)
         }

@@ -25,7 +25,7 @@ class HistoryNotesVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentRecord.choices.count - 1
+        return currentRecord.choices.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,15 +39,25 @@ class HistoryNotesVC: UITableViewController {
         let notes = currentRecord.notes
         let note = notes[indexPath.row]
         
-        cell.HistoryNotesLabel?.text = "Choice??? \(choice). Note: \(note)"
-        
-        if choice == 1 { //Good choice
-            cell.HistoryNotesLabel?.text = "Good choice. Note: \(note)"
+        if note != "" {
+            if choice == 1 { //Good choice
+                cell.HistoryNotesLabel?.text = "+ choice. Note: \(note)"
+            }
+            
+            if choice == -1 { // Bad choice
+                cell.HistoryNotesLabel?.text = "- choice. Note: \(note)"
+            }
+        } else {
+            if choice == 1 { //Good choice
+                cell.HistoryNotesLabel?.text = "+ choice"
+            }
+            
+            if choice == -1 { // Bad choice
+                cell.HistoryNotesLabel?.text = "- choice"
+            }
         }
         
-        if choice == -1 { // Bad choice
-            cell.HistoryNotesLabel?.text = "Badf choice. Note: \(note)"
-        }
+       
         
         
         return cell

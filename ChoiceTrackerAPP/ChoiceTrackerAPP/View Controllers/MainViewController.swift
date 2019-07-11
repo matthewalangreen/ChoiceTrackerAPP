@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
         updateUI()
     }
     
-    @IBAction func handleGesture(_ sender: UILongPressGestureRecognizer) {
+    @IBAction func handleGoodChoiceNote(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began
         {
             //print("long pressed good choice")
@@ -151,7 +151,11 @@ class MainViewController: UIViewController {
             incrementChoice(choice: "Good")
           
             let ac = alertWithField(dailyRecord: currentDailyRecord)
-            self.present(ac, animated: true, completion: nil)
+            self.present(ac, animated: true, completion: {
+                self.pieChartView.highlightValue(x: 0, dataSetIndex: 0)
+                styleChart(chart: self.pieChartView, goodChoices: self.currentDailyRecord.numGoodChoices, badChoices: self.currentDailyRecord.numBadChoices)
+                self.updateUI()
+            })
             
             //currentDailyRecord.addChoiceNote(note: "Custom good note")
             let notes = currentDailyRecord.getNotes()
@@ -165,14 +169,18 @@ class MainViewController: UIViewController {
             //print("long pressed bad choice")
             //TODO: Present popup for description text
             incrementChoice(choice: "Bad")
-            //currentDailyRecord.addChoiceNote(note: "Custom bad note")
             let ac = alertWithField(dailyRecord: currentDailyRecord)
-            self.present(ac, animated: true, completion: nil)
+            self.present(ac, animated: true, completion: {
+                self.pieChartView.highlightValue(x: 1, dataSetIndex: 0)
+                styleChart(chart: self.pieChartView, goodChoices: self.currentDailyRecord.numGoodChoices, badChoices: self.currentDailyRecord.numBadChoices)
+                self.updateUI()
+            })
             
             //currentDailyRecord.addChoiceNote(note: "Custom good note")
             let notes = currentDailyRecord.getNotes()
             print("notes: \(notes)\n")
             print("notes count: \(notes.count)")
+            
         }
     }
     //MARK:- Segue
