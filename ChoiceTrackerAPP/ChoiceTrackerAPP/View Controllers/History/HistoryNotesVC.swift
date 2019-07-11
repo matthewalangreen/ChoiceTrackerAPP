@@ -11,7 +11,7 @@ import UIKit
 class HistoryNotesVC: UITableViewController {
     
     var selectedRowIndex: Int!
-    var currentRecord: DailyRecord!
+    var currentRecord: DailyRecordV2!
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
@@ -30,33 +30,33 @@ class HistoryNotesVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryNotesVCCell", for: indexPath) as! HistoryNotesVCCell
-        //cell.HistoryNotesLabel?.text = String(self.selectedRowIndex)
+        cell.HistoryNotesLabel?.text = String(self.selectedRowIndex)
         
         
         
-        let choices = currentRecord.choices
-        let choice = choices[indexPath.row]
-        let notes = currentRecord.notes
-        let note = notes[indexPath.row]
+        //let choices = currentRecord.choices
+      //  let choice = choices[indexPath.row]
+        //let notes = currentRecord.notes
+        //let note = notes[indexPath.row]
         
-        if note != "" {
-            if choice == 1 { //Good choice
-                cell.HistoryNotesLabel?.text = "+ choice. Note: \(note)"
-            }
-            
-            if choice == -1 { // Bad choice
-                cell.HistoryNotesLabel?.text = "- choice. Note: \(note)"
-            }
-        } else {
-            if choice == 1 { //Good choice
-                cell.HistoryNotesLabel?.text = "+ choice"
-            }
-            
-            if choice == -1 { // Bad choice
-                cell.HistoryNotesLabel?.text = "- choice"
-            }
-        }
-        
+//        if note != "" {
+//            if choice == 1 { //Good choice
+//                cell.HistoryNotesLabel?.text = "+ choice. Note: \(note)"
+//            }
+//
+//            if choice == -1 { // Bad choice
+//                cell.HistoryNotesLabel?.text = "- choice. Note: \(note)"
+//            }
+//        } else {
+//            if choice == 1 { //Good choice
+//                cell.HistoryNotesLabel?.text = "+ choice"
+//            }
+//
+//            if choice == -1 { // Bad choice
+//                cell.HistoryNotesLabel?.text = "- choice"
+//            }
+//        }
+//
        
         
         

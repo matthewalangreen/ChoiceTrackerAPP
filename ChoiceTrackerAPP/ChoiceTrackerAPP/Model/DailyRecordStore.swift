@@ -10,7 +10,7 @@ import UIKit
 
 class DailyRecordStore{
     //MARK:- Properties
-    var allDailyRecords: Dictionary = [String:DailyRecord]()
+    var allDailyRecords: Dictionary = [String:DailyRecordV2]()
     
     let recordsArchiveURL: URL = {
         let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -20,25 +20,25 @@ class DailyRecordStore{
     
     //MARK:- Initializer
     init() {
-        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecord] {
+        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecordV2] {
             allDailyRecords = archivedItems
         }
     }
     
     //Mark:- Methods
-    @discardableResult func createRandomDailyRecord() -> DailyRecord {
+    @discardableResult func createRandomDailyRecord() -> DailyRecordV2 {
         let n = Int(arc4random_uniform(3600)) // random number  0 - 49
         let nowDateString = sortableShortDate.string(from: generateRandomDate(daysBack: n)!)
-        let newDailyRecord = DailyRecord.init(nowDateString: nowDateString)
+        let newDailyRecord = DailyRecordV2.init(nowDateString: nowDateString)
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
     
-    @discardableResult func createDailyRecord() -> DailyRecord {
+    @discardableResult func createDailyRecord() -> DailyRecordV2 {
        // let nowDateString = dateFormatter.string(from: Date.init())
         let nowDateString = sortableShortDate.string(from: Date.init())
        // let nowDate = Date.init()
-        let newDailyRecord = DailyRecord.init(nowDateString :nowDateString, firstTimeToday: true)
+        let newDailyRecord = DailyRecordV2.init(nowDateString: nowDateString, firstTimeToday: true)
         allDailyRecords[nowDateString] = newDailyRecord
         return newDailyRecord
     }
@@ -53,7 +53,7 @@ class DailyRecordStore{
     //MARK:- Delete All Records
     func deleteAllRecords() {
         // erase all data
-        allDailyRecords = [String:DailyRecord]()
+        allDailyRecords = [String:DailyRecordV2]()
         createDailyRecord()
     }
 }

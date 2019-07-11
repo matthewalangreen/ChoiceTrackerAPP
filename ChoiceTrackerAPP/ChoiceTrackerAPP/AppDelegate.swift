@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK:- Properties
     var window: UIWindow?
     let dailyRecordStore = DailyRecordStore()
-    let currentDailyRecord = DailyRecord()
+    let currentDailyRecord = DailyRecordV2()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

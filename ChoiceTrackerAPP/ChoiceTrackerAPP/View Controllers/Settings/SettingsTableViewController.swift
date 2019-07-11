@@ -19,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
     
     //MARK:- Properties
     var settingsDailyRecordStore: DailyRecordStore!  // set by "prepareForSegue" from Main View Controller
-    var settingsCurrentDailyRecord: DailyRecord! // set by "prepareForSegue" from Main View Controller
+    var settingsCurrentDailyRecord: DailyRecordV2! // set by "prepareForSegue" from Main View Controller
     
     //MARK:- Outlets to cells
     
@@ -201,7 +201,7 @@ class SettingsTableViewController: UITableViewController {
         switch segue.identifier {
         case "showHistory"?:
             let destinationVC = segue.destination as! HistoryTableViewController
-            destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
+            //destinationVC.allRecords = [DailyRecord](settingsDailyRecordStore.allDailyRecords.values)
             destinationVC.recordDictionary = settingsDailyRecordStore.allDailyRecords
        
         default:

@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-func exportCSV(fileName: String, data: [String:DailyRecord], viewController: UIViewController) {
+func exportCSV(fileName: String, data: [String:DailyRecordV2], viewController: UIViewController) {
     
     let fileName = "\(fileName).csv"
     let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
     
     var csvText = "Date,Good_Choices,Bad_Choices,Total_Choices,Goal\n"
     
-    let sortedTuple: [(key: String, value: DailyRecord)] = data.sorted(by: { $0.0 < $1.0 })
+    let sortedTuple: [(key: String, value: DailyRecordV2)] = data.sorted(by: { $0.0 < $1.0 })
     
-    var sortedObjectArray = [DailyRecord]()
+    var sortedObjectArray = [DailyRecordV2]()
     for r in sortedTuple {
         sortedObjectArray.append(r.value)
     }

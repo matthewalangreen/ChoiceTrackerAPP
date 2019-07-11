@@ -19,10 +19,10 @@ class HistoryTableViewController: UITableViewController {
     
     
     //MARK:- Parameters
-    var allRecords: [DailyRecord]!
-    var recordDictionary: [String:DailyRecord]!
-    var sortedRecords: [(key: String, value: DailyRecord)]!
-    var reverseSortedRecords: [(key: String, value: DailyRecord)]!
+    var allRecords: [DailyRecordV2]!
+    var recordDictionary: [String:DailyRecordV2]!
+    var sortedRecords: [(key: String, value: DailyRecordV2)]!
+    var reverseSortedRecords: [(key: String, value: DailyRecordV2)]!
     var selectedRow: Int = 0
     
     

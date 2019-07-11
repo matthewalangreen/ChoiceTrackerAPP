@@ -39,7 +39,7 @@ func genRandomData(_ arrayLength: Int) -> [Int] {
 }
 
 //MARK:- Alert with field
-func alertWithField(dailyRecord: DailyRecord) -> UIAlertController {
+func alertWithField(dailyRecord: DailyRecordV2) -> UIAlertController {
     var userGoalField: UITextField?
     
     // 2.
@@ -58,8 +58,9 @@ func alertWithField(dailyRecord: DailyRecord) -> UIAlertController {
 //            UserDefaults.standard.set(newGoal, forKey: "dataLabel")
             userGoalField?.autocorrectionType = .yes
             userGoalField?.autocapitalizationType = .sentences
-            dailyRecord.addChoiceNote(note: newGoal)
-            
+            dailyRecord.goodChoice(note: newGoal)
+           // dailyRecord.addChoiceNote(note: newGoal)  old...v1
+
         } else {
             print("no note added")
         }
@@ -83,7 +84,7 @@ func alertWithField(dailyRecord: DailyRecord) -> UIAlertController {
     //present(alertController, animated: true, completion: nil)
 }
 
-func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
+func changeGoalAlert(currentDailyRecord: DailyRecordV2) -> UIAlertController {
     var userGoalField: UITextField?
     
     // 2.
@@ -126,7 +127,7 @@ func changeGoalAlert(currentDailyRecord: DailyRecord) -> UIAlertController {
     //present(alertController, animated: true, completion: nil)
 }
 
-func changeGoalAlertWithHandler(currentDailyRecord: DailyRecord, handler: @escaping ()->()) -> UIAlertController {
+func changeGoalAlertWithHandler(currentDailyRecord: DailyRecordV2, handler: @escaping ()->()) -> UIAlertController {
     var userGoalField: UITextField?
     
     // 2.

@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     
     //MARK:- Properties
     var dailyRecordStore: DailyRecordStore!
-    var currentDailyRecord: DailyRecord!
+    var currentDailyRecord: DailyRecordV2!
     
     //MARK:- Outlets
     @IBOutlet var pieChartView: PieChartView!
@@ -128,8 +128,8 @@ class MainViewController: UIViewController {
     @IBAction func addBadChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 1, dataSetIndex: 0)
         incrementChoice(choice: "Bad")
-        currentDailyRecord.addChoiceNote(note: "")
-        print("notes: \(currentDailyRecord.getNotes())")
+        //currentDailyRecord.addChoiceNote(note: "")
+        //print("notes: \(currentDailyRecord.getNotes())")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
@@ -137,8 +137,8 @@ class MainViewController: UIViewController {
     @IBAction func addGoodChoice(_ sender: Any) {
         pieChartView.highlightValue(x: 0, dataSetIndex: 0)
         incrementChoice(choice: "Good")
-        currentDailyRecord.addChoiceNote(note: "")
-        print("notes: \(currentDailyRecord.getNotes())")
+       // currentDailyRecord.addChoiceNote(note: "")
+       // print("notes: \(currentDailyRecord.getNotes())")
         styleChart(chart: pieChartView, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         updateUI()
     }
@@ -158,9 +158,9 @@ class MainViewController: UIViewController {
             })
             
             //currentDailyRecord.addChoiceNote(note: "Custom good note")
-            let notes = currentDailyRecord.getNotes()
-            print("notes: \(notes)\n")
-            print("notes count: \(notes.count)")
+           // let notes = currentDailyRecord.getNotes()
+           // print("notes: \(notes)\n")
+           // print("notes count: \(notes.count)")
         }
     }
 
@@ -177,9 +177,9 @@ class MainViewController: UIViewController {
             })
             
             //currentDailyRecord.addChoiceNote(note: "Custom good note")
-            let notes = currentDailyRecord.getNotes()
-            print("notes: \(notes)\n")
-            print("notes count: \(notes.count)")
+            //let notes = currentDailyRecord.getNotes()
+           // print("notes: \(notes)\n")
+            //print("notes count: \(notes.count)")
             
         }
     }
@@ -205,9 +205,9 @@ class MainViewController: UIViewController {
     public func incrementChoice(choice: String) {
         switch choice {
         case "Good":
-            currentDailyRecord.goodChoice()
+            currentDailyRecord.goodChoice(note: "")
         case "Bad":
-            currentDailyRecord.badChoice()
+            currentDailyRecord.badChoice(note: "")
         default:
             print("not a valid choice")
         }
@@ -220,7 +220,7 @@ class MainViewController: UIViewController {
     // do I need to effect the return type of this method to also return a flag
     // indicating that this is a new record?
     // I can't call an alert from this scope, so I'll have to do it outside here....
-    func getCurrentDailyRecord() -> DailyRecord {
+    func getCurrentDailyRecord() -> DailyRecordV2 {
         let todayString = sortableShortDate.string(from: Date.init())
         // check allDailyRecords for today, if today exists return it
         if (doesRecordExist(todayString)) {
@@ -228,7 +228,7 @@ class MainViewController: UIViewController {
         } else {
             // if today doesn't exist, make it and return it.
             // this is the edit point to ask for a new goal
-            let newRecord: DailyRecord = dailyRecordStore.createDailyRecord()
+            let newRecord: DailyRecordV2 = dailyRecordStore.createDailyRecord()
             // write the code to ask for the goal
         
             
@@ -237,7 +237,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    func getCurrentDailyRecordTuple() -> (DailyRecord,Bool) {
+    func getCurrentDailyRecordTuple() -> (DailyRecordV2,Bool) {
         let todayString = sortableShortDate.string(from: Date.init())
         // check allDailyRecords for today, if today exists return it
         if (doesRecordExist(todayString)) {
@@ -245,7 +245,7 @@ class MainViewController: UIViewController {
         } else {
             // if today doesn't exist, make it and return it.
             // this is the edit point to ask for a new goal
-            let newRecord: DailyRecord = dailyRecordStore.createDailyRecord()
+            let newRecord: DailyRecordV2 = dailyRecordStore.createDailyRecord()
             // write the code to ask for the goal
             
             
