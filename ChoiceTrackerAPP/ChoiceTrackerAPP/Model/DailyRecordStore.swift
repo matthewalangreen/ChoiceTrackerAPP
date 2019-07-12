@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyRecordStore{
+class DailyRecordStore: Codable {
     //MARK:- Properties
     var allDailyRecords: Dictionary = [String:DailyRecordV2]()
     
@@ -20,8 +20,17 @@ class DailyRecordStore{
     
     //MARK:- Initializer
     init() {
-        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecordV2] {
-            allDailyRecords = archivedItems
+//        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? [String:DailyRecordV2] {
+//            allDailyRecords = archivedItems
+//        }
+        
+        guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: recordsArchiveURL.path) as? Data else { return }
+        do {
+            let records = try PropertyListDecoder().decode([String:DailyRecordV2].self, from: data)
+            allDailyRecords = records
+            print("data retrieved")
+        } catch {
+            print("Could not retrieve records")
         }
     }
     
@@ -47,7 +56,15 @@ class DailyRecordStore{
     //MARK:- NSCoding Methods
    @discardableResult func saveChanges() -> Bool {
         print("Saving items to: \(recordsArchiveURL.path)")
-        return NSKeyedArchiver.archiveRootObject(allDailyRecords, toFile: recordsArchiveURL.path)
+        do {
+           let data = try PropertyListEncoder().encode(allDailyRecords)
+            let success = NSKeyedArchiver.archiveRootObject(data, toFile: recordsArchiveURL.path)
+            print(success ? "All data saved" : "Save Failed")
+            return success
+        } catch {
+            print("Save Failed")
+            return false
+        }
     }
     
     //MARK:- Delete All Records

@@ -86,14 +86,12 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-//        applyTheme()
-//        renderChart()
-//        setNeedsStatusBarAppearanceUpdate()
-    
+        applyTheme()
+        renderChart()
+        setNeedsStatusBarAppearanceUpdate()
+
         // Force Portrait
         AppUtility.lockOrientation(.portrait)
-        applyTheme()
-        //renderChart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -112,8 +110,8 @@ class MainViewController: UIViewController {
          print("you've used the app at least once today")
         }
         
-         //applyTheme()
-        //renderChart()
+        applyTheme()
+        renderChart()
         setNeedsStatusBarAppearanceUpdate()
     }
     
