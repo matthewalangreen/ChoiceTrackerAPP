@@ -16,6 +16,20 @@ func exportCSV(fileName: String, data: [String:DailyRecordV2], viewController: U
     
     var csvText = "Date,Good_Choices,Bad_Choices,Total_Choices,Goal\n"
     
+    // This is the new header for a differntly styled sheet to include the notes with each choice
+    //
+    /*
+ 
+    Date    |   Choice_Type     |   Goal        |   Note                                          |
+    ----------------------------------------------------------------------------------------------
+    July 1  |   Good            |   "Be rad"    |   "Complemented a stranger"                     |
+    July 1  |   Bad             |   "Be rad"    |   "Flipped off the driver next to me"           |
+    July 2  |   Good            |   "Be rad"    |   "Made dinner for my bride"                    |
+ 
+ 
+    */
+    var newCSVText = "Date,Choice_Type,Goal,Note\n"
+    
     let sortedTuple: [(key: String, value: DailyRecordV2)] = data.sorted(by: { $0.0 < $1.0 })
     
     var sortedObjectArray = [DailyRecordV2]()
