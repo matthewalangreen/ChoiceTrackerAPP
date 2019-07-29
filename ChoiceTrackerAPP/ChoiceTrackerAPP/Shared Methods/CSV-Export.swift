@@ -16,31 +16,50 @@ func exportCSV(fileName: String, data: [String:DailyRecordV2], viewController: U
     
     var csvText = "Date,Good_Choices,Bad_Choices,Total_Choices,Goal\n"
     
-    // This is the new header for a differntly styled sheet to include the notes with each choice
+    // deprecated
+//    let sortedTuple: [(key: String, value: DailyRecordV2)] = data.sorted(by: { $0.0 < $1.0 })
+//
+//    var sortedObjectArray = [DailyRecordV2]()
+//
+//    for r in sortedTuple {
+//        sortedObjectArray.append(r.value)
+//    }
+//
+//    for r in sortedObjectArray {
+//        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices),\(r.goalString)\n"
+//        csvText.append(contentsOf: newLine)
+//    }
+    
+    // This is the new header for a differently-styled sheet to include the notes with each choice
     //
     /*
- 
-    Date    |   Choice_Type     |   Goal        |   Note                                          |
-    ----------------------------------------------------------------------------------------------
-    July 1  |   Good            |   "Be rad"    |   "Complemented a stranger"                     |
-    July 1  |   Bad             |   "Be rad"    |   "Flipped off the driver next to me"           |
-    July 2  |   Good            |   "Be rad"    |   "Made dinner for my bride"                    |
- 
- 
-    */
+     
+     Date    |   Choice_Type     |   Goal        |   Note                                          |
+     ----------------------------------------------------------------------------------------------
+     July 1  |   Good            |   "Be rad"    |   "Complemented a stranger"                     |
+     July 1  |   Bad             |   "Be rad"    |   "Flipped off the driver next to me"           |
+     July 2  |   Good            |   "Be rad"    |   "Made dinner for my bride"                    |
+     
+     
+     */
     var newCSVText = "Date,Choice_Type,Goal,Note\n"
     
-    let sortedTuple: [(key: String, value: DailyRecordV2)] = data.sorted(by: { $0.0 < $1.0 })
+        let sortedTuple: [(key: String, value: DailyRecordV2)] = data.sorted(by: { $0.0 < $1.0 })
     
-    var sortedObjectArray = [DailyRecordV2]()
-    for r in sortedTuple {
-        sortedObjectArray.append(r.value)
-    }
+        var sortedObjectArray = [DailyRecordV2]()
     
-    for r in sortedObjectArray {
-        let newLine = "\(r.dateString),\(r.numGoodChoices),\(r.numBadChoices),\(r.numAllChoices),\(r.goalString)\n"
-        csvText.append(contentsOf: newLine)
-    }
+        for r in sortedTuple {
+            sortedObjectArray.append(r.value)
+        }
+    
+        for r in sortedObjectArray {
+            let choices = r.choices
+            for c in choices {
+                let newLine = "\(r.dateString),\(c.type),\(r.goalString),\(c.note)\n"
+                newCSVText.append(contentsOf: newLine)
+            }
+        }
+
     
     do {
         try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
