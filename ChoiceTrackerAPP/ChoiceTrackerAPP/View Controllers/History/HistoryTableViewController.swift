@@ -9,14 +9,11 @@
 import UIKit
 import Charts
 
-
 class HistoryTableViewController: UITableViewController {
     //MARK:- Status bar style
     override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return UserDefaults.standard.bool(forKey: "LightTheme") ? .default : .lightContent
         return .lightContent
     }
-    
     
     //MARK:- Parameters
     var allRecords: [DailyRecordV2]!
@@ -35,12 +32,6 @@ class HistoryTableViewController: UITableViewController {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create an instance of UITableViewCell, with default appearance
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
-        
-        // Set the text on the cell with the description of the item
-        // that is at the nth index of items, where n = row this cell
-        // will appear in on the tableview
-       // let dateStringOldFormat = sortedRecords[indexPath.row].key
-       // let currentDailyRecord = sortedRecords[indexPath.row].value
         
         let dateStringOldFormat = reverseSortedRecords[indexPath.row].key
         let currentDailyRecord = reverseSortedRecords[indexPath.row].value
@@ -61,6 +52,7 @@ class HistoryTableViewController: UITableViewController {
         } else {
              styleChart(chart: cell.pieChart, goodChoices: currentDailyRecord.numGoodChoices, badChoices: currentDailyRecord.numBadChoices)
         }
+        cell.selectionStyle = .none
         return cell
     }
  
@@ -80,8 +72,6 @@ class HistoryTableViewController: UITableViewController {
         //  title color
         navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.textColor]
         
-        
-        tableView.allowsSelection = false
         tableView.rowHeight = 150
         
         // remove bottom of table view
@@ -91,11 +81,17 @@ class HistoryTableViewController: UITableViewController {
         reverseSortedRecords = recordDictionary.sorted(by: { $0.0 > $1.0 } )
         
         self.tableView.allowsSelection = true
+        
     }
     
     //MARK:- Force Portrait
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // deselect cell
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
         
         // set background view to match theme
         self.view.backgroundColor = Theme.current.backgroundColor
@@ -140,6 +136,8 @@ extension HistoryTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedRow = indexPath.row
     }
+    
+    
     }
 
 

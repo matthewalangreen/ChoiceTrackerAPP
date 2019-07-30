@@ -395,27 +395,27 @@ Twitter: @app_choice</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="0vN-ZC-BYs" userLabel="Container">
-                                            <rect key="frame" x="4" y="4" width="406" height="141.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-zk-TmC" userLabel="Text Stack">
-                                                    <rect key="frame" x="0.0" y="47.5" width="281" height="47"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="249" placeholderIntrinsicWidth="150" placeholderIntrinsicHeight="50" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fHg-zk-TmC" userLabel="Text Stack">
+                                                    <rect key="frame" x="0.0" y="51.5" width="284" height="47"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal Text" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHV-v8-bdP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="281" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="284" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfL-t6-6AF">
-                                                            <rect key="frame" x="0.0" y="23.5" width="281" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="284" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-dD-BHj" customClass="PieChartView" customModule="Charts">
-                                                    <rect key="frame" x="286" y="11" width="120" height="120"/>
+                                                <view contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" horizontalCompressionResistancePriority="248" verticalCompressionResistancePriority="248" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="vcV-dD-BHj" customClass="PieChartView" customModule="Charts">
+                                                    <rect key="frame" x="294" y="15" width="120" height="120"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="71r-Rr-BdK"/>
@@ -424,16 +424,18 @@ Twitter: @app_choice</string>
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="fHg-zk-TmC" firstAttribute="leading" secondItem="0vN-ZC-BYs" secondAttribute="leading" id="62i-LE-ZgZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="vcV-dD-BHj" secondAttribute="trailing" id="KwQ-8v-N7m"/>
+                                                <constraint firstItem="vcV-dD-BHj" firstAttribute="leading" secondItem="fHg-zk-TmC" secondAttribute="trailing" constant="10" id="NPa-OE-egu"/>
                                                 <constraint firstItem="fHg-zk-TmC" firstAttribute="leading" secondItem="0vN-ZC-BYs" secondAttribute="leading" id="YQE-ce-4sH"/>
-                                                <constraint firstItem="vcV-dD-BHj" firstAttribute="leading" secondItem="fHg-zk-TmC" secondAttribute="trailing" constant="5" id="eBf-9T-UNG"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="0vN-ZC-BYs" secondAttribute="trailing" constant="4" id="B5h-Uw-sVk"/>
-                                        <constraint firstItem="0vN-ZC-BYs" firstAttribute="top" secondItem="aSi-i2-DCX" secondAttribute="top" constant="4" id="Fpf-zR-xkv"/>
-                                        <constraint firstItem="0vN-ZC-BYs" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leading" constant="4" id="isU-Cy-ZTZ"/>
-                                        <constraint firstAttribute="bottom" secondItem="0vN-ZC-BYs" secondAttribute="bottom" constant="4" id="lhL-uQ-7dH"/>
+                                        <constraint firstItem="0vN-ZC-BYs" firstAttribute="top" secondItem="aSi-i2-DCX" secondAttribute="top" id="JRh-wo-Y6p"/>
+                                        <constraint firstAttribute="trailing" secondItem="0vN-ZC-BYs" secondAttribute="trailing" id="gcV-pj-3JV"/>
+                                        <constraint firstItem="0vN-ZC-BYs" firstAttribute="leading" secondItem="aSi-i2-DCX" secondAttribute="leading" id="kGu-bN-1gW"/>
+                                        <constraint firstAttribute="bottom" secondItem="0vN-ZC-BYs" secondAttribute="bottom" id="zNX-Y1-K6E"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
