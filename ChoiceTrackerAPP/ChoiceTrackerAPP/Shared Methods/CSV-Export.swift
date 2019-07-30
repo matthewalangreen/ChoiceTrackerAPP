@@ -62,7 +62,7 @@ func exportCSV(fileName: String, data: [String:DailyRecordV2], viewController: U
 
     
     do {
-        try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+        try newCSVText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
     } catch {
         print("Failed to create file")
         print("\(error)")
