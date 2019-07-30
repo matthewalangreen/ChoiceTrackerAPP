@@ -12,4 +12,5 @@ import Charts
 class HistoryNotesVCCell: UITableViewCell {
     
     @IBOutlet weak var HistoryNotesLabel: UILabel!
+    @IBOutlet weak var GoalTextLabel: UILabel!
 }

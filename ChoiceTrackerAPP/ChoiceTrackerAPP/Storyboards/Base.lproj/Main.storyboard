@@ -469,27 +469,35 @@ Twitter: @app_choice</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryNotesVCCell" id="gfE-PA-7V3" customClass="HistoryNotesVCCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryNotesVCCell" rowHeight="90" id="gfE-PA-7V3" customClass="HistoryNotesVCCell" customModule="ChoiceTrackerAPP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gfE-PA-7V3" id="vrb-It-FZy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp7-5l-umB">
-                                            <rect key="frame" x="16" y="12" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp7-5l-umB">
+                                            <rect key="frame" x="16" y="34.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckl-sX-jfL" userLabel="GoalTextLabel">
+                                            <rect key="frame" x="344" y="56" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                            <color key="textColor" name="light-header"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="leading" secondItem="vrb-It-FZy" secondAttribute="leadingMargin" id="F0N-DY-57T"/>
-                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="centerY" secondItem="vrb-It-FZy" secondAttribute="centerY" id="G69-ZS-CSq"/>
-                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="bottom" secondItem="vrb-It-FZy" secondAttribute="bottomMargin" id="HAn-Z4-9He"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ckl-sX-jfL" secondAttribute="trailing" constant="8" id="8mS-Fe-wPR"/>
+                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="centerY" secondItem="vrb-It-FZy" secondAttribute="centerY" id="HaB-k4-N3n"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ckl-sX-jfL" secondAttribute="bottom" constant="2" id="YVq-XH-6bk"/>
+                                        <constraint firstItem="Fp7-5l-umB" firstAttribute="leading" secondItem="vrb-It-FZy" secondAttribute="leading" constant="16" id="dKc-41-iou"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="GoalTextLabel" destination="Ckl-sX-jfL" id="lam-pt-dSc"/>
                                     <outlet property="HistoryNotesLabel" destination="Fp7-5l-umB" id="XeG-4f-bzI"/>
                                 </connections>
                             </tableViewCell>
@@ -533,6 +541,9 @@ Twitter: @app_choice</string>
         </namedColor>
         <namedColor name="light-good">
             <color red="0.28999999165534973" green="0.6470000147819519" blue="0.55299997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light-header">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
