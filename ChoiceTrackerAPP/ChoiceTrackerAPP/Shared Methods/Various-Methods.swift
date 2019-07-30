@@ -56,8 +56,8 @@ func alertWithField(dailyRecord: DailyRecordV2) -> UIAlertController {
             // set the goal to the match the text entered
 //            currentDailyRecord.changeGoal(newGoal)
 //            UserDefaults.standard.set(newGoal, forKey: "dataLabel")
-            userGoalField?.autocorrectionType = .yes
-            userGoalField?.autocapitalizationType = .sentences
+            //userGoalField?.autocorrectionType = .yes
+            //userGoalField?.autocapitalizationType = .sentences
             dailyRecord.goodChoice(note: newGoal)
            // dailyRecord.addChoiceNote(note: newGoal)  old...v1
 
@@ -71,6 +71,11 @@ func alertWithField(dailyRecord: DailyRecordV2) -> UIAlertController {
         (userGoal) -> Void in
         userGoalField = userGoal
         userGoalField!.placeholder = "Placeholder text"
+        userGoalField?.autocapitalizationType = .sentences
+        userGoalField?.autocorrectionType = .yes
+        
+        
+        // do it here
     }
     
     let noAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
